@@ -1,0 +1,26 @@
+# Build outputs
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# VS / Rider
+.vs/
+.idea/
+*.user
+*.suo
+
+# dotnet tool manifest (local)
+.config/dotnet-tools.json
+
+# Coverage
+coverage/
+*.coveragexml
+TestResults/
+
+# OS
+.DS_Store
+Thumbs.db
