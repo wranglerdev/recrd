@@ -5,7 +5,7 @@
 | **Author** | Architecture Team |
 | **Status** | Draft |
 | **Last Revised** | 2026-03-25 |
-| **Target Runtime** | .NET 8 (LTS) |
+| **Target Runtime** | .NET 10 (LTS) |
 | **Supersedes** | PRD v1.0 |
 
 ---
@@ -14,7 +14,7 @@
 
 **Name:** `recrd`
 
-**One-liner:** A .NET 8 CLI that records browser interactions, emits pt-BR Gherkin, and compiles executable Robot Framework test suites with native data-driven testing.
+**One-liner:** A .NET 10 CLI that records browser interactions, emits pt-BR Gherkin, and compiles executable Robot Framework test suites with native data-driven testing.
 
 **Philosophy:** Test-Driven Development from day zero; plugin-oriented architecture exposed through a stable public API surface; deterministic, reproducible output — the same recording plus the same data must always produce byte-identical test artifacts.
 
@@ -258,7 +258,7 @@ The extension communicates with the CLI exclusively through its stdout/stderr st
 ```
 recrd/
 ├── apps/
-│   ├── recrd-cli/                   .NET 8 console app (entry point)
+│   ├── recrd-cli/                   .NET 10 console app (entry point)
 │   └── vscode-extension/            TypeScript VS Code extension
 ├── packages/
 │   ├── Recrd.Core/                  AST types, interfaces, Channel infra
