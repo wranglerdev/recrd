@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Test (unit only)
+        run: >
+          dotnet test --no-build
+          --collect:"XPlat Code Coverage"
+          --filter "Category!=Integration"
+
+      - name: Check code style
+        run: dotnet format --verify-no-changes
+
+  mutation-testing:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Install Stryker.NET
+        run: dotnet tool install --global dotnet-stryker
+
+      - name: Run mutation testing on Recrd.Core
+        run: dotnet stryker --project packages/Recrd.Core/Recrd.Core.csproj
