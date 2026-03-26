@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-26T18:37:46.685Z"
+last_updated: "2026-03-26T18:37:50.774Z"
 progress:
   total_phases: 12
   completed_phases: 0
@@ -71,6 +71,9 @@ Plan: 3 of 7
 | Playwright .NET over raw CDP | Transport reconnection, multi-browser, stable API surface |
 | `AssemblyLoadContext` for plugins | Prevents version conflicts; host rejects incompatible major versions |
 | `Channel<T>` for event pipeline | No HTTP/socket/serialization overhead between recording and inspector |
+| Recrd.Integration.Tests references all 5 packages | Integration tests span the full recording-to-compiler pipeline |
+| PlaceholderTests.cs pattern in all test projects | Prevents xunit no-tests-found exit-code 1 on empty test projects |
+| IsPackable=false on all test .csproj files | Prevents dotnet pack from emitting test NuGet packages |
 
 ### TDD Mandate
 
@@ -96,6 +99,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-26 — Completed quick task 260326-eol: Fix Playwright NuGet package in Recrd.Recording causing infinite loading during dotnet restore
+**Last updated:** 2026-03-26 — Completed plan 01-05: test-projects (6 xUnit test project stubs + PlaceholderTests.cs + registered in recrd.sln)
 
-**To resume:** Run `/gsd:plan-phase 1` to decompose Phase 1 into executable plans.
+**To resume:** Continue with plan 01-06 (ci-workflow) — the next unexecuted plan in Phase 1.
