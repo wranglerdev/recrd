@@ -38,13 +38,13 @@
 **Plans**: 7 plans
 
 Plans:
-- [ ] 01-PLAN-solution-scaffold.md — recrd.sln, Directory.Build.props, global.json
-- [ ] 01-PLAN-package-projects.md — 5 package library stubs (Core, Data, Gherkin, Recording, Compilers)
-- [ ] 01-PLAN-app-project.md — recrd-cli console app stub
-- [ ] 01-PLAN-placeholder-dirs.md — plugins/ and apps/vscode-extension/ .gitkeep
-- [ ] 01-PLAN-test-projects.md — 6 xUnit test project stubs with PlaceholderTests
-- [ ] 01-PLAN-ci-workflow.md — GitHub Actions CI workflow with Core isolation check
-- [ ] 01-PLAN-code-quality-tooling.md — .editorconfig and dotnet-tools.json
+- [ ] 01-01-solution-scaffold-PLAN.md — recrd.sln, Directory.Build.props, global.json
+- [ ] 01-02-package-projects-PLAN.md — 5 package library stubs (Core, Data, Gherkin, Recording, Compilers)
+- [ ] 01-03-app-project-PLAN.md — recrd-cli console app stub
+- [ ] 01-04-placeholder-dirs-PLAN.md — plugins/ and apps/vscode-extension/ .gitkeep
+- [ ] 01-05-test-projects-PLAN.md — 6 xUnit test project stubs with PlaceholderTests
+- [ ] 01-06-ci-workflow-PLAN.md — GitHub Actions CI workflow with Core isolation check
+- [ ] 01-07-code-quality-tooling-PLAN.md — .editorconfig and dotnet-tools.json
 **UI hint**: no
 
 ### Phase 2: Core AST Types & Interfaces
