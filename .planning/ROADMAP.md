@@ -38,7 +38,7 @@
 **Plans**: 7 plans
 
 Plans:
-- [ ] 01-01-solution-scaffold-PLAN.md — recrd.sln, Directory.Build.props, global.json
+- [x] 01-01-solution-scaffold-PLAN.md — recrd.sln, Directory.Build.props, global.json
 - [ ] 01-02-package-projects-PLAN.md — 5 package library stubs (Core, Data, Gherkin, Recording, Compilers)
 - [ ] 01-03-app-project-PLAN.md — recrd-cli console app stub
 - [ ] 01-04-placeholder-dirs-PLAN.md — plugins/ and apps/vscode-extension/ .gitkeep
