@@ -61,8 +61,8 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [x] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [x] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
 - [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 3: Data Providers
@@ -78,7 +78,7 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [x] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
 - [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
 - [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
 - [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
@@ -254,7 +254,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
-| 2. Core AST Types & Interfaces | 1/4 | In Progress|  |
+| 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
 | 3. Data Providers | 0/? | Not started | - |
 | 4. Gherkin Generator | 0/? | Not started | - |
 | 5. CI Pipeline | 0/? | Not started | - |
