@@ -35,7 +35,16 @@
   3. `Directory.Build.props` applies shared properties (TFM, nullable, warnings-as-errors) to every project without per-project duplication
   4. A placeholder CI workflow exists that runs restore and build and exits zero on a push to `main`
   5. Running `dotnet dependency-graph` (or equivalent assertion) confirms `Recrd.Core` has zero `Recrd.*` package references
-**Plans**: TBD
+**Plans**: 7 plans
+
+Plans:
+- [ ] 01-PLAN-solution-scaffold.md — recrd.sln, Directory.Build.props, global.json
+- [ ] 01-PLAN-package-projects.md — 5 package library stubs (Core, Data, Gherkin, Recording, Compilers)
+- [ ] 01-PLAN-app-project.md — recrd-cli console app stub
+- [ ] 01-PLAN-placeholder-dirs.md — plugins/ and apps/vscode-extension/ .gitkeep
+- [ ] 01-PLAN-test-projects.md — 6 xUnit test project stubs with PlaceholderTests
+- [ ] 01-PLAN-ci-workflow.md — GitHub Actions CI workflow with Core isolation check
+- [ ] 01-PLAN-code-quality-tooling.md — .editorconfig and dotnet-tools.json
 **UI hint**: no
 
 ### Phase 2: Core AST Types & Interfaces
