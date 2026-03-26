@@ -1,6 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <AssemblyName>Recrd.Core</AssemblyName>
-    <PackageId>Recrd.Core</PackageId>
-  </PropertyGroup>
-</Project>

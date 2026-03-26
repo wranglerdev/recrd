@@ -1,8 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <AssemblyName>Recrd.Gherkin</AssemblyName>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\packages\Recrd.Core\Recrd.Core.csproj" />
-  </ItemGroup>
-</Project>
