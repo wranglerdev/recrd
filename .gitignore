@@ -13,8 +13,6 @@ obj/
 *.user
 *.suo
 
-# dotnet tool manifest (local)
-.config/dotnet-tools.json
 
 # Coverage
 coverage/
