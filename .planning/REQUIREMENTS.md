@@ -9,19 +9,19 @@
 
 ### Foundation — Core Types & Interfaces
 
-- [ ] **CORE-01**: `Session` AST root with `metadata`, `variables`, and `steps` fields serializable to/from JSON with `schemaVersion: 1`
-- [ ] **CORE-02**: `ActionStep` covering click, type, select, navigate, upload, drag-and-drop
-- [ ] **CORE-03**: `AssertionStep` covering text-equals, text-contains, visible, enabled, URL-matches
-- [ ] **CORE-04**: `GroupStep` with `given`/`when`/`then` type, containing child steps
-- [ ] **CORE-05**: `Selector` with type (data-testid, id, role, css, xpath) and ranked priority array
-- [ ] **CORE-06**: `Variable` with name (`^[a-z][a-z0-9_]{0,63}$` validated), linked step reference
-- [ ] **CORE-07**: `ITestCompiler` interface: `TargetName`, `CompileAsync(Session, CompilerOptions) → CompilationResult`
-- [ ] **CORE-08**: `IDataProvider` interface: `IAsyncEnumerable<IReadOnlyDictionary<string,string>> StreamAsync()`
-- [ ] **CORE-09**: `IEventInterceptor` plugin extension point interface
-- [ ] **CORE-10**: `IAssertionProvider` plugin extension point interface
-- [ ] **CORE-11**: `Channel<RecordedEvent>` pipeline infrastructure with backpressure and cancellation support
-- [ ] **CORE-12**: `RecordedEvent` envelope with Id, TimestampMs (monotonic), EventType, Selectors, Payload, DataVariable
-- [ ] **CORE-13**: `Recrd.Core` has zero `Recrd.*` package dependencies (CI-enforced)
+- [x] **CORE-01**: `Session` AST root with `metadata`, `variables`, and `steps` fields serializable to/from JSON with `schemaVersion: 1`
+- [x] **CORE-02**: `ActionStep` covering click, type, select, navigate, upload, drag-and-drop
+- [x] **CORE-03**: `AssertionStep` covering text-equals, text-contains, visible, enabled, URL-matches
+- [x] **CORE-04**: `GroupStep` with `given`/`when`/`then` type, containing child steps
+- [x] **CORE-05**: `Selector` with type (data-testid, id, role, css, xpath) and ranked priority array
+- [x] **CORE-06**: `Variable` with name (`^[a-z][a-z0-9_]{0,63}$` validated), linked step reference
+- [x] **CORE-07**: `ITestCompiler` interface: `TargetName`, `CompileAsync(Session, CompilerOptions) → CompilationResult`
+- [x] **CORE-08**: `IDataProvider` interface: `IAsyncEnumerable<IReadOnlyDictionary<string,string>> StreamAsync()`
+- [x] **CORE-09**: `IEventInterceptor` plugin extension point interface
+- [x] **CORE-10**: `IAssertionProvider` plugin extension point interface
+- [x] **CORE-11**: `Channel<RecordedEvent>` pipeline infrastructure with backpressure and cancellation support
+- [x] **CORE-12**: `RecordedEvent` envelope with Id, TimestampMs (monotonic), EventType, Selectors, Payload, DataVariable
+- [x] **CORE-13**: `Recrd.Core` has zero `Recrd.*` package dependencies (CI-enforced)
 
 ### Foundation — Data Providers
 
@@ -162,19 +162,19 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | Phase 2 | Pending |
-| CORE-02 | Phase 2 | Pending |
-| CORE-03 | Phase 2 | Pending |
-| CORE-04 | Phase 2 | Pending |
-| CORE-05 | Phase 2 | Pending |
-| CORE-06 | Phase 2 | Pending |
-| CORE-07 | Phase 2 | Pending |
-| CORE-08 | Phase 2 | Pending |
-| CORE-09 | Phase 2 | Pending |
-| CORE-10 | Phase 2 | Pending |
-| CORE-11 | Phase 2 | Pending |
-| CORE-12 | Phase 2 | Pending |
-| CORE-13 | Phase 2 | Pending |
+| CORE-01 | Phase 2 | Complete |
+| CORE-02 | Phase 2 | Complete |
+| CORE-03 | Phase 2 | Complete |
+| CORE-04 | Phase 2 | Complete |
+| CORE-05 | Phase 2 | Complete |
+| CORE-06 | Phase 2 | Complete |
+| CORE-07 | Phase 2 | Complete |
+| CORE-08 | Phase 2 | Complete |
+| CORE-09 | Phase 2 | Complete |
+| CORE-10 | Phase 2 | Complete |
+| CORE-11 | Phase 2 | Complete |
+| CORE-12 | Phase 2 | Complete |
+| CORE-13 | Phase 2 | Complete |
 | DATA-01 | Phase 3 | Pending |
 | DATA-02 | Phase 3 | Pending |
 | DATA-03 | Phase 3 | Pending |
