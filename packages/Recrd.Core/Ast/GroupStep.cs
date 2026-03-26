@@ -5,9 +5,9 @@ public sealed record GroupStep : IStep
     public GroupType GroupType { get; }
     public IReadOnlyList<IStep> Steps { get; }
 
-    public GroupStep(GroupType groupType, IReadOnlyList<IStep> steps)
+    public GroupStep(GroupType GroupType, IReadOnlyList<IStep> Steps)
     {
-        GroupType = groupType;
-        Steps = steps ?? throw new ArgumentNullException(nameof(steps));
+        this.GroupType = GroupType;
+        this.Steps = Steps ?? throw new ArgumentNullException(nameof(Steps));
     }
 }

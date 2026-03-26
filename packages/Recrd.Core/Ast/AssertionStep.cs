@@ -6,10 +6,10 @@ public sealed record AssertionStep : IStep
     public Selector Selector { get; }
     public IReadOnlyDictionary<string, string> Payload { get; }
 
-    public AssertionStep(AssertionType assertionType, Selector selector, IReadOnlyDictionary<string, string> payload)
+    public AssertionStep(AssertionType AssertionType, Selector Selector, IReadOnlyDictionary<string, string> Payload)
     {
-        AssertionType = assertionType;
-        Selector = selector ?? throw new ArgumentNullException(nameof(selector));
-        Payload = payload ?? throw new ArgumentNullException(nameof(payload));
+        this.AssertionType = AssertionType;
+        this.Selector = Selector ?? throw new ArgumentNullException(nameof(Selector));
+        this.Payload = Payload ?? throw new ArgumentNullException(nameof(Payload));
     }
 }

@@ -12,18 +12,18 @@ public sealed record RecordedEvent
     public string? DataVariable { get; init; }
 
     public RecordedEvent(
-        string id,
-        long timestampMs,
-        RecordedEventType eventType,
-        IReadOnlyList<Selector> selectors,
-        IReadOnlyDictionary<string, string> payload,
-        string? dataVariable = null)
+        string Id,
+        long TimestampMs,
+        RecordedEventType EventType,
+        IReadOnlyList<Selector> Selectors,
+        IReadOnlyDictionary<string, string> Payload,
+        string? DataVariable = null)
     {
-        Id = id ?? throw new ArgumentNullException(nameof(id));
-        TimestampMs = timestampMs;
-        EventType = eventType;
-        Selectors = selectors ?? throw new ArgumentNullException(nameof(selectors));
-        Payload = payload ?? throw new ArgumentNullException(nameof(payload));
-        DataVariable = dataVariable;
+        this.Id = Id ?? throw new ArgumentNullException(nameof(Id));
+        this.TimestampMs = TimestampMs;
+        this.EventType = EventType;
+        this.Selectors = Selectors ?? throw new ArgumentNullException(nameof(Selectors));
+        this.Payload = Payload ?? throw new ArgumentNullException(nameof(Payload));
+        this.DataVariable = DataVariable;
     }
 }

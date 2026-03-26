@@ -60,7 +60,7 @@ public sealed class StepModelTests
             Steps: new List<IStep> { childStep }
         );
 
-        Assert.Equal(1, groupStep.Steps.Count);
+        Assert.Single(groupStep.Steps);
         Assert.Equal(GroupType.Given, groupStep.GroupType);
     }
 

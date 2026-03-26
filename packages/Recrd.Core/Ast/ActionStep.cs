@@ -6,10 +6,10 @@ public sealed record ActionStep : IStep
     public Selector Selector { get; }
     public IReadOnlyDictionary<string, string> Payload { get; }
 
-    public ActionStep(ActionType actionType, Selector selector, IReadOnlyDictionary<string, string> payload)
+    public ActionStep(ActionType ActionType, Selector Selector, IReadOnlyDictionary<string, string> Payload)
     {
-        ActionType = actionType;
-        Selector = selector ?? throw new ArgumentNullException(nameof(selector));
-        Payload = payload ?? throw new ArgumentNullException(nameof(payload));
+        this.ActionType = ActionType;
+        this.Selector = Selector ?? throw new ArgumentNullException(nameof(Selector));
+        this.Payload = Payload ?? throw new ArgumentNullException(nameof(Payload));
     }
 }

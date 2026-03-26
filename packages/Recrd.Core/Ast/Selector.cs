@@ -9,9 +9,9 @@ public sealed record Selector
     public IReadOnlyList<SelectorStrategy> Strategies { get; }
     public IReadOnlyDictionary<SelectorStrategy, string> Values { get; }
 
-    public Selector(IReadOnlyList<SelectorStrategy> strategies, IReadOnlyDictionary<SelectorStrategy, string> values)
+    public Selector(IReadOnlyList<SelectorStrategy> Strategies, IReadOnlyDictionary<SelectorStrategy, string> Values)
     {
-        Strategies = strategies ?? throw new ArgumentNullException(nameof(strategies));
-        Values = values ?? throw new ArgumentNullException(nameof(values));
+        this.Strategies = Strategies ?? throw new ArgumentNullException(nameof(Strategies));
+        this.Values = Values ?? throw new ArgumentNullException(nameof(Values));
     }
 }

@@ -7,11 +7,11 @@ public sealed record Session
     public IReadOnlyList<Variable> Variables { get; }
     public IReadOnlyList<IStep> Steps { get; }
 
-    public Session(int schemaVersion, SessionMetadata metadata, IReadOnlyList<Variable> variables, IReadOnlyList<IStep> steps)
+    public Session(int SchemaVersion, SessionMetadata Metadata, IReadOnlyList<Variable> Variables, IReadOnlyList<IStep> Steps)
     {
-        SchemaVersion = schemaVersion;
-        Metadata = metadata ?? throw new ArgumentNullException(nameof(metadata));
-        Variables = variables ?? throw new ArgumentNullException(nameof(variables));
-        Steps = steps ?? throw new ArgumentNullException(nameof(steps));
+        this.SchemaVersion = SchemaVersion;
+        this.Metadata = Metadata ?? throw new ArgumentNullException(nameof(Metadata));
+        this.Variables = Variables ?? throw new ArgumentNullException(nameof(Variables));
+        this.Steps = Steps ?? throw new ArgumentNullException(nameof(Steps));
     }
 }
