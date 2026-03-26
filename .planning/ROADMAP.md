@@ -41,7 +41,7 @@ Plans:
 - [x] 01-01-solution-scaffold-PLAN.md — recrd.sln, Directory.Build.props, global.json
 - [ ] 01-02-package-projects-PLAN.md — 5 package library stubs (Core, Data, Gherkin, Recording, Compilers)
 - [ ] 01-03-app-project-PLAN.md — recrd-cli console app stub
-- [ ] 01-04-placeholder-dirs-PLAN.md — plugins/ and apps/vscode-extension/ .gitkeep
+- [x] 01-04-placeholder-dirs-PLAN.md — plugins/ and apps/vscode-extension/ .gitkeep
 - [ ] 01-05-test-projects-PLAN.md — 6 xUnit test project stubs with PlaceholderTests
 - [ ] 01-06-ci-workflow-PLAN.md — GitHub Actions CI workflow with Core isolation check
 - [ ] 01-07-code-quality-tooling-PLAN.md — .editorconfig and dotnet-tools.json
