@@ -12,12 +12,11 @@ Record once, compile to a round-trip-verified, data-driven Robot Framework suite
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] `Recrd.Core` — AST types (`Session`, `ActionStep`, `AssertionStep`, `GroupStep`, `Selector`, `Variable`), all interfaces (`ITestCompiler`, `IDataProvider`, `IEventInterceptor`, `IAssertionProvider`), `Channel<RecordedEvent>` pipeline — *Validated in Phase 02: core-ast-types-interfaces*
 
 ### Active
 
 **Foundation**
-- [ ] `Recrd.Core` — AST types (`Session`, `ActionStep`, `AssertionStep`, `GroupStep`, `Selector`, `Variable`), all interfaces (`ITestCompiler`, `IDataProvider`, `IEventInterceptor`, `IAssertionProvider`), `Channel<RecordedEvent>` pipeline
 - [ ] `Recrd.Data` — `CsvDataProvider` (RFC 4180, BOM-tolerant, streaming) and `JsonDataProvider` (flat root array, dot-notation flattening), `IAsyncEnumerable<T>` contract, ≤1000 rows in-memory batch
 - [ ] `Recrd.Gherkin` — AST → pt-BR `.feature` generator; `Cenário` vs `Esquema do Cenário` + `Exemplos` table; deterministic/idempotent output; variable mismatch hard error
 - [ ] CI pipeline — build, unit test, coverage gates (≥90% Core/Data/Gherkin/Compilers), `dotnet format` check, weekly Stryker.NET mutation run
@@ -102,4 +101,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after initialization*
+*Last updated: 2026-03-26 after Phase 02 completion — Recrd.Core AST/interfaces/pipeline/serialization all green (40/40 tests)*
