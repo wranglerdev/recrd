@@ -8,7 +8,7 @@
 
 ## Phases
 
-- [ ] **Phase 1: Monorepo Scaffold & Solution Structure** - sln, Directory.Build.props, project files, CI skeleton, dependency enforcement
+- [x] **Phase 1: Monorepo Scaffold & Solution Structure** - sln, Directory.Build.props, project files, CI skeleton, dependency enforcement (completed 2026-03-26)
 - [ ] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps)
 - [ ] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling
 - [ ] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging
@@ -44,7 +44,7 @@ Plans:
 - [x] 01-04-placeholder-dirs-PLAN.md — plugins/ and apps/vscode-extension/ .gitkeep
 - [x] 01-05-test-projects-PLAN.md — 6 xUnit test project stubs with PlaceholderTests
 - [x] 01-06-ci-workflow-PLAN.md — GitHub Actions CI workflow with Core isolation check
-- [ ] 01-07-code-quality-tooling-PLAN.md — .editorconfig and dotnet-tools.json
+- [x] 01-07-code-quality-tooling-PLAN.md — .editorconfig and dotnet-tools.json
 **UI hint**: no
 
 ### Phase 2: Core AST Types & Interfaces
@@ -187,7 +187,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Monorepo Scaffold & Solution Structure | 6/7 | In Progress|  |
+| 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
 | 2. Core AST Types & Interfaces | 0/? | Not started | - |
 | 3. Data Providers | 0/? | Not started | - |
 | 4. Gherkin Generator | 0/? | Not started | - |
