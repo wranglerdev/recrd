@@ -85,8 +85,16 @@ None.
 
 ---
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260326-eol | Fix Playwright NuGet package in Recrd.Recording causing infinite loading during dotnet restore | 2026-03-26 | 470c456 | [260326-eol-fix-playwright-nuget-package-in-recrd-re](./quick/260326-eol-fix-playwright-nuget-package-in-recrd-re/) |
+
+---
+
 ## Session Continuity
 
-**Last updated:** 2026-03-26 — roadmap created, no plans defined yet.
+**Last updated:** 2026-03-26 — Completed quick task 260326-eol: Fix Playwright NuGet package in Recrd.Recording causing infinite loading during dotnet restore
 
 **To resume:** Run `/gsd:plan-phase 1` to decompose Phase 1 into executable plans.
