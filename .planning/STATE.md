@@ -102,11 +102,12 @@ None.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260326-eol | Fix Playwright NuGet package in Recrd.Recording causing infinite loading during dotnet restore | 2026-03-26 | 470c456 | [260326-eol-fix-playwright-nuget-package-in-recrd-re](./quick/260326-eol-fix-playwright-nuget-package-in-recrd-re/) |
+| 260326-t3b | Fix CI failure: global.json SDK 10.0.103 unavailable on runners — changed to latestFeature/10.0.100 | 2026-03-26 | 7fc79bc | [260326-t3b-fix-ci-failure-global-json-requires-net-](./quick/260326-t3b-fix-ci-failure-global-json-requires-net-/) |
 
 ---
 
 ## Session Continuity
 
-**Last updated:** 2026-03-26 — Completed plan 02-04: source-generated JSON serializer context (RecrdJsonContext); all 40 Recrd.Core.Tests green; zero warnings; dotnet format clean.
+**Last updated:** 2026-03-26 — Completed quick task 260326-t3b: fixed CI failure by updating global.json from rollForward=latestPatch/10.0.103 to rollForward=latestFeature/10.0.100.
 
 **To resume:** Phase 02 complete (4/4 plans). Run `/gsd:transition` to close Phase 2.
