@@ -57,7 +57,13 @@ Plans:
   3. `Selector` instances rank by the defined priority array; `Variable` names are validated against `^[a-z][a-z0-9_]{0,63}$` at construction
   4. `Channel<RecordedEvent>` accepts events with backpressure, supports cancellation, and drains without deadlock under test
   5. All four interfaces (`ITestCompiler`, `IDataProvider`, `IEventInterceptor`, `IAssertionProvider`) are defined and `Recrd.Core` builds with zero `Recrd.*` references (CI gate green)
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 3: Data Providers
 **Goal**: `Recrd.Data` delivers production-quality CSV and JSON data providers that stream rows without OOM risk and throw typed exceptions on malformed input.
@@ -69,7 +75,13 @@ Plans:
   3. A 50 MB CSV file streams to completion with a peak heap delta no greater than 100 MB, verified by a test using `GC.GetTotalMemory`
   4. `JsonDataProvider` flattens `{ "user": { "name": "Gil" } }` to a column named `user.name`
   5. A JSON file whose root is an object (not array) throws `DataParseException` with a message that explains the root-must-be-array constraint
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 4: Gherkin Generator
 **Goal**: `Recrd.Gherkin` walks the AST and emits a valid, deterministic pt-BR `.feature` file for both fixed-scenario and data-driven cases.
@@ -81,7 +93,13 @@ Plans:
   3. When a variable declared in the AST is missing from the data file, `GherkinException` is thrown naming the missing variable and the data file path; an extra column in the data produces a warning to stderr only
   4. `GroupStep(given)` steps emit `Dado`/`E`; the default heuristic (no GroupStep) assigns the first navigation to `Dado`, interactions to `Quando`, and assertions to `Então`
   5. Running the generator twice on the identical AST and data inputs produces byte-identical `.feature` output; the file is always UTF-8 with no BOM and opens with `# language: pt`
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 5: CI Pipeline
 **Goal**: Every push to the repository triggers a fully automated quality gate: build, test, coverage, format, with scheduled mutation testing and gated NuGet publish on `main`.
@@ -94,7 +112,13 @@ Plans:
   4. A weekly scheduled workflow runs Stryker.NET on `Recrd.Core` and posts a mutation score report
   5. Pushing a pre-release tag on `main` triggers `dotnet pack` followed by a NuGet push; pushing on a non-`main` branch does not trigger packaging
   6. Pushing to a branch prefixed `tdd/phase-*` runs tests but does not fail the build on test failures, enabling the TDD red phase
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 6: Recording Engine
 **Goal**: `Recrd.Recording` captures live browser interactions via Playwright into the AST Channel pipeline, with an inspector side-panel for variable tagging, assertion insertion, and constrained popup handling.
@@ -107,7 +131,13 @@ Plans:
   4. A `.recrd.partial` snapshot file is written every 30 seconds during a session; `recrd recover` reconstructs a `Session` from the latest partial without manual intervention
   5. The inspector side-panel opens alongside the recording context; right-clicking a field and selecting "Tag as Variable" replaces the literal value with a named placeholder; attempting to reuse a name shows a visible warning; right-click in pause mode inserts an `AssertionStep` into the AST
   6. A single-level OAuth-style popup (new page opened by `window.open`) has its events captured and is automatically treated as a constrained popup context; events from the popup appear on the same channel with a popup scope marker
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 **UI hint**: yes
 
 ### Phase 7: Compilers
@@ -120,7 +150,13 @@ Plans:
   3. Every generated file from both compilers contains a header comment block with the `recrd` version, compilation timestamp, source `.recrd` SHA-256 hash, and compiler target name
   4. Both compilers emit a `*** Settings ***` block that declares the minimum RF version
   5. `CompilationResult` carries the full list of generated files, any warnings, and a dependency manifest; the full `record → compile → execute` pipeline against the fixture web app (static HTML + simple SPA) completes with zero manual edits
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 8: CLI Polish
 **Goal**: The `recrd` CLI exposes its complete command surface with structured logging, human-readable help text, machine-parseable output mode, and a cold-start time under 500 ms.
@@ -133,7 +169,13 @@ Plans:
   4. `recrd stop` prints a human-readable summary: total events captured, variables declared, session duration, and output file sizes
   5. `--verbosity quiet|normal|detailed|diagnostic` controls console output volume; `--log-output json` switches to machine-parseable structured JSON logs
   6. `time recrd version` completes in under 500 ms on the target platforms (Windows, macOS, Linux)
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 9: Distribution
 **Goal**: A tagged release produces self-contained single-file binaries for all four platforms, attached to a GitHub Release, with a Homebrew formula and a winget manifest ready for submission.
@@ -144,7 +186,13 @@ Plans:
   2. Pushing a version tag triggers a GitHub Actions workflow that attaches all four binaries as assets to a GitHub Release and publishes release notes
   3. The Homebrew formula installs the macOS binary and `brew install recrd && recrd version` exits zero
   4. The winget manifest is well-formed and passes `winget validate` locally
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 10: VS Code Extension
 **Goal**: The VS Code extension provides start/stop recording, target and data file pickers, a live preview WebView, and a status bar — all via CLI subprocess calls — and is publishable to the Marketplace.
@@ -156,7 +204,13 @@ Plans:
   3. The live preview WebView renders the current `.feature` and `.robot` output, updating within seconds of the `.recrd` file changing on disk (via `fs.watch`)
   4. The status bar item shows `recording`, `paused`, or `idle` with elapsed time during an active session
   5. The extension package is built and published to the VS Code Marketplace against a minimum VS Code version of 1.85
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 **UI hint**: yes
 
 ### Phase 11: Plugin System
@@ -168,7 +222,13 @@ Plans:
   2. A plugin loaded via `AssemblyLoadContext` isolation can implement `ITestCompiler` and be invoked by `recrd compile --target <plugin-target>` without type identity conflicts with the host's `Recrd.Core`
   3. A plugin built against an incompatible major version of `Recrd.Core` causes the CLI to print a clear rejection message and skip that plugin, without failing the overall command
   4. An unhandled exception thrown inside a plugin during compilation is caught, logged as a warning, and reported in `CompilationResult.Warnings` — the host process exits zero and completes the compile with remaining plugins
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 12: Hardening
 **Goal**: The codebase achieves measurable resilience through mutation testing, performance benchmarks, example plugin implementations, and contributor documentation.
@@ -179,7 +239,13 @@ Plans:
   2. BenchmarkDotNet benchmarks assert: recording latency < 50 ms, compile time < 3 s for a 1000-step session, CSV/JSON 50 MB parse < 10 s with peak heap delta <= 100 MB; all three pass in CI
   3. At least one fully functional example plugin lives in `plugins/` implementing a non-trivial `ITestCompiler` or `IDataProvider` and is documented with a README
   4. A contributor can follow written instructions to scaffold, implement, test, and install a new `Recrd.Plugin.*` package end-to-end
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ---
 
