@@ -47,7 +47,7 @@ public sealed class SelectorVariableTests
     [InlineData("A")]
     [InlineData("1abc")]
     [InlineData("my-var")]
-    [InlineData("abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")] // 64 b's + 'a' prefix = 65 chars
+    [InlineData("abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")] // 64 b's + 'a' prefix = 65 chars
     public void Variable_InvalidName_ThrowsArgumentException(string invalidName)
     {
         Assert.Throws<ArgumentException>(() => new Variable(invalidName));

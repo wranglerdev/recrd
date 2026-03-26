@@ -8,12 +8,12 @@ public sealed record SessionMetadata
     public ViewportSize ViewportSize { get; }
     public string? BaseUrl { get; init; }
 
-    public SessionMetadata(string id, DateTimeOffset createdAt, string browserEngine, ViewportSize viewportSize, string? baseUrl = null)
+    public SessionMetadata(string Id, DateTimeOffset CreatedAt, string BrowserEngine, ViewportSize ViewportSize, string? BaseUrl = null)
     {
-        Id = id ?? throw new ArgumentNullException(nameof(id));
-        CreatedAt = createdAt;
-        BrowserEngine = browserEngine ?? throw new ArgumentNullException(nameof(browserEngine));
-        ViewportSize = viewportSize ?? throw new ArgumentNullException(nameof(viewportSize));
-        BaseUrl = baseUrl;
+        this.Id = Id ?? throw new ArgumentNullException(nameof(Id));
+        this.CreatedAt = CreatedAt;
+        this.BrowserEngine = BrowserEngine ?? throw new ArgumentNullException(nameof(BrowserEngine));
+        this.ViewportSize = ViewportSize ?? throw new ArgumentNullException(nameof(ViewportSize));
+        this.BaseUrl = BaseUrl;
     }
 }
