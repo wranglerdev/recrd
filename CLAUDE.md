@@ -10,12 +10,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 > The project is in the specification phase — the following commands apply once implementation begins.
 
+> **Linux networking note:** Always prefix `dotnet` commands with `DOTNET_SYSTEM_NET_DISABLEIPV6=1` to force IPv4. Without it, NuGet restore hangs waiting for IPv6 responses.
+
 ```bash
-dotnet restore
-dotnet build --no-restore
-dotnet test --no-build --collect:"XPlat Code Coverage"
-dotnet test --no-build --filter "FullyQualifiedName~Recrd.Data.Tests"  # run a single test project
-dotnet format --verify-no-changes                                        # lint/code style check
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet restore
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet build --no-restore
+```
+
+### Playwright Browser Installation (Linux)
+
+After building `Recrd.Recording`, install browsers using the shell script (not `.ps1` — PowerShell is not available):
+
+```bash
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet build packages/Recrd.Recording
+bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install
+```
+
+```bash
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet build --no-restore
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet test --no-build --collect:"XPlat Code Coverage"
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet test --no-build --filter "FullyQualifiedName~Recrd.Data.Tests"  # run a single test project
+DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet format --verify-no-changes                                      # lint/code style check
 ```
 
 CI pipeline (`.github/workflows`): restore → build → test → coverage gate → format check. Weekly scheduled mutation testing via Stryker.NET on `Recrd.Core`. On `main` only: `dotnet pack` → NuGet push.
