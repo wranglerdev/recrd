@@ -79,8 +79,8 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [x] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [x] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
 - [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 4: Gherkin Generator
@@ -96,7 +96,7 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [x] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
 - [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
 - [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
 - [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
