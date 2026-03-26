@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-26T19:47:02.010Z"
+last_updated: "2026-03-26T23:43:37.097Z"
 progress:
   total_phases: 12
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # State: recrd
@@ -33,10 +33,9 @@ progress:
 **Progress**
 
 ```
-Phase: 02 (core-ast-types-interfaces) — EXECUTING
+Phase: 02 (core-ast-types-interfaces) — COMPLETE
 Plan: 4 of 4
-         ---   ---   ---   ---   ---   ---   ---   ---   ---   ---   ---   ---
-          0%
+         [██████████] 100%
 ```
 
 ---
@@ -61,6 +60,7 @@ Plan: 4 of 4
 | Phase 02 P01 | 2 | 2 tasks | 7 files |
 | Phase 02 P02 | 127 | 2 tasks | 13 files |
 | Phase 02 P03 | 2 | 2 tasks | 10 files |
+| Phase 02 P04 | 233 | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -80,6 +80,8 @@ Plan: 4 of 4
 | IsPackable=false on all test .csproj files | Prevents dotnet pack from emitting test NuGet packages |
 | dotnet-tools.json tools object left empty | dotnet format is SDK-built-in; manifest ready for Phase 5 Stryker addition |
 | Removed .gitignore exclusion of .config/dotnet-tools.json | Tool manifests must be tracked in source control for CI reproducibility |
+| RecrdJsonContext uses GenerationMode=Metadata | Fast-path (Serialization) mode does not support JsonPolymorphic/$type discriminators |
+| PascalCase constructor parameters in AST types | Enables named-argument call sites in tests; aligns param names with property names |
 
 ### TDD Mandate
 
@@ -105,6 +107,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-26 — Completed plan 01-07: code-quality-tooling (.editorconfig + .config/dotnet-tools.json; dotnet format --verify-no-changes exits 0)
+**Last updated:** 2026-03-26 — Completed plan 02-04: source-generated JSON serializer context (RecrdJsonContext); all 40 Recrd.Core.Tests green; zero warnings; dotnet format clean.
 
-**To resume:** Phase 01 complete (7/7 plans). Run `/gsd:transition` to close Phase 1.
+**To resume:** Phase 02 complete (4/4 plans). Run `/gsd:transition` to close Phase 2.
