@@ -132,6 +132,19 @@ These are not data stubs that block the plan's goal — the plan's goal is to ha
 - Test projects pre-wired to their package targets; Phase 2 only needs to write tests, not configure projects
 - CI workflow (plan 01-06) can reference `dotnet test recrd.sln` as the test command without further setup
 
+## Self-Check: PASSED
+
+- FOUND: tests/Recrd.Core.Tests/Recrd.Core.Tests.csproj
+- FOUND: tests/Recrd.Core.Tests/PlaceholderTests.cs
+- FOUND: tests/Recrd.Integration.Tests/Recrd.Integration.Tests.csproj
+- FOUND: tests/Recrd.Integration.Tests/PlaceholderTests.cs
+- FOUND: .planning/phases/01-monorepo-scaffold-solution-structure/01-05-SUMMARY.md
+- FOUND commit: 33c263d (feat: create 6 xUnit test project stubs)
+- FOUND commit: 2fd0d8f (docs: commit recrd.sln test-project registrations and update STATE.md)
+- `dotnet build recrd.sln --no-restore` exits 0 (verified)
+- `dotnet test recrd.sln --no-build --filter "Category!=Integration"` exits 0 (verified)
+- `dotnet sln recrd.sln list` returns 12 entries (14 lines including header/blank)
+
 ---
 *Phase: 01-monorepo-scaffold-solution-structure*
 *Completed: 2026-03-26*
