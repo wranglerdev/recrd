@@ -162,22 +162,97 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 to CORE-13 | Phase 1 | Pending |
-| DATA-01 to DATA-05 | Phase 2 | Pending |
-| GHER-01 to GHER-09 | Phase 3 | Pending |
-| CI-01 to CI-06 | Phase 4 | Pending |
-| REC-01 to REC-15 | Phase 5 | Pending |
-| COMP-01 to COMP-10 | Phase 6 | Pending |
-| CLI-01 to CLI-12 | Phase 7 | Pending |
-| DIST-01 to DIST-04 | Phase 8 | Pending |
-| VSCE-01 to VSCE-07 | Phase 9 | Pending |
-| PLUG-01 to PLUG-04 | Phase 10 | Pending |
+| CORE-01 | Phase 2 | Pending |
+| CORE-02 | Phase 2 | Pending |
+| CORE-03 | Phase 2 | Pending |
+| CORE-04 | Phase 2 | Pending |
+| CORE-05 | Phase 2 | Pending |
+| CORE-06 | Phase 2 | Pending |
+| CORE-07 | Phase 2 | Pending |
+| CORE-08 | Phase 2 | Pending |
+| CORE-09 | Phase 2 | Pending |
+| CORE-10 | Phase 2 | Pending |
+| CORE-11 | Phase 2 | Pending |
+| CORE-12 | Phase 2 | Pending |
+| CORE-13 | Phase 2 | Pending |
+| DATA-01 | Phase 3 | Pending |
+| DATA-02 | Phase 3 | Pending |
+| DATA-03 | Phase 3 | Pending |
+| DATA-04 | Phase 3 | Pending |
+| DATA-05 | Phase 3 | Pending |
+| GHER-01 | Phase 4 | Pending |
+| GHER-02 | Phase 4 | Pending |
+| GHER-03 | Phase 4 | Pending |
+| GHER-04 | Phase 4 | Pending |
+| GHER-05 | Phase 4 | Pending |
+| GHER-06 | Phase 4 | Pending |
+| GHER-07 | Phase 4 | Pending |
+| GHER-08 | Phase 4 | Pending |
+| GHER-09 | Phase 4 | Pending |
+| CI-01 | Phase 5 | Pending |
+| CI-02 | Phase 5 | Pending |
+| CI-03 | Phase 5 | Pending |
+| CI-04 | Phase 5 | Pending |
+| CI-05 | Phase 5 | Pending |
+| CI-06 | Phase 5 | Pending |
+| REC-01 | Phase 6 | Pending |
+| REC-02 | Phase 6 | Pending |
+| REC-03 | Phase 6 | Pending |
+| REC-04 | Phase 6 | Pending |
+| REC-05 | Phase 6 | Pending |
+| REC-06 | Phase 6 | Pending |
+| REC-07 | Phase 6 | Pending |
+| REC-08 | Phase 6 | Pending |
+| REC-09 | Phase 6 | Pending |
+| REC-10 | Phase 6 | Pending |
+| REC-11 | Phase 6 | Pending |
+| REC-12 | Phase 6 | Pending |
+| REC-13 | Phase 6 | Pending |
+| REC-14 | Phase 6 | Pending |
+| REC-15 | Phase 6 | Pending |
+| COMP-01 | Phase 7 | Pending |
+| COMP-02 | Phase 7 | Pending |
+| COMP-03 | Phase 7 | Pending |
+| COMP-04 | Phase 7 | Pending |
+| COMP-05 | Phase 7 | Pending |
+| COMP-06 | Phase 7 | Pending |
+| COMP-07 | Phase 7 | Pending |
+| COMP-08 | Phase 7 | Pending |
+| COMP-09 | Phase 7 | Pending |
+| COMP-10 | Phase 7 | Pending |
+| CLI-01 | Phase 8 | Pending |
+| CLI-02 | Phase 8 | Pending |
+| CLI-03 | Phase 8 | Pending |
+| CLI-04 | Phase 8 | Pending |
+| CLI-05 | Phase 8 | Pending |
+| CLI-06 | Phase 8 | Pending |
+| CLI-07 | Phase 8 | Pending |
+| CLI-08 | Phase 8 | Pending |
+| CLI-09 | Phase 8 | Pending |
+| CLI-10 | Phase 8 | Pending |
+| CLI-11 | Phase 8 | Pending |
+| CLI-12 | Phase 8 | Pending |
+| DIST-01 | Phase 9 | Pending |
+| DIST-02 | Phase 9 | Pending |
+| DIST-03 | Phase 9 | Pending |
+| DIST-04 | Phase 9 | Pending |
+| VSCE-01 | Phase 10 | Pending |
+| VSCE-02 | Phase 10 | Pending |
+| VSCE-03 | Phase 10 | Pending |
+| VSCE-04 | Phase 10 | Pending |
+| VSCE-05 | Phase 10 | Pending |
+| VSCE-06 | Phase 10 | Pending |
+| VSCE-07 | Phase 10 | Pending |
+| PLUG-01 | Phase 11 | Pending |
+| PLUG-02 | Phase 11 | Pending |
+| PLUG-03 | Phase 11 | Pending |
+| PLUG-04 | Phase 11 | Pending |
 
 **Coverage:**
 - v1 requirements: 78 total
 - Mapped to phases: 78
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-26*
-*Last updated: 2026-03-26 after initial definition*
+*Last updated: 2026-03-26 — traceability updated after roadmap creation (Phase 1 = Scaffold, Phase 2 = Core, phases 2–11 shifted +1)*
