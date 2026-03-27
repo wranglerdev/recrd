@@ -17,7 +17,7 @@ Record once, compile to a round-trip-verified, data-driven Robot Framework suite
 ### Active
 
 **Foundation**
-- [ ] `Recrd.Data` — `CsvDataProvider` (RFC 4180, BOM-tolerant, streaming) and `JsonDataProvider` (flat root array, dot-notation flattening), `IAsyncEnumerable<T>` contract, ≤1000 rows in-memory batch
+- [x] `Recrd.Data` — `CsvDataProvider` (RFC 4180, BOM-tolerant, streaming) and `JsonDataProvider` (flat root array, dot-notation flattening), `IAsyncEnumerable<T>` contract, ≤1000 rows in-memory batch — *Validated in Phase 03: data-providers*
 - [ ] `Recrd.Gherkin` — AST → pt-BR `.feature` generator; `Cenário` vs `Esquema do Cenário` + `Exemplos` table; deterministic/idempotent output; variable mismatch hard error
 - [ ] CI pipeline — build, unit test, coverage gates (≥90% Core/Data/Gherkin/Compilers), `dotnet format` check, weekly Stryker.NET mutation run
 
