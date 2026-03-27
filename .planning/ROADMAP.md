@@ -11,7 +11,7 @@
 - [x] **Phase 1: Monorepo Scaffold & Solution Structure** - sln, Directory.Build.props, project files, CI skeleton, dependency enforcement (completed 2026-03-26)
 - [ ] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps)
 - [x] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling (completed 2026-03-27)
-- [ ] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging
+- [x] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging (completed 2026-03-27)
 - [ ] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support
 - [ ] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab
 - [ ] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip
@@ -96,10 +96,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — TDD red phase: public types + 5 test suites (red) on tdd/phase-04
-- [ ] 04-02-PLAN.md — Fixed scenario: StepTextRenderer, GroupingClassifier, GherkinGenerator Cenario path
-- [ ] 04-03-PLAN.md — Data-driven: ExemplosTableBuilder, Esquema do Cenario + variable validation
-- [ ] 04-04-PLAN.md — Green phase: full suite verification + tdd/phase-04 merge to main
+- [x] 04-01-PLAN.md — TDD red phase: public types + 5 test suites (red) on tdd/phase-04
+- [x] 04-02-PLAN.md — Fixed scenario: StepTextRenderer, GroupingClassifier, GherkinGenerator Cenario path
+- [x] 04-03-PLAN.md — Data-driven: ExemplosTableBuilder, Esquema do Cenario + variable validation
+- [x] 04-04-PLAN.md — Green phase: full suite verification + tdd/phase-04 merge to main
 
 ### Phase 5: CI Pipeline
 **Goal**: Every push to the repository triggers a fully automated quality gate: build, test, coverage, format, with scheduled mutation testing and gated NuGet publish on `main`.
@@ -256,7 +256,7 @@ Plans:
 | 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
 | 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
-| 4. Gherkin Generator | 0/4 | Not started | - |
+| 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
 | 5. CI Pipeline | 0/? | Not started | - |
 | 6. Recording Engine | 0/? | Not started | - |
 | 7. Compilers | 0/? | Not started | - |

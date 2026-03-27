@@ -33,14 +33,14 @@
 
 ### Foundation — Gherkin Generator
 
-- [ ] **GHER-01**: Session with zero variables emits `Cenário` (single scenario)
+- [x] **GHER-01**: Session with zero variables emits `Cenário` (single scenario)
 - [x] **GHER-02**: Session with ≥1 variable emits `Esquema do Cenário` + `Exemplos` pipe-delimited table
 - [x] **GHER-03**: Variable missing from data columns → hard error (`GherkinException`) with variable name and file reference
 - [x] **GHER-04**: Extra data column not in AST → warning to stderr (not an error)
-- [ ] **GHER-05**: `GroupStep(given)` → `Dado`/`E`; `GroupStep(when)` → `Quando`/`E`; `GroupStep(then)` → `Então`/`E`
-- [ ] **GHER-06**: Default heuristic (no GroupStep): first navigation → `Dado`, interactions → `Quando`, assertions → `Então`
-- [ ] **GHER-07**: Output is deterministic: same AST + same data = byte-identical `.feature` across runs
-- [ ] **GHER-08**: Output file always UTF-8, no BOM, `# language: pt` header
+- [x] **GHER-05**: `GroupStep(given)` → `Dado`/`E`; `GroupStep(when)` → `Quando`/`E`; `GroupStep(then)` → `Então`/`E`
+- [x] **GHER-06**: Default heuristic (no GroupStep): first navigation → `Dado`, interactions → `Quando`, assertions → `Então`
+- [x] **GHER-07**: Output is deterministic: same AST + same data = byte-identical `.feature` across runs
+- [x] **GHER-08**: Output file always UTF-8, no BOM, `# language: pt` header
 - [x] **GHER-09**: Columns in `Exemplos` table ordered by first variable appearance in scenario body
 
 ### Foundation — CI Pipeline
@@ -180,14 +180,14 @@
 | DATA-03 | Phase 3 | Complete |
 | DATA-04 | Phase 3 | Complete |
 | DATA-05 | Phase 3 | Complete |
-| GHER-01 | Phase 4 | Pending |
+| GHER-01 | Phase 4 | Complete |
 | GHER-02 | Phase 4 | Complete |
 | GHER-03 | Phase 4 | Complete |
 | GHER-04 | Phase 4 | Complete |
-| GHER-05 | Phase 4 | Pending |
-| GHER-06 | Phase 4 | Pending |
-| GHER-07 | Phase 4 | Pending |
-| GHER-08 | Phase 4 | Pending |
+| GHER-05 | Phase 4 | Complete |
+| GHER-06 | Phase 4 | Complete |
+| GHER-07 | Phase 4 | Complete |
+| GHER-08 | Phase 4 | Complete |
 | GHER-09 | Phase 4 | Complete |
 | CI-01 | Phase 5 | Pending |
 | CI-02 | Phase 5 | Pending |

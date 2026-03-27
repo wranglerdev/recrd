@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-27T19:31:43.628Z"
+last_updated: "2026-03-27T20:01:09.119Z"
 progress:
   total_phases: 12
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 19
-  completed_plans: 15
+  completed_plans: 19
 ---
 
 # State: recrd
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 04 — gherkin-generator
+**Current Focus:** Phase 05 — ci-pipeline (Phase 04 complete)
 
 ---
 
@@ -33,8 +33,8 @@ progress:
 **Progress**
 
 ```
-Phase: 04 (gherkin-generator) — EXECUTING
-Plan: 3 of 4
+Phase: 04 (gherkin-generator) — COMPLETE
+Plan: 4 of 4 complete
          [██████████] 100%
 ```
 
@@ -68,6 +68,7 @@ Plan: 3 of 4
 | Phase 04 P01 | 4 | 2 tasks | 10 files |
 | Phase 04 P02 | 6 | 2 tasks | 3 files |
 | Phase 04 P03 | 15 | 1 tasks | 2 files |
+| Phase 04 P04 | 5 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -97,6 +98,8 @@ Plan: 3 of 4
 | StepTextRenderer Internal/ subdirectory pattern | Implementation helpers not exposed in public Recrd.Gherkin API |
 | Null dataProvider with variables skips Exemplos silently | Preserves DeterminismTests contract which pass null intentionally for step-text determinism testing |
 | No cell padding in Exemplos table | Test assertions use exact substring matching; padding would break Contains("| bob |") assertions |
+| Merged gsd/phase-04-gherkin-generator to main (not tdd/phase-04) | Implementation lived in gsd branch after worktree-based multi-plan execution; tdd branch only had red-phase scaffold |
+| NU1900 NuGet audit error is pre-existing environment constraint | Offline/restricted network cannot reach api.nuget.org for vulnerability DB; binaries build and tests pass correctly |
 
 ### TDD Mandate
 
@@ -123,6 +126,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-27 — Completed Phase 04 Plan 03: GherkinGenerator data-driven path. ExemplosTableBuilder + Exemplos table emission. 22 tests green (all GHER-01 through GHER-09). GHER-02/03/04/09 satisfied.
+**Last updated:** 2026-03-27 — Completed Phase 04 Plan 04: Green phase — all 22 Gherkin tests + 40 Core + 21 Data = 83 tests green. Format clean. gsd/phase-04-gherkin-generator merged to main. Phase 04 complete. All 9 GHER requirements satisfied.
 
-**To resume:** Phase 04 Plan 04 (gherkin-generator). Remaining work TBD.
+**To resume:** Phase 05 — ci-pipeline. Ready to start.
