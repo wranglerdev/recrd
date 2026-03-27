@@ -18,7 +18,7 @@ Record once, compile to a round-trip-verified, data-driven Robot Framework suite
 
 **Foundation**
 - [x] `Recrd.Data` — `CsvDataProvider` (RFC 4180, BOM-tolerant, streaming) and `JsonDataProvider` (flat root array, dot-notation flattening), `IAsyncEnumerable<T>` contract, ≤1000 rows in-memory batch — *Validated in Phase 03: data-providers*
-- [ ] `Recrd.Gherkin` — AST → pt-BR `.feature` generator; `Cenário` vs `Esquema do Cenário` + `Exemplos` table; deterministic/idempotent output; variable mismatch hard error
+- [x] `Recrd.Gherkin` — AST → pt-BR `.feature` generator; `Cenário` vs `Esquema do Cenário` + `Exemplos` table; deterministic/idempotent output; variable mismatch hard error — *Validated in Phase 04: gherkin-generator*
 - [ ] CI pipeline — build, unit test, coverage gates (≥90% Core/Data/Gherkin/Compilers), `dotnet format` check, weekly Stryker.NET mutation run
 
 **Recording Engine**
@@ -101,4 +101,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-26 after Phase 02 completion — Recrd.Core AST/interfaces/pipeline/serialization all green (40/40 tests)*
+*Last updated: 2026-03-27 after Phase 04 completion — Recrd.Gherkin pt-BR generator complete, all 22 Gherkin tests green (83/83 total)*
