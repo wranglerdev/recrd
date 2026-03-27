@@ -129,3 +129,12 @@ None - no external service configuration required.
 ---
 *Phase: 04-gherkin-generator*
 *Completed: 2026-03-27*
+
+## Self-Check: PASSED
+
+All required files verified present:
+- packages/Recrd.Gherkin/Internal/ExemplosTableBuilder.cs: FOUND
+- packages/Recrd.Gherkin/GherkinGenerator.cs: FOUND
+- .planning/phases/04-gherkin-generator/04-03-SUMMARY.md: FOUND
+
+Commits verified: 81a9a44 (FOUND), feb6f21 (FOUND), 80da338 (FOUND)
