@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-26T23:49:48.229Z"
+last_updated: "2026-03-27T00:51:23.544Z"
 progress:
   total_phases: 12
   completed_phases: 2
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 15
+  completed_plans: 12
 ---
 
 # State: recrd
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 02 — core-ast-types-interfaces
+**Current Focus:** Phase 03 — data-providers
 
 ---
 
@@ -33,8 +33,8 @@ progress:
 **Progress**
 
 ```
-Phase: 3
-Plan: Not started
+Phase: 03 (data-providers) — EXECUTING
+Plan: 2 of 4
          [██████████] 100%
 ```
 
@@ -61,6 +61,7 @@ Plan: Not started
 | Phase 02 P02 | 127 | 2 tasks | 13 files |
 | Phase 02 P03 | 2 | 2 tasks | 10 files |
 | Phase 02 P04 | 233 | 2 tasks | 9 files |
+| Phase 03 P01 | 3 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,8 @@ Plan: Not started
 | Removed .gitignore exclusion of .config/dotnet-tools.json | Tool manifests must be tracked in source control for CI reproducibility |
 | RecrdJsonContext uses GenerationMode=Metadata | Fast-path (Serialization) mode does not support JsonPolymorphic/$type discriminators |
 | PascalCase constructor parameters in AST types | Enables named-argument call sites in tests; aligns param names with property names |
+| Stub async iterators use CS0162 pragma around yield break | C# async iterator stubs throw NotImplementedException but need a yield; compiler rejects unreachable yield without pragma |
+| tdd/phase-03 branch for Phase 3 red tests | TDD mandate D-08: all 21 tests committed failing before any CSV/JSON implementation begins |
 
 ### TDD Mandate
 
@@ -108,6 +111,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-26 — Completed quick task 260326-t3b: fixed CI failure by updating global.json from rollForward=latestPatch/10.0.103 to rollForward=latestFeature/10.0.100.
+**Last updated:** 2026-03-27 — Completed Phase 03 Plan 01: TDD Red Phase. DataParseException, CsvDataProvider/JsonDataProvider stubs, CsvHelper 33.1.0 added. 21 red xUnit tests committed on tdd/phase-03 branch.
 
-**To resume:** Phase 02 complete (4/4 plans). Run `/gsd:transition` to close Phase 2.
+**To resume:** Phase 03, Plan 2 of 4 (CSV implementation). Checkout tdd/phase-03 and implement CsvDataProvider to make DATA-01/02/03 tests green.

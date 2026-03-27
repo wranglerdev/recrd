@@ -25,11 +25,11 @@
 
 ### Foundation — Data Providers
 
-- [ ] **DATA-01**: `CsvDataProvider` — RFC 4180 compliant, BOM-tolerant, configurable delimiter
-- [ ] **DATA-02**: `CsvDataProvider` throws `DataParseException` with line number on malformed input (missing closing quote, mismatched column count)
-- [ ] **DATA-03**: `CsvDataProvider` streams `IAsyncEnumerable<T>` with ≤1000 rows in-memory; 50MB file peak heap delta ≤100MB
-- [ ] **DATA-04**: `JsonDataProvider` — root-level JSON array of flat objects; dot-notation flattening for nested objects
-- [ ] **DATA-05**: `JsonDataProvider` throws `DataParseException` on non-array root
+- [x] **DATA-01**: `CsvDataProvider` — RFC 4180 compliant, BOM-tolerant, configurable delimiter
+- [x] **DATA-02**: `CsvDataProvider` throws `DataParseException` with line number on malformed input (missing closing quote, mismatched column count)
+- [x] **DATA-03**: `CsvDataProvider` streams `IAsyncEnumerable<T>` with ≤1000 rows in-memory; 50MB file peak heap delta ≤100MB
+- [x] **DATA-04**: `JsonDataProvider` — root-level JSON array of flat objects; dot-notation flattening for nested objects
+- [x] **DATA-05**: `JsonDataProvider` throws `DataParseException` on non-array root
 
 ### Foundation — Gherkin Generator
 
@@ -175,11 +175,11 @@
 | CORE-11 | Phase 2 | Complete |
 | CORE-12 | Phase 2 | Complete |
 | CORE-13 | Phase 2 | Complete |
-| DATA-01 | Phase 3 | Pending |
-| DATA-02 | Phase 3 | Pending |
-| DATA-03 | Phase 3 | Pending |
-| DATA-04 | Phase 3 | Pending |
-| DATA-05 | Phase 3 | Pending |
+| DATA-01 | Phase 3 | Complete |
+| DATA-02 | Phase 3 | Complete |
+| DATA-03 | Phase 3 | Complete |
+| DATA-04 | Phase 3 | Complete |
+| DATA-05 | Phase 3 | Complete |
 | GHER-01 | Phase 4 | Pending |
 | GHER-02 | Phase 4 | Pending |
 | GHER-03 | Phase 4 | Pending |

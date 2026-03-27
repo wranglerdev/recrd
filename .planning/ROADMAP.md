@@ -78,7 +78,7 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — TDD red phase: DataParseException, stub providers, CsvHelper dep, all test suites (red)
+- [x] 03-01-PLAN.md — TDD red phase: DataParseException, stub providers, CsvHelper dep, all test suites (red)
 - [ ] 03-02-PLAN.md — CsvDataProvider implementation (RFC 4180, BOM, delimiter, streaming, error handling)
 - [ ] 03-03-PLAN.md — JsonDataProvider implementation (dot-notation flattening, array skip, non-array root error)
 - [ ] 03-04-PLAN.md — Green phase: full suite verification and tdd/phase-03 merge to main
