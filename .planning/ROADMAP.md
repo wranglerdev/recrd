@@ -10,7 +10,7 @@
 
 - [x] **Phase 1: Monorepo Scaffold & Solution Structure** - sln, Directory.Build.props, project files, CI skeleton, dependency enforcement (completed 2026-03-26)
 - [ ] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps)
-- [ ] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling
+- [x] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling (completed 2026-03-27)
 - [ ] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging
 - [ ] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support
 - [ ] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab
@@ -81,7 +81,7 @@ Plans:
 - [x] 03-01-PLAN.md — TDD red phase: DataParseException, stub providers, CsvHelper dep, all test suites (red)
 - [x] 03-02-PLAN.md — CsvDataProvider implementation (RFC 4180, BOM, delimiter, streaming, error handling)
 - [x] 03-03-PLAN.md — JsonDataProvider implementation (dot-notation flattening, array skip, non-array root error)
-- [ ] 03-04-PLAN.md — Green phase: full suite verification and tdd/phase-03 merge to main
+- [x] 03-04-PLAN.md — Green phase: full suite verification and tdd/phase-03 merge to main
 
 ### Phase 4: Gherkin Generator
 **Goal**: `Recrd.Gherkin` walks the AST and emits a valid, deterministic pt-BR `.feature` file for both fixed-scenario and data-driven cases.
@@ -255,7 +255,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
 | 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
-| 3. Data Providers | 3/4 | In Progress|  |
+| 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
 | 4. Gherkin Generator | 0/? | Not started | - |
 | 5. CI Pipeline | 0/? | Not started | - |
 | 6. Recording Engine | 0/? | Not started | - |
