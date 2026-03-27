@@ -88,25 +88,25 @@ Plans:
 **Depends on**: Phase 3
 **Requirements**: GHER-01, GHER-02, GHER-03, GHER-04, GHER-05, GHER-06, GHER-07, GHER-08, GHER-09
 **Success Criteria** (what must be TRUE):
-  1. A session with no variables produces a file containing `Cenário` (not `Esquema do Cenário`)
-  2. A session with variables produces `Esquema do Cenário` and a pipe-delimited `Exemplos` table whose column order matches the first appearance of each variable in the scenario body
+  1. A session with no variables produces a file containing `Cenario` (not `Esquema do Cenario`)
+  2. A session with variables produces `Esquema do Cenario` and a pipe-delimited `Exemplos` table whose column order matches the first appearance of each variable in the scenario body
   3. When a variable declared in the AST is missing from the data file, `GherkinException` is thrown naming the missing variable and the data file path; an extra column in the data produces a warning to stderr only
-  4. `GroupStep(given)` steps emit `Dado`/`E`; the default heuristic (no GroupStep) assigns the first navigation to `Dado`, interactions to `Quando`, and assertions to `Então`
+  4. `GroupStep(given)` steps emit `Dado`/`E`; the default heuristic (no GroupStep) assigns the first navigation to `Dado`, interactions to `Quando`, and assertions to `Entao`
   5. Running the generator twice on the identical AST and data inputs produces byte-identical `.feature` output; the file is always UTF-8 with no BOM and opens with `# language: pt`
 **Plans**: 4 plans
 
 Plans:
-- [x] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [x] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [x] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 04-01-PLAN.md — TDD red phase: public types + 5 test suites (red) on tdd/phase-04
+- [ ] 04-02-PLAN.md — Fixed scenario: StepTextRenderer, GroupingClassifier, GherkinGenerator Cenario path
+- [ ] 04-03-PLAN.md — Data-driven: ExemplosTableBuilder, Esquema do Cenario + variable validation
+- [ ] 04-04-PLAN.md — Green phase: full suite verification + tdd/phase-04 merge to main
 
 ### Phase 5: CI Pipeline
 **Goal**: Every push to the repository triggers a fully automated quality gate: build, test, coverage, format, with scheduled mutation testing and gated NuGet publish on `main`.
 **Depends on**: Phase 4
 **Requirements**: CI-01, CI-02, CI-03, CI-04, CI-05, CI-06
 **Success Criteria** (what must be TRUE):
-  1. A pull request against `main` triggers a GitHub Actions workflow that runs restore → build → test → coverage gate → format check in sequence, failing the PR if any step exits non-zero
+  1. A pull request against `main` triggers a GitHub Actions workflow that runs restore -> build -> test -> coverage gate -> format check in sequence, failing the PR if any step exits non-zero
   2. Dropping line coverage below 90% on any of `Recrd.Core`, `Recrd.Data`, `Recrd.Gherkin`, or `Recrd.Compilers` fails the build with a descriptive message identifying which project fell below threshold
   3. Introducing a formatting violation causes `dotnet format --verify-no-changes` to fail the CI run with a diff
   4. A weekly scheduled workflow runs Stryker.NET on `Recrd.Core` and posts a mutation score report
@@ -149,7 +149,7 @@ Plans:
   2. `RobotSeleniumCompiler` emits a `.robot` suite and `.resource` file where clicks use `id:...` selectors, falling back to `css:...` then `xpath:...`, with configurable implicit/explicit waits defaulting to 10 seconds
   3. Every generated file from both compilers contains a header comment block with the `recrd` version, compilation timestamp, source `.recrd` SHA-256 hash, and compiler target name
   4. Both compilers emit a `*** Settings ***` block that declares the minimum RF version
-  5. `CompilationResult` carries the full list of generated files, any warnings, and a dependency manifest; the full `record → compile → execute` pipeline against the fixture web app (static HTML + simple SPA) completes with zero manual edits
+  5. `CompilationResult` carries the full list of generated files, any warnings, and a dependency manifest; the full `record -> compile -> execute` pipeline against the fixture web app (static HTML + simple SPA) completes with zero manual edits
 **Plans**: 4 plans
 
 Plans:
@@ -256,7 +256,7 @@ Plans:
 | 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
 | 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
-| 4. Gherkin Generator | 0/? | Not started | - |
+| 4. Gherkin Generator | 0/4 | Not started | - |
 | 5. CI Pipeline | 0/? | Not started | - |
 | 6. Recording Engine | 0/? | Not started | - |
 | 7. Compilers | 0/? | Not started | - |

@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-27T01:07:19.075Z"
+last_updated: "2026-03-27T19:31:43.628Z"
 progress:
   total_phases: 12
   completed_phases: 3
-  total_plans: 15
+  total_plans: 19
   completed_plans: 15
 ---
 
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 04 — gherkin (next)
+**Current Focus:** Phase 04 — gherkin-generator
 
 ---
 
@@ -33,8 +33,8 @@ progress:
 **Progress**
 
 ```
-Phase: 4
-Plan: Not started
+Phase: 04 (gherkin-generator) — EXECUTING
+Plan: 3 of 4
          [██████████] 100%
 ```
 
@@ -65,6 +65,9 @@ Plan: Not started
 | Phase 03 P02 | 2 | 1 tasks | 2 files |
 | Phase 03 P03 | 5 | 1 tasks | 2 files |
 | Phase 03 P04 | 3 | 1 tasks | 2 files |
+| Phase 04 P01 | 4 | 2 tasks | 10 files |
+| Phase 04 P02 | 6 | 2 tasks | 3 files |
+| Phase 04 P03 | 15 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -90,6 +93,10 @@ Plan: Not started
 | tdd/phase-03 branch for Phase 3 red tests | TDD mandate D-08: all 21 tests committed failing before any CSV/JSON implementation begins |
 | BuildRow helper method for async iterator exception wrapping | yield return cannot appear inside try/catch in C# (CS1626) — extracted row building to separate synchronous method |
 | JsonDataProvider MoveNextAsync pattern | Restructured to call MoveNextAsync in try/catch and yield return outside to satisfy CS1626 restriction |
+| GroupStep detection uses Any(s => s is GroupStep) on top-level steps | Chooses between GroupStep emission path and default heuristic path in GherkinGenerator |
+| StepTextRenderer Internal/ subdirectory pattern | Implementation helpers not exposed in public Recrd.Gherkin API |
+| Null dataProvider with variables skips Exemplos silently | Preserves DeterminismTests contract which pass null intentionally for step-text determinism testing |
+| No cell padding in Exemplos table | Test assertions use exact substring matching; padding would break Contains("| bob |") assertions |
 
 ### TDD Mandate
 
@@ -116,6 +123,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-26 — Completed Phase 03 Plan 04: tdd/phase-03 merged to main. 61/61 tests green (40 Core + 21 Data). Format clean. DATA-01 through DATA-05 satisfied. Phase 03 complete.
+**Last updated:** 2026-03-27 — Completed Phase 04 Plan 03: GherkinGenerator data-driven path. ExemplosTableBuilder + Exemplos table emission. 22 tests green (all GHER-01 through GHER-09). GHER-02/03/04/09 satisfied.
 
-**To resume:** Phase 04 (Gherkin generator). Branch: main. Phase 03 is complete — all data providers implemented and verified.
+**To resume:** Phase 04 Plan 04 (gherkin-generator). Remaining work TBD.
