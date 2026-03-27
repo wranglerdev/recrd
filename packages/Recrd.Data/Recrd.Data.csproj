@@ -5,4 +5,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\packages\Recrd.Core\Recrd.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+  </ItemGroup>
 </Project>
