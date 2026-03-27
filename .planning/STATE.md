@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-27T00:51:23.544Z"
+last_updated: "2026-03-27T00:57:33.683Z"
 progress:
   total_phases: 12
   completed_phases: 2
   total_plans: 15
-  completed_plans: 12
+  completed_plans: 14
 ---
 
 # State: recrd
@@ -34,7 +34,7 @@ progress:
 
 ```
 Phase: 03 (data-providers) — EXECUTING
-Plan: 2 of 4
+Plan: 4 of 4
          [██████████] 100%
 ```
 
@@ -62,6 +62,7 @@ Plan: 2 of 4
 | Phase 02 P03 | 2 | 2 tasks | 10 files |
 | Phase 02 P04 | 233 | 2 tasks | 9 files |
 | Phase 03 P01 | 3 | 2 tasks | 6 files |
+| Phase 03 P02 | 2 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,8 @@ Plan: 2 of 4
 | PascalCase constructor parameters in AST types | Enables named-argument call sites in tests; aligns param names with property names |
 | Stub async iterators use CS0162 pragma around yield break | C# async iterator stubs throw NotImplementedException but need a yield; compiler rejects unreachable yield without pragma |
 | tdd/phase-03 branch for Phase 3 red tests | TDD mandate D-08: all 21 tests committed failing before any CSV/JSON implementation begins |
+| BuildRow helper method for async iterator exception wrapping | yield return cannot appear inside try/catch in C# (CS1626) — extracted row building to separate synchronous method |
+| JsonDataProvider MoveNextAsync pattern | Restructured to call MoveNextAsync in try/catch and yield return outside to satisfy CS1626 restriction |
 
 ### TDD Mandate
 
@@ -111,6 +114,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-27 — Completed Phase 03 Plan 01: TDD Red Phase. DataParseException, CsvDataProvider/JsonDataProvider stubs, CsvHelper 33.1.0 added. 21 red xUnit tests committed on tdd/phase-03 branch.
+**Last updated:** 2026-03-27 — Completed Phase 03 Plan 02: CsvDataProvider implemented with CsvHelper 33.1.0. All 11 CsvDataProviderTests green. RFC 4180, BOM tolerance, semicolon delimiter, column-count validation, DataParseException wrapping. JsonDataProvider CS1626 compile error also fixed.
 
-**To resume:** Phase 03, Plan 2 of 4 (CSV implementation). Checkout tdd/phase-03 and implement CsvDataProvider to make DATA-01/02/03 tests green.
+**To resume:** Phase 03, Plan 3 of 4 (JSON implementation). Branch: tdd/phase-03. Implement JsonDataProvider to make DATA-04/05/06 tests green.

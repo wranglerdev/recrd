@@ -79,8 +79,8 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — TDD red phase: DataParseException, stub providers, CsvHelper dep, all test suites (red)
-- [ ] 03-02-PLAN.md — CsvDataProvider implementation (RFC 4180, BOM, delimiter, streaming, error handling)
-- [ ] 03-03-PLAN.md — JsonDataProvider implementation (dot-notation flattening, array skip, non-array root error)
+- [x] 03-02-PLAN.md — CsvDataProvider implementation (RFC 4180, BOM, delimiter, streaming, error handling)
+- [x] 03-03-PLAN.md — JsonDataProvider implementation (dot-notation flattening, array skip, non-array root error)
 - [ ] 03-04-PLAN.md — Green phase: full suite verification and tdd/phase-03 merge to main
 
 ### Phase 4: Gherkin Generator
@@ -255,7 +255,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
 | 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
-| 3. Data Providers | 0/4 | Planned | - |
+| 3. Data Providers | 3/4 | In Progress|  |
 | 4. Gherkin Generator | 0/? | Not started | - |
 | 5. CI Pipeline | 0/? | Not started | - |
 | 6. Recording Engine | 0/? | Not started | - |
