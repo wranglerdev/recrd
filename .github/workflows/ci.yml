@@ -2,9 +2,14 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - 'tdd/phase-*'
   pull_request:
     branches: [ "main" ]
+
+env:
+  DOTNET_SYSTEM_NET_DISABLEIPV6: '1'
 
 jobs:
   build-and-test:
@@ -33,7 +38,49 @@ jobs:
           echo "OK: Recrd.Core has zero Recrd.* references"
 
       - name: Test
-        run: dotnet test --no-build --collect:"XPlat Code Coverage" --filter "Category!=Integration"
+        if: ${{ !startsWith(github.ref_name, 'tdd/phase-') }}
+        run: dotnet test --no-build --filter "Category!=Integration"
+
+      - name: Test (TDD red-phase — failures allowed)
+        if: ${{ startsWith(github.ref_name, 'tdd/phase-') }}
+        continue-on-error: true
+        run: dotnet test --no-build --filter "Category!=Integration"
+
+      - name: Coverage gate — Recrd.Core (90% line)
+        run: >
+          dotnet test tests/Recrd.Core.Tests/Recrd.Core.Tests.csproj
+          --no-build
+          --collect:"XPlat Code Coverage"
+          --threshold 90
+          --threshold-type line
+          --threshold-stat minimum
+
+      - name: Coverage gate — Recrd.Data (90% line)
+        run: >
+          dotnet test tests/Recrd.Data.Tests/Recrd.Data.Tests.csproj
+          --no-build
+          --collect:"XPlat Code Coverage"
+          --threshold 90
+          --threshold-type line
+          --threshold-stat minimum
+
+      - name: Coverage gate — Recrd.Gherkin (90% line)
+        run: >
+          dotnet test tests/Recrd.Gherkin.Tests/Recrd.Gherkin.Tests.csproj
+          --no-build
+          --collect:"XPlat Code Coverage"
+          --threshold 90
+          --threshold-type line
+          --threshold-stat minimum
+
+      - name: Coverage gate — Recrd.Compilers (90% line)
+        run: >
+          dotnet test tests/Recrd.Compilers.Tests/Recrd.Compilers.Tests.csproj
+          --no-build
+          --collect:"XPlat Code Coverage"
+          --threshold 90
+          --threshold-type line
+          --threshold-stat minimum
 
       - name: Check code style
         run: dotnet format --verify-no-changes
