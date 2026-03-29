@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-27T20:06:01.422Z"
+last_updated: "2026-03-29T21:59:03.220Z"
 progress:
   total_phases: 12
-  completed_phases: 4
-  total_plans: 19
-  completed_plans: 19
+  completed_phases: 5
+  total_plans: 22
+  completed_plans: 22
 ---
 
 # State: recrd
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 05 — ci-pipeline (Phase 04 complete)
+**Current Focus:** Phase 05 — ci-pipeline
 
 ---
 
@@ -33,8 +33,8 @@ progress:
 **Progress**
 
 ```
-Phase: 5
-Plan: Not started
+Phase: 05 (ci-pipeline) — EXECUTING
+Plan: 3 of 3
          [██████████] 100%
 ```
 
@@ -69,6 +69,9 @@ Plan: Not started
 | Phase 04 P02 | 6 | 2 tasks | 3 files |
 | Phase 04 P03 | 15 | 1 tasks | 2 files |
 | Phase 04 P04 | 5 | 1 tasks | 2 files |
+| Phase 05 P03 | 41 | 1 tasks | 1 files |
+| Phase 05 P01 | 1 | 1 tasks | 1 files |
+| Phase 05 P02 | 52 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -100,6 +103,8 @@ Plan: Not started
 | No cell padding in Exemplos table | Test assertions use exact substring matching; padding would break Contains("| bob |") assertions |
 | Merged gsd/phase-04-gherkin-generator to main (not tdd/phase-04) | Implementation lived in gsd branch after worktree-based multi-plan execution; tdd branch only had red-phase scaffold |
 | NU1900 NuGet audit error is pre-existing environment constraint | Offline/restricted network cannot reach api.nuget.org for vulnerability DB; binaries build and tests pass correctly |
+| Coverlet inline thresholds via --threshold 90 --threshold-type line --threshold-stat minimum per project | Fail-fast per project; project name in error message; no extra tooling required (D-01/D-02) |
+| Two conditional test steps for TDD red-phase: continue-on-error on tdd/phase-* branches | Hard-fail on non-TDD branches; coverage gates still enforced on all branches including TDD red-phase (D-08/D-10) |
 
 ### TDD Mandate
 
@@ -126,6 +131,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-27 — Completed Phase 04 Plan 04: Green phase — all 22 Gherkin tests + 40 Core + 21 Data = 83 tests green. Format clean. gsd/phase-04-gherkin-generator merged to main. Phase 04 complete. All 9 GHER requirements satisfied.
+**Last updated:** 2026-03-29 — Completed Phase 05 Plan 01: CI coverage gates and TDD red-phase support. ci.yml now has DOTNET_SYSTEM_NET_DISABLEIPV6 env, tdd/phase-* trigger, conditional test steps, and four per-project 90% line coverage gates. CI-01/CI-02/CI-03/CI-06 satisfied.
 
-**To resume:** Phase 05 — ci-pipeline. Ready to start.
+**To resume:** Phase 05 Plan 02 — mutation testing workflow (mutation.yml).

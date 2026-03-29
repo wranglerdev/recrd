@@ -12,7 +12,7 @@
 - [ ] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps)
 - [x] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling (completed 2026-03-27)
 - [x] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging (completed 2026-03-27)
-- [ ] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support
+- [x] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support (completed 2026-03-29)
 - [ ] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab
 - [ ] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip
 - [ ] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target
@@ -115,9 +115,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Enhanced ci.yml: per-project coverage gates, TDD red-phase support, IPv4 env
-- [ ] 05-02-PLAN.md — Weekly Stryker.NET mutation workflow + dotnet-stryker tool manifest
-- [ ] 05-03-PLAN.md — NuGet publish workflow for pre-release tags on GitHub Packages
+- [x] 05-01-PLAN.md — Enhanced ci.yml: per-project coverage gates, TDD red-phase support, IPv4 env
+- [x] 05-02-PLAN.md — Weekly Stryker.NET mutation workflow + dotnet-stryker tool manifest
+- [x] 05-03-PLAN.md — NuGet publish workflow for pre-release tags on GitHub Packages
 
 ### Phase 6: Recording Engine
 **Goal**: `Recrd.Recording` captures live browser interactions via Playwright into the AST Channel pipeline, with an inspector side-panel for variable tagging, assertion insertion, and constrained popup handling.
@@ -256,7 +256,7 @@ Plans:
 | 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
 | 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
-| 5. CI Pipeline | 0/3 | Not started | - |
+| 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
 | 6. Recording Engine | 0/? | Not started | - |
 | 7. Compilers | 0/? | Not started | - |
 | 8. CLI Polish | 0/? | Not started | - |
