@@ -1,0 +1,55 @@
+name: Publish NuGet Packages
+
+on:
+  push:
+    tags:
+      - 'v*-*'  # Pre-release only: v1.0.0-preview.1, v1.0.0-alpha.2, etc.
+
+env:
+  DOTNET_SYSTEM_NET_DISABLEIPV6: '1'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    # Only publish from main branch — prevents tag pushes from feature branches
+    if: github.ref_type == 'tag' && github.event.base_ref == 'refs/heads/main' || github.event.repository.default_branch == 'main'
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing version: $VERSION"
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build in Release mode
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --filter "Category!=Integration"
+
+      - name: Pack NuGet packages
+        run: |
+          dotnet pack --no-build --configuration Release \
+            -p:PackageVersion=${{ steps.version.outputs.version }} \
+            --output ./nupkg
+
+      - name: Push to GitHub Packages
+        run: |
+          dotnet nuget push ./nupkg/*.nupkg \
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --api-key ${{ secrets.GITHUB_TOKEN }} \
+            --skip-duplicate
