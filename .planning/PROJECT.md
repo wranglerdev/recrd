@@ -19,7 +19,7 @@ Record once, compile to a round-trip-verified, data-driven Robot Framework suite
 **Foundation**
 - [x] `Recrd.Data` — `CsvDataProvider` (RFC 4180, BOM-tolerant, streaming) and `JsonDataProvider` (flat root array, dot-notation flattening), `IAsyncEnumerable<T>` contract, ≤1000 rows in-memory batch — *Validated in Phase 03: data-providers*
 - [x] `Recrd.Gherkin` — AST → pt-BR `.feature` generator; `Cenário` vs `Esquema do Cenário` + `Exemplos` table; deterministic/idempotent output; variable mismatch hard error — *Validated in Phase 04: gherkin-generator*
-- [ ] CI pipeline — build, unit test, coverage gates (≥90% Core/Data/Gherkin/Compilers), `dotnet format` check, weekly Stryker.NET mutation run
+- [x] CI pipeline — build, unit test, coverage gates (≥90% Core/Data/Gherkin/Compilers), `dotnet format` check, weekly Stryker.NET mutation run — *Validated in Phase 05: ci-pipeline*
 
 **Recording Engine**
 - [ ] `Recrd.Recording` — Playwright .NET CDP integration, DOM event capture (click, input, change, select, hover, navigation, file upload, drag-and-drop), selector extraction ranked by stability (`data-testid` > `id` > `role` > CSS > XPath)
