@@ -1,0 +1,50 @@
+name: Mutation Testing
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
+  workflow_dispatch:        # Allow manual trigger
+
+env:
+  DOTNET_SYSTEM_NET_DISABLEIPV6: '1'
+
+jobs:
+  stryker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Restore local tools
+        run: dotnet tool restore
+
+      - name: Run Stryker.NET on Recrd.Core
+        run: |
+          dotnet stryker \
+            --project packages/Recrd.Core/Recrd.Core.csproj \
+            --test-project tests/Recrd.Core.Tests/Recrd.Core.Tests.csproj \
+            --reporter markdown \
+            --reporter html \
+            --output StrykerOutput
+        continue-on-error: true
+
+      - name: Post mutation report to summary
+        if: always()
+        run: |
+          REPORT=$(find StrykerOutput -name "mutation-report.md" -type f 2>/dev/null | head -1)
+          if [ -n "$REPORT" ]; then
+            echo "## Stryker.NET Mutation Report — Recrd.Core" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            cat "$REPORT" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## Stryker.NET Mutation Report — Recrd.Core" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "No mutation report generated. Check the Stryker step logs for errors." >> $GITHUB_STEP_SUMMARY
+          fi
