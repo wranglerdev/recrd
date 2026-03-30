@@ -65,9 +65,9 @@ Exceptions:
 
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
-| Body | 13px | 400 | 1.5 | Inspector event stream rows, variable list items |
+| Body | 14px | 400 | 1.5 | Inspector event stream rows, variable list items |
 | Label | 11px | 600 | 1.4 | Section headings, column headers, badge text |
-| Heading | 15px | 600 | 1.2 | Panel title ("Inspector"), overlay menu title |
+| Heading | 16px | 600 | 1.2 | Panel title ("Inspector"), overlay menu title |
 | Mono | 12px | 400 | 1.5 | Selector strings, event payload values, variable placeholder names |
 
 **Font stack:** `system-ui, -apple-system, "Segoe UI", sans-serif` for all non-mono roles.
@@ -102,9 +102,11 @@ Dark theme is the sole color scheme for both surfaces. Rationale: the inspector 
 
 The inspector panel is a single `<html>` page served as an embedded resource. It must be fully functional with no external resource loads (no CDN, no Google Fonts, no external scripts).
 
+**Primary focal point:** The recording state badge in the panel header is the primary visual anchor when the inspector is in idle state. It is the first element a developer reads to determine session status.
+
 | Component | Element | States |
 |-----------|---------|--------|
-| Panel header | `<header>` with title "Inspector" + recording state badge | recording (accent dot + "REC"), paused ("PAUSE"), idle ("idle") |
+| Panel header | `<header>` with title "Inspector" + recording state badge | recording (accent dot + "REC"), paused ("PAUSE"), idle ("IDLE") |
 | Event stream list | `<ul>` with `<li>` rows; each row shows: event type, element selector (truncated at 40 chars), timestamp delta | normal, hover (secondary bg), selected |
 | Variable list | `<section>` below event stream; shows all named variables as chips | default, duplicate-warning (destructive border) |
 | "Tag as Variable" form | `<form>` inside a `<dialog>` overlay; single `<input>` for name, two buttons | default, invalid (name violates `^[a-z][a-z0-9_]{0,63}$`), duplicate-error |
@@ -138,12 +140,12 @@ Injected by the JS agent. Must not interfere with existing page styles. Use a sc
 | Variable tag dialog title | "Tag as Variable" | REQUIREMENTS.md REC-13 |
 | Variable tag input placeholder | "variable_name (e.g. username)" | default |
 | Variable tag confirm button | "Tag" | default |
-| Variable tag cancel button | "Cancel" | default |
+| Variable tag cancel button | "Discard Tag" | ui-checker revision — "Cancel" is a generic label; "Discard Tag" names the abandoned action |
 | Duplicate variable name warning | "A variable named '{name}' already exists. Choose a different name." | CONTEXT.md D-08 — "duplicate names rejected with visible warning" |
 | Variable name invalid warning | "Name must match: lowercase letters, digits, underscores only." | REQUIREMENTS.md REC-13 + CORE-06 pattern `^[a-z][a-z0-9_]{0,63}$` |
 | Assertion builder dialog title | "Add Assertion" | default |
 | Assertion builder confirm button | "Add Assertion" | default |
-| Assertion builder cancel button | "Cancel" | default |
+| Assertion builder cancel button | "Discard Assertion" | ui-checker revision — "Cancel" is a generic label; "Discard Assertion" names the abandoned action |
 | Recover prompt (CLI stdout) | "A session snapshot was found at {path}. Run 'recrd recover' to restore it." | REQUIREMENTS.md REC-10 |
 | Stop summary (CLI stdout) | "Session saved to {filename}. {N} events, {N} variables, {duration}." | REQUIREMENTS.md REC-08 — implied summary output |
 
