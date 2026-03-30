@@ -45,12 +45,12 @@
 
 ### Foundation — CI Pipeline
 
-- [ ] **CI-01**: GitHub Actions pipeline: restore → build → test → coverage gate → format check
-- [ ] **CI-02**: Coverage gate fails build if `Recrd.Core`, `Recrd.Data`, `Recrd.Gherkin`, or `Recrd.Compilers` drop below 90% line coverage
-- [ ] **CI-03**: `dotnet format --verify-no-changes` enforced on every push/PR
-- [ ] **CI-04**: Weekly scheduled Stryker.NET mutation run on `Recrd.Core`
-- [ ] **CI-05**: `main`-branch-only: `dotnet pack` → NuGet push (pre-release tag)
-- [ ] **CI-06**: TDD red phase: CI runs tests but does NOT fail the build on test failures during a designated red-phase branch prefix (e.g., `tdd/phase-*`)
+- [x] **CI-01**: GitHub Actions pipeline: restore → build → test → coverage gate → format check
+- [x] **CI-02**: Coverage gate fails build if `Recrd.Core`, `Recrd.Data`, `Recrd.Gherkin`, or `Recrd.Compilers` drop below 90% line coverage
+- [x] **CI-03**: `dotnet format --verify-no-changes` enforced on every push/PR
+- [x] **CI-04**: Weekly scheduled Stryker.NET mutation run on `Recrd.Core`
+- [x] **CI-05**: `main`-branch-only: `dotnet pack` → NuGet push (pre-release tag)
+- [x] **CI-06**: TDD red phase: CI runs tests but does NOT fail the build on test failures during a designated red-phase branch prefix (e.g., `tdd/phase-*`)
 
 ### Recording Engine
 
@@ -189,12 +189,12 @@
 | GHER-07 | Phase 4 | Complete |
 | GHER-08 | Phase 4 | Complete |
 | GHER-09 | Phase 4 | Complete |
-| CI-01 | Phase 5 | Pending |
-| CI-02 | Phase 5 | Pending |
-| CI-03 | Phase 5 | Pending |
-| CI-04 | Phase 5 | Pending |
-| CI-05 | Phase 5 | Pending |
-| CI-06 | Phase 5 | Pending |
+| CI-01 | Phase 5 | Complete |
+| CI-02 | Phase 5 | Complete |
+| CI-03 | Phase 5 | Complete |
+| CI-04 | Phase 5 | Complete |
+| CI-05 | Phase 5 | Complete |
+| CI-06 | Phase 5 | Complete |
 | REC-01 | Phase 6 | Pending |
 | REC-02 | Phase 6 | Pending |
 | REC-03 | Phase 6 | Pending |

@@ -12,7 +12,7 @@
 - [ ] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps)
 - [x] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling (completed 2026-03-27)
 - [x] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging (completed 2026-03-27)
-- [ ] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support
+- [x] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support (completed 2026-03-29)
 - [ ] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab
 - [ ] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip
 - [ ] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target
@@ -112,13 +112,12 @@ Plans:
   4. A weekly scheduled workflow runs Stryker.NET on `Recrd.Core` and posts a mutation score report
   5. Pushing a pre-release tag on `main` triggers `dotnet pack` followed by a NuGet push; pushing on a non-`main` branch does not trigger packaging
   6. Pushing to a branch prefixed `tdd/phase-*` runs tests but does not fail the build on test failures, enabling the TDD red phase
-**Plans**: 4 plans
+**Plans**: 3 plans
 
 Plans:
-- [x] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [x] 05-01-PLAN.md — Enhanced ci.yml: per-project coverage gates, TDD red-phase support, IPv4 env
+- [x] 05-02-PLAN.md — Weekly Stryker.NET mutation workflow + dotnet-stryker tool manifest
+- [x] 05-03-PLAN.md — NuGet publish workflow for pre-release tags on GitHub Packages
 
 ### Phase 6: Recording Engine
 **Goal**: `Recrd.Recording` captures live browser interactions via Playwright into the AST Channel pipeline, with an inspector side-panel for variable tagging, assertion insertion, and constrained popup handling.
@@ -257,7 +256,7 @@ Plans:
 | 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
 | 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
-| 5. CI Pipeline | 0/? | Not started | - |
+| 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
 | 6. Recording Engine | 0/? | Not started | - |
 | 7. Compilers | 0/? | Not started | - |
 | 8. CLI Polish | 0/? | Not started | - |
