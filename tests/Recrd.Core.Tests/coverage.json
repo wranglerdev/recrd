@@ -1,0 +1,4960 @@
+{
+  "Recrd.Core.dll": {
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs": {
+      "System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0": {
+        "System.Void System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0::.ctor()": {
+          "Lines": {
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1
+          },
+          "Branches": []
+        },
+        "System.Void System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0::.cctor()": {
+          "Lines": {
+            "42": 1
+          },
+          "Branches": []
+        }
+      },
+      "System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0/RunnerFactory": {
+        "System.Text.RegularExpressions.RegexRunner System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0/RunnerFactory::CreateInstance()": {
+          "Lines": {
+            "59": 1
+          },
+          "Branches": []
+        }
+      },
+      "System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0/RunnerFactory/Runner": {
+        "System.Void System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0/RunnerFactory/Runner::Scan(System.ReadOnlySpan`1<System.Char>)": {
+          "Lines": {
+            "67": 11,
+            "69": 11,
+            "70": 4,
+            "71": 4,
+            "72": 4,
+            "73": 11
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 11
+            },
+            {
+              "Line": 69,
+              "Offset": 8,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 69,
+              "Offset": 25,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 11
+            }
+          ]
+        },
+        "System.Boolean System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0/RunnerFactory/Runner::TryFindNextPossibleStartingPosition(System.ReadOnlySpan`1<System.Char>)": {
+          "Lines": {
+            "79": 11,
+            "80": 11,
+            "83": 11,
+            "84": 11,
+            "86": 11,
+            "87": 11,
+            "88": 11,
+            "90": 0,
+            "93": 0,
+            "94": 0,
+            "95": 11
+          },
+          "Branches": [
+            {
+              "Line": 83,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 11
+            },
+            {
+              "Line": 86,
+              "Offset": 29,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 11
+            },
+            {
+              "Line": 86,
+              "Offset": 29,
+              "EndOffset": 36,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 20,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__NamePattern_0/RunnerFactory/Runner::TryMatchAtCurrentPosition(System.ReadOnlySpan`1<System.Char>)": {
+          "Lines": {
+            "101": 11,
+            "102": 11,
+            "103": 11,
+            "105": 11,
+            "108": 11,
+            "109": 0,
+            "110": 0,
+            "114": 11,
+            "115": 2,
+            "116": 2,
+            "120": 9,
+            "121": 9,
+            "122": 9,
+            "123": 9,
+            "124": 171,
+            "125": 162,
+            "126": 162,
+            "127": 162,
+            "129": 9,
+            "130": 9,
+            "131": 9,
+            "134": 9,
+            "135": 2,
+            "136": 2,
+            "140": 7,
+            "141": 7,
+            "142": 7,
+            "143": 11
+          },
+          "Branches": [
+            {
+              "Line": 108,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 108,
+              "Offset": 27,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 11
+            },
+            {
+              "Line": 114,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 11
+            },
+            {
+              "Line": 114,
+              "Offset": 45,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 71,
+              "EndOffset": 73,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 114,
+              "Offset": 71,
+              "EndOffset": 82,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 9
+            },
+            {
+              "Line": 124,
+              "Offset": 178,
+              "EndOffset": 101,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 162
+            },
+            {
+              "Line": 124,
+              "Offset": 113,
+              "EndOffset": 115,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 169
+            },
+            {
+              "Line": 124,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 163
+            },
+            {
+              "Line": 124,
+              "Offset": 140,
+              "EndOffset": 142,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 163
+            },
+            {
+              "Line": 124,
+              "Offset": 140,
+              "EndOffset": 170,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 124,
+              "Offset": 113,
+              "EndOffset": 173,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 8
+            },
+            {
+              "Line": 124,
+              "Offset": 124,
+              "EndOffset": 173,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 8
+            },
+            {
+              "Line": 124,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 9
+            },
+            {
+              "Line": 134,
+              "Offset": 206,
+              "EndOffset": 208,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 8
+            },
+            {
+              "Line": 134,
+              "Offset": 216,
+              "EndOffset": 218,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            },
+            {
+              "Line": 134,
+              "Offset": 216,
+              "EndOffset": 236,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 7
+            },
+            {
+              "Line": 134,
+              "Offset": 206,
+              "EndOffset": 239,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 1
+            },
+            {
+              "Line": 134,
+              "Offset": 244,
+              "EndOffset": 246,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 2
+            },
+            {
+              "Line": 134,
+              "Offset": 244,
+              "EndOffset": 252,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 7
+            }
+          ]
+        }
+      },
+      "System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__Utilities": {
+        "System.Void System.Text.RegularExpressions.Generated.<RegexGenerator_g>F26EAC1AC34B00E53C9557DDD0BA72D8AAB5146C02B93FFB6F299394D8A5DA726__Utilities::.cctor()": {
+          "Lines": {
+            "154": 1,
+            "157": 1
+          },
+          "Branches": [
+            {
+              "Line": 154,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 154,
+              "Offset": 17,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Recrd.Core.Ast.Variable": {
+        "System.Text.RegularExpressions.Regex Recrd.Core.Ast.Variable::NamePattern()": {
+          "Lines": {
+            "21": 11
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.ActionStep.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.ActionStep> Recrd.Core.Serialization.RecrdJsonContext::get_ActionStep()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.ActionStep> Recrd.Core.Serialization.RecrdJsonContext::Create_ActionStep(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 2,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::ActionStepPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 3,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 3,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 0,
+            "87": 1,
+            "89": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 3,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 0,
+            "108": 1,
+            "110": 1,
+            "111": 1,
+            "113": 1,
+            "114": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::ActionStepCtorParamInit()": {
+          "Lines": {
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "124": 1,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "141": 1,
+            "142": 1,
+            "143": 1,
+            "144": 1,
+            "145": 1,
+            "146": 1,
+            "147": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.ActionType.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.ActionType> Recrd.Core.Serialization.RecrdJsonContext::get_ActionType()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.ActionType> Recrd.Core.Serialization.RecrdJsonContext::Create_ActionType(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.AssertionStep.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.AssertionStep> Recrd.Core.Serialization.RecrdJsonContext::get_AssertionStep()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.AssertionStep> Recrd.Core.Serialization.RecrdJsonContext::Create_AssertionStep(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::AssertionStepPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 0,
+            "87": 1,
+            "89": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 0,
+            "108": 1,
+            "110": 1,
+            "111": 1,
+            "113": 1,
+            "114": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::AssertionStepCtorParamInit()": {
+          "Lines": {
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "124": 1,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "141": 1,
+            "142": 1,
+            "143": 1,
+            "144": 1,
+            "145": 1,
+            "146": 1,
+            "147": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.AssertionType.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.AssertionType> Recrd.Core.Serialization.RecrdJsonContext::get_AssertionType()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.AssertionType> Recrd.Core.Serialization.RecrdJsonContext::Create_AssertionType(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.GroupStep.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.GroupStep> Recrd.Core.Serialization.RecrdJsonContext::get_GroupStep()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.GroupStep> Recrd.Core.Serialization.RecrdJsonContext::Create_GroupStep(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::GroupStepPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 0,
+            "87": 1,
+            "89": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::GroupStepCtorParamInit()": {
+          "Lines": {
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.GroupType.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.GroupType> Recrd.Core.Serialization.RecrdJsonContext::get_GroupType()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.GroupType> Recrd.Core.Serialization.RecrdJsonContext::Create_GroupType(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IStep.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.IStep> Recrd.Core.Serialization.RecrdJsonContext::get_IStep()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.IStep> Recrd.Core.Serialization.RecrdJsonContext::Create_IStep(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 131,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::IStepPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.Selector.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.Selector> Recrd.Core.Serialization.RecrdJsonContext::get_Selector()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.Selector> Recrd.Core.Serialization.RecrdJsonContext::Create_Selector(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 3,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::SelectorPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 4,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "70": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 4,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 0,
+            "88": 1,
+            "90": 1,
+            "91": 1,
+            "93": 1,
+            "94": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::SelectorCtorParamInit()": {
+          "Lines": {
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.SelectorStrategy.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.SelectorStrategy> Recrd.Core.Serialization.RecrdJsonContext::get_SelectorStrategy()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.SelectorStrategy> Recrd.Core.Serialization.RecrdJsonContext::Create_SelectorStrategy(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.Session.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.Session> Recrd.Core.Serialization.RecrdJsonContext::get_Session()": {
+          "Lines": {
+            "22": 7
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.Session> Recrd.Core.Serialization.RecrdJsonContext::Create_Session(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 3,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::SessionPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 4,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 4,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 0,
+            "87": 1,
+            "89": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 4,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 0,
+            "108": 1,
+            "110": 1,
+            "111": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 4,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "124": 1,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 0,
+            "129": 1,
+            "131": 1,
+            "132": 1,
+            "134": 1,
+            "135": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::SessionCtorParamInit()": {
+          "Lines": {
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "141": 1,
+            "142": 1,
+            "143": 1,
+            "144": 1,
+            "145": 1,
+            "146": 1,
+            "147": 1,
+            "148": 1,
+            "149": 1,
+            "150": 1,
+            "151": 1,
+            "152": 1,
+            "153": 1,
+            "154": 1,
+            "155": 1,
+            "156": 1,
+            "157": 1,
+            "158": 1,
+            "159": 1,
+            "160": 1,
+            "161": 1,
+            "162": 1,
+            "163": 1,
+            "164": 1,
+            "165": 1,
+            "166": 1,
+            "167": 1,
+            "168": 1,
+            "169": 1,
+            "170": 1,
+            "171": 1,
+            "172": 1,
+            "173": 1,
+            "174": 1,
+            "175": 1,
+            "176": 1,
+            "177": 1,
+            "178": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.SessionMetadata.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.SessionMetadata> Recrd.Core.Serialization.RecrdJsonContext::get_SessionMetadata()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.SessionMetadata> Recrd.Core.Serialization.RecrdJsonContext::Create_SessionMetadata(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 3,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::SessionMetadataPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 4,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "70": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 4,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 0,
+            "88": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 4,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 0,
+            "108": 1,
+            "110": 1,
+            "111": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 4,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "124": 1,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 0,
+            "129": 1,
+            "131": 1,
+            "132": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "141": 4,
+            "142": 0,
+            "143": 1,
+            "144": 1,
+            "145": 1,
+            "146": 1,
+            "147": 1,
+            "148": 1,
+            "149": 0,
+            "150": 1,
+            "152": 1,
+            "154": 1,
+            "155": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::SessionMetadataCtorParamInit()": {
+          "Lines": {
+            "157": 1,
+            "158": 1,
+            "159": 1,
+            "160": 1,
+            "161": 1,
+            "162": 1,
+            "163": 1,
+            "164": 1,
+            "165": 1,
+            "166": 1,
+            "167": 1,
+            "168": 1,
+            "169": 1,
+            "170": 1,
+            "171": 1,
+            "172": 1,
+            "173": 1,
+            "174": 1,
+            "175": 1,
+            "176": 1,
+            "177": 1,
+            "178": 1,
+            "179": 1,
+            "180": 1,
+            "181": 1,
+            "182": 1,
+            "183": 1,
+            "184": 1,
+            "185": 1,
+            "186": 1,
+            "187": 1,
+            "188": 1,
+            "189": 1,
+            "190": 1,
+            "191": 1,
+            "192": 1,
+            "193": 1,
+            "194": 1,
+            "195": 1,
+            "196": 1,
+            "197": 1,
+            "198": 1,
+            "199": 1,
+            "200": 1,
+            "201": 1,
+            "202": 1,
+            "203": 1,
+            "204": 1,
+            "205": 1,
+            "206": 1,
+            "207": 1,
+            "208": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.Variable.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.Variable> Recrd.Core.Serialization.RecrdJsonContext::get_Variable()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.Variable> Recrd.Core.Serialization.RecrdJsonContext::Create_Variable(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 2,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::VariablePropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 2,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "70": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 2,
+            "80": 0,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 0,
+            "88": 1,
+            "90": 1,
+            "92": 1,
+            "93": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::VariableCtorParamInit()": {
+          "Lines": {
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.ViewportSize.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.ViewportSize> Recrd.Core.Serialization.RecrdJsonContext::get_ViewportSize()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Ast.ViewportSize> Recrd.Core.Serialization.RecrdJsonContext::Create_ViewportSize(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 3,
+            "33": 1,
+            "34": 1,
+            "35": 0,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::ViewportSizePropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 4,
+            "59": 0,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 4,
+            "79": 0,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 0,
+            "87": 1,
+            "89": 1,
+            "91": 1,
+            "92": 1
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::ViewportSizeCtorParamInit()": {
+          "Lines": {
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.CompilationResult.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Interfaces.CompilationResult> Recrd.Core.Serialization.RecrdJsonContext::get_CompilationResult()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Interfaces.CompilationResult> Recrd.Core.Serialization.RecrdJsonContext::Create_CompilationResult(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::CompilationResultPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "69": 0,
+            "70": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "90": 0,
+            "91": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 0,
+            "112": 0,
+            "114": 0,
+            "115": 0
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::CompilationResultCtorParamInit()": {
+          "Lines": {
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.CompilerOptions.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Interfaces.CompilerOptions> Recrd.Core.Serialization.RecrdJsonContext::get_CompilerOptions()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Interfaces.CompilerOptions> Recrd.Core.Serialization.RecrdJsonContext::Create_CompilerOptions(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::CompilerOptionsPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "91": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 0,
+            "113": 0,
+            "114": 0
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::CompilerOptionsCtorParamInit()": {
+          "Lines": {
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.RecordedEvent.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Pipeline.RecordedEvent> Recrd.Core.Serialization.RecrdJsonContext::get_RecordedEvent()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Pipeline.RecordedEvent> Recrd.Core.Serialization.RecrdJsonContext::Create_RecordedEvent(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 32,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonPropertyInfo[] Recrd.Core.Serialization.RecrdJsonContext::RecordedEventPropInit(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "69": 0,
+            "70": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "90": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "110": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "130": 0,
+            "131": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "151": 0,
+            "152": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "172": 0,
+            "174": 0,
+            "175": 0
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonParameterInfoValues[] Recrd.Core.Serialization.RecrdJsonContext::RecordedEventCtorParamInit()": {
+          "Lines": {
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "217": 0,
+            "218": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "224": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "238": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.RecordedEventType.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Pipeline.RecordedEventType> Recrd.Core.Serialization.RecrdJsonContext::get_RecordedEventType()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<Recrd.Core.Pipeline.RecordedEventType> Recrd.Core.Serialization.RecrdJsonContext::Create_RecordedEventType(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.DictionaryStringString.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.Dictionary`2<System.String,System.String>> Recrd.Core.Serialization.RecrdJsonContext::get_DictionaryStringString()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.Dictionary`2<System.String,System.String>> Recrd.Core.Serialization.RecrdJsonContext::Create_DictionaryStringString(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyDictionarySelectorStrategyString.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyDictionary`2<Recrd.Core.Ast.SelectorStrategy,System.String>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyDictionarySelectorStrategyString()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyDictionary`2<Recrd.Core.Ast.SelectorStrategy,System.String>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyDictionarySelectorStrategyString(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 0,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyDictionaryStringString.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyDictionaryStringString()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyDictionaryStringString(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 0,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyListIStep.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyListIStep()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyListIStep(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyListSelector.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Selector>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyListSelector()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Selector>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyListSelector(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyListSelectorStrategy.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.SelectorStrategy>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyListSelectorStrategy()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.SelectorStrategy>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyListSelectorStrategy(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyListVariable.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Variable>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyListVariable()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Variable>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyListVariable(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.IReadOnlyListString.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<System.String>> Recrd.Core.Serialization.RecrdJsonContext::get_IReadOnlyListString()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Collections.Generic.IReadOnlyList`1<System.String>> Recrd.Core.Serialization.RecrdJsonContext::Create_IReadOnlyListString(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.DateTimeOffset.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.DateTimeOffset> Recrd.Core.Serialization.RecrdJsonContext::get_DateTimeOffset()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.DateTimeOffset> Recrd.Core.Serialization.RecrdJsonContext::Create_DateTimeOffset(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.Int32.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Int32> Recrd.Core.Serialization.RecrdJsonContext::get_Int32()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Int32> Recrd.Core.Serialization.RecrdJsonContext::Create_Int32(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.Int64.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Int64> Recrd.Core.Serialization.RecrdJsonContext::get_Int64()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Int64> Recrd.Core.Serialization.RecrdJsonContext::Create_Int64(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.String.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.String> Recrd.Core.Serialization.RecrdJsonContext::get_String()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.String> Recrd.Core.Serialization.RecrdJsonContext::Create_String(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 14,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "Recrd.Core.Serialization.RecrdJsonContext Recrd.Core.Serialization.RecrdJsonContext::get_Default()": {
+          "Lines": {
+            "29": 8
+          },
+          "Branches": []
+        },
+        "System.Text.Json.JsonSerializerOptions Recrd.Core.Serialization.RecrdJsonContext::get_GeneratedSerializerOptions()": {
+          "Lines": {
+            "34": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean Recrd.Core.Serialization.RecrdJsonContext::TryGetTypeInfoForRuntimeCustomConverter(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<TJsonMetadataType>&)": {
+          "Lines": {
+            "47": 21,
+            "48": 21,
+            "49": 21,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "55": 21,
+            "56": 21,
+            "57": 21
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 24,
+              "EndOffset": 40,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.JsonConverter Recrd.Core.Serialization.RecrdJsonContext::GetRuntimeConverterForType(System.Type,System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "60": 21,
+            "61": 42,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "68": 0,
+            "70": 21,
+            "71": 21
+          },
+          "Branches": [
+            {
+              "Line": 61,
+              "Offset": 72,
+              "EndOffset": 5,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 20,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 34,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 21
+            }
+          ]
+        },
+        "System.Text.Json.Serialization.JsonConverter Recrd.Core.Serialization.RecrdJsonContext::ExpandConverter(System.Type,System.Text.Json.Serialization.JsonConverter,System.Text.Json.JsonSerializerOptions,System.Boolean)": {
+          "Lines": {
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0
+          },
+          "Branches": [
+            {
+              "Line": 75,
+              "Offset": 2,
+              "EndOffset": 4,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 2,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 19,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 72,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 88,
+              "EndOffset": 113,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 58,
+              "EndOffset": 114,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Recrd.Core.Serialization.RecrdJsonContext::.ctor()": {
+          "Lines": {
+            "37": 0,
+            "38": 0,
+            "39": 0
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Serialization.RecrdJsonContext::.ctor(System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "42": 1,
+            "43": 1,
+            "44": 1
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Serialization.RecrdJsonContext::.cctor()": {
+          "Lines": {
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/obj/Debug/net10.0/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/RecrdJsonContext.GetJsonTypeInfo.g.cs": {
+      "Recrd.Core.Serialization.RecrdJsonContext": {
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo Recrd.Core.Serialization.RecrdJsonContext::GetTypeInfo(System.Type)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Text.Json.Serialization.Metadata.JsonTypeInfo Recrd.Core.Serialization.RecrdJsonContext::global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver.GetTypeInfo(System.Type,System.Text.Json.JsonSerializerOptions)": {
+          "Lines": {
+            "21": 21,
+            "22": 21,
+            "23": 1,
+            "24": 1,
+            "26": 20,
+            "27": 1,
+            "28": 1,
+            "30": 19,
+            "31": 1,
+            "32": 1,
+            "34": 18,
+            "35": 1,
+            "36": 1,
+            "38": 17,
+            "39": 1,
+            "40": 1,
+            "42": 16,
+            "43": 1,
+            "44": 1,
+            "46": 15,
+            "47": 1,
+            "48": 1,
+            "50": 14,
+            "51": 1,
+            "52": 1,
+            "54": 13,
+            "55": 1,
+            "56": 1,
+            "58": 12,
+            "59": 1,
+            "60": 1,
+            "62": 11,
+            "63": 1,
+            "64": 1,
+            "66": 10,
+            "67": 1,
+            "68": 1,
+            "70": 9,
+            "71": 1,
+            "72": 1,
+            "74": 8,
+            "75": 0,
+            "76": 0,
+            "78": 8,
+            "79": 0,
+            "80": 0,
+            "82": 8,
+            "83": 0,
+            "84": 0,
+            "86": 8,
+            "87": 0,
+            "88": 0,
+            "90": 8,
+            "91": 0,
+            "92": 0,
+            "94": 8,
+            "95": 1,
+            "96": 1,
+            "98": 7,
+            "99": 1,
+            "100": 1,
+            "102": 6,
+            "103": 1,
+            "104": 1,
+            "106": 5,
+            "107": 0,
+            "108": 0,
+            "110": 5,
+            "111": 1,
+            "112": 1,
+            "114": 4,
+            "115": 1,
+            "116": 1,
+            "118": 3,
+            "119": 0,
+            "120": 0,
+            "122": 3,
+            "123": 1,
+            "124": 1,
+            "126": 2,
+            "127": 1,
+            "128": 1,
+            "130": 1,
+            "131": 0,
+            "132": 0,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "138": 0,
+            "139": 21
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 19,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 20
+            },
+            {
+              "Line": 26,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 26,
+              "Offset": 53,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 19
+            },
+            {
+              "Line": 30,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 87,
+              "EndOffset": 103,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 18
+            },
+            {
+              "Line": 34,
+              "Offset": 123,
+              "EndOffset": 125,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 34,
+              "Offset": 123,
+              "EndOffset": 139,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 17
+            },
+            {
+              "Line": 38,
+              "Offset": 159,
+              "EndOffset": 161,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 38,
+              "Offset": 159,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 16
+            },
+            {
+              "Line": 42,
+              "Offset": 195,
+              "EndOffset": 197,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 42,
+              "Offset": 195,
+              "EndOffset": 211,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 15
+            },
+            {
+              "Line": 46,
+              "Offset": 231,
+              "EndOffset": 233,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 231,
+              "EndOffset": 247,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 14
+            },
+            {
+              "Line": 50,
+              "Offset": 267,
+              "EndOffset": 269,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 50,
+              "Offset": 267,
+              "EndOffset": 283,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 13
+            },
+            {
+              "Line": 54,
+              "Offset": 303,
+              "EndOffset": 305,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 303,
+              "EndOffset": 319,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 12
+            },
+            {
+              "Line": 58,
+              "Offset": 339,
+              "EndOffset": 341,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 339,
+              "EndOffset": 355,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 11
+            },
+            {
+              "Line": 62,
+              "Offset": 375,
+              "EndOffset": 377,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 1
+            },
+            {
+              "Line": 62,
+              "Offset": 375,
+              "EndOffset": 391,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 10
+            },
+            {
+              "Line": 66,
+              "Offset": 411,
+              "EndOffset": 413,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 1
+            },
+            {
+              "Line": 66,
+              "Offset": 411,
+              "EndOffset": 427,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 9
+            },
+            {
+              "Line": 70,
+              "Offset": 447,
+              "EndOffset": 449,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 1
+            },
+            {
+              "Line": 70,
+              "Offset": 447,
+              "EndOffset": 463,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 8
+            },
+            {
+              "Line": 74,
+              "Offset": 483,
+              "EndOffset": 485,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 483,
+              "EndOffset": 499,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 8
+            },
+            {
+              "Line": 78,
+              "Offset": 519,
+              "EndOffset": 521,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 78,
+              "Offset": 519,
+              "EndOffset": 535,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 8
+            },
+            {
+              "Line": 82,
+              "Offset": 555,
+              "EndOffset": 557,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 82,
+              "Offset": 555,
+              "EndOffset": 571,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 8
+            },
+            {
+              "Line": 86,
+              "Offset": 591,
+              "EndOffset": 593,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 591,
+              "EndOffset": 607,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 8
+            },
+            {
+              "Line": 90,
+              "Offset": 627,
+              "EndOffset": 629,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 627,
+              "EndOffset": 643,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 8
+            },
+            {
+              "Line": 94,
+              "Offset": 663,
+              "EndOffset": 665,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 1
+            },
+            {
+              "Line": 94,
+              "Offset": 663,
+              "EndOffset": 679,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 7
+            },
+            {
+              "Line": 98,
+              "Offset": 699,
+              "EndOffset": 701,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 1
+            },
+            {
+              "Line": 98,
+              "Offset": 699,
+              "EndOffset": 715,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 6
+            },
+            {
+              "Line": 102,
+              "Offset": 735,
+              "EndOffset": 737,
+              "Path": 0,
+              "Ordinal": 40,
+              "Hits": 1
+            },
+            {
+              "Line": 102,
+              "Offset": 735,
+              "EndOffset": 751,
+              "Path": 1,
+              "Ordinal": 41,
+              "Hits": 5
+            },
+            {
+              "Line": 106,
+              "Offset": 771,
+              "EndOffset": 773,
+              "Path": 0,
+              "Ordinal": 42,
+              "Hits": 0
+            },
+            {
+              "Line": 106,
+              "Offset": 771,
+              "EndOffset": 787,
+              "Path": 1,
+              "Ordinal": 43,
+              "Hits": 5
+            },
+            {
+              "Line": 110,
+              "Offset": 807,
+              "EndOffset": 809,
+              "Path": 0,
+              "Ordinal": 44,
+              "Hits": 1
+            },
+            {
+              "Line": 110,
+              "Offset": 807,
+              "EndOffset": 823,
+              "Path": 1,
+              "Ordinal": 45,
+              "Hits": 4
+            },
+            {
+              "Line": 114,
+              "Offset": 843,
+              "EndOffset": 845,
+              "Path": 0,
+              "Ordinal": 46,
+              "Hits": 1
+            },
+            {
+              "Line": 114,
+              "Offset": 843,
+              "EndOffset": 859,
+              "Path": 1,
+              "Ordinal": 47,
+              "Hits": 3
+            },
+            {
+              "Line": 118,
+              "Offset": 879,
+              "EndOffset": 881,
+              "Path": 0,
+              "Ordinal": 48,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 879,
+              "EndOffset": 895,
+              "Path": 1,
+              "Ordinal": 49,
+              "Hits": 3
+            },
+            {
+              "Line": 122,
+              "Offset": 915,
+              "EndOffset": 917,
+              "Path": 0,
+              "Ordinal": 50,
+              "Hits": 1
+            },
+            {
+              "Line": 122,
+              "Offset": 915,
+              "EndOffset": 928,
+              "Path": 1,
+              "Ordinal": 51,
+              "Hits": 2
+            },
+            {
+              "Line": 126,
+              "Offset": 948,
+              "EndOffset": 950,
+              "Path": 0,
+              "Ordinal": 52,
+              "Hits": 1
+            },
+            {
+              "Line": 126,
+              "Offset": 948,
+              "EndOffset": 961,
+              "Path": 1,
+              "Ordinal": 53,
+              "Hits": 1
+            },
+            {
+              "Line": 130,
+              "Offset": 981,
+              "EndOffset": 983,
+              "Path": 0,
+              "Ordinal": 54,
+              "Hits": 0
+            },
+            {
+              "Line": 130,
+              "Offset": 981,
+              "EndOffset": 994,
+              "Path": 1,
+              "Ordinal": 55,
+              "Hits": 1
+            },
+            {
+              "Line": 134,
+              "Offset": 1014,
+              "EndOffset": 1016,
+              "Path": 0,
+              "Ordinal": 56,
+              "Hits": 1
+            },
+            {
+              "Line": 134,
+              "Offset": 1014,
+              "EndOffset": 1027,
+              "Path": 1,
+              "Ordinal": 57,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Pipeline/RecordedEvent.cs": {
+      "Recrd.Core.Pipeline.RecordedEvent": {
+        "System.String Recrd.Core.Pipeline.RecordedEvent::get_Id()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.Int64 Recrd.Core.Pipeline.RecordedEvent::get_TimestampMs()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "Recrd.Core.Pipeline.RecordedEventType Recrd.Core.Pipeline.RecordedEvent::get_EventType()": {
+          "Lines": {
+            "9": 1
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Selector> Recrd.Core.Pipeline.RecordedEvent::get_Selectors()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Recrd.Core.Pipeline.RecordedEvent::get_Payload()": {
+          "Lines": {
+            "11": 1
+          },
+          "Branches": []
+        },
+        "System.String Recrd.Core.Pipeline.RecordedEvent::get_DataVariable()": {
+          "Lines": {
+            "12": 10
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Pipeline.RecordedEvent::.ctor(System.String,System.Int64,Recrd.Core.Pipeline.RecordedEventType,System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Selector>,System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>,System.String)": {
+          "Lines": {
+            "14": 9,
+            "15": 9,
+            "16": 9,
+            "17": 9,
+            "18": 9,
+            "19": 9,
+            "20": 9,
+            "21": 9,
+            "22": 9,
+            "23": 9,
+            "24": 9,
+            "25": 9,
+            "26": 9,
+            "27": 9,
+            "28": 9
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 11,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 9
+            },
+            {
+              "Line": 25,
+              "Offset": 48,
+              "EndOffset": 50,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 48,
+              "EndOffset": 62,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 9
+            },
+            {
+              "Line": 26,
+              "Offset": 71,
+              "EndOffset": 73,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 71,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 9
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Pipeline/RecordingChannel.cs": {
+      "Recrd.Core.Pipeline.RecordingChannel": {
+        "System.Threading.Tasks.ValueTask Recrd.Core.Pipeline.RecordingChannel::WriteAsync(Recrd.Core.Pipeline.RecordedEvent,System.Threading.CancellationToken)": {
+          "Lines": {
+            "26": 8,
+            "27": 8,
+            "28": 8,
+            "29": 8
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IAsyncEnumerable`1<Recrd.Core.Pipeline.RecordedEvent> Recrd.Core.Pipeline.RecordingChannel::ReadAllAsync(System.Threading.CancellationToken)": {
+          "Lines": {
+            "32": 4
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Pipeline.RecordingChannel::Complete()": {
+          "Lines": {
+            "35": 3
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Pipeline.RecordingChannel::Cancel(System.Exception)": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 26,
+              "EndOffset": 28,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 26,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Recrd.Core.Pipeline.RecordingChannel::Dispose()": {
+          "Lines": {
+            "44": 0
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Pipeline.RecordingChannel::.ctor(System.Int32)": {
+          "Lines": {
+            "8": 4,
+            "10": 4,
+            "11": 4,
+            "12": 4,
+            "13": 0,
+            "15": 4,
+            "16": 4,
+            "17": 4,
+            "18": 4,
+            "19": 4,
+            "20": 4,
+            "21": 4,
+            "22": 4,
+            "23": 4
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 12,
+              "Offset": 28,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Interfaces/CompilationResult.cs": {
+      "Recrd.Core.Interfaces.CompilationResult": {
+        "System.Collections.Generic.IReadOnlyList`1<System.String> Recrd.Core.Interfaces.CompilationResult::get_GeneratedFiles()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<System.String> Recrd.Core.Interfaces.CompilationResult::get_Warnings()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Recrd.Core.Interfaces.CompilationResult::get_DependencyManifest()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Interfaces.CompilationResult::.ctor(System.Collections.Generic.IReadOnlyList`1<System.String>,System.Collections.Generic.IReadOnlyList`1<System.String>,System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 11,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 33,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 55,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Interfaces/CompilerOptions.cs": {
+      "Recrd.Core.Interfaces.CompilerOptions": {
+        "System.String Recrd.Core.Interfaces.CompilerOptions::get_OutputDirectory()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "Recrd.Core.Ast.SelectorStrategy Recrd.Core.Interfaces.CompilerOptions::get_PreferredSelectorStrategy()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Recrd.Core.Interfaces.CompilerOptions::get_TimeoutSeconds()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/ActionStep.cs": {
+      "Recrd.Core.Ast.ActionStep": {
+        "Recrd.Core.Ast.ActionType Recrd.Core.Ast.ActionStep::get_ActionType()": {
+          "Lines": {
+            "5": 9
+          },
+          "Branches": []
+        },
+        "Recrd.Core.Ast.Selector Recrd.Core.Ast.ActionStep::get_Selector()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Recrd.Core.Ast.ActionStep::get_Payload()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.ActionStep::.ctor(Recrd.Core.Ast.ActionType,Recrd.Core.Ast.Selector,System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>)": {
+          "Lines": {
+            "9": 12,
+            "10": 12,
+            "11": 12,
+            "12": 12,
+            "13": 12,
+            "14": 12
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 12,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 12
+            },
+            {
+              "Line": 13,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 40,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 12
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/AssertionStep.cs": {
+      "Recrd.Core.Ast.AssertionStep": {
+        "Recrd.Core.Ast.AssertionType Recrd.Core.Ast.AssertionStep::get_AssertionType()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "Recrd.Core.Ast.Selector Recrd.Core.Ast.AssertionStep::get_Selector()": {
+          "Lines": {
+            "6": 1
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String> Recrd.Core.Ast.AssertionStep::get_Payload()": {
+          "Lines": {
+            "7": 1
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.AssertionStep::.ctor(Recrd.Core.Ast.AssertionType,Recrd.Core.Ast.Selector,System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.String>)": {
+          "Lines": {
+            "9": 7,
+            "10": 7,
+            "11": 7,
+            "12": 7,
+            "13": 7,
+            "14": 7
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 12,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 13,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 40,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 7
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/GroupStep.cs": {
+      "Recrd.Core.Ast.GroupStep": {
+        "Recrd.Core.Ast.GroupType Recrd.Core.Ast.GroupStep::get_GroupType()": {
+          "Lines": {
+            "5": 5
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep> Recrd.Core.Ast.GroupStep::get_Steps()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.GroupStep::.ctor(Recrd.Core.Ast.GroupType,System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep>)": {
+          "Lines": {
+            "8": 6,
+            "9": 6,
+            "10": 6,
+            "11": 6,
+            "12": 6
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/Selector.cs": {
+      "Recrd.Core.Ast.Selector": {
+        "System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.SelectorStrategy> Recrd.Core.Ast.Selector::get_Strategies()": {
+          "Lines": {
+            "9": 7
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyDictionary`2<Recrd.Core.Ast.SelectorStrategy,System.String> Recrd.Core.Ast.Selector::get_Values()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.Selector::.ctor(System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.SelectorStrategy>,System.Collections.Generic.IReadOnlyDictionary`2<Recrd.Core.Ast.SelectorStrategy,System.String>)": {
+          "Lines": {
+            "12": 28,
+            "13": 28,
+            "14": 28,
+            "15": 28,
+            "16": 28
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 11,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 28
+            },
+            {
+              "Line": 15,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 33,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 28
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/Session.cs": {
+      "Recrd.Core.Ast.Session": {
+        "System.Int32 Recrd.Core.Ast.Session::get_SchemaVersion()": {
+          "Lines": {
+            "5": 5
+          },
+          "Branches": []
+        },
+        "Recrd.Core.Ast.SessionMetadata Recrd.Core.Ast.Session::get_Metadata()": {
+          "Lines": {
+            "6": 9
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Variable> Recrd.Core.Ast.Session::get_Variables()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep> Recrd.Core.Ast.Session::get_Steps()": {
+          "Lines": {
+            "8": 9
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.Session::.ctor(System.Int32,Recrd.Core.Ast.SessionMetadata,System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.Variable>,System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep>)": {
+          "Lines": {
+            "10": 7,
+            "11": 7,
+            "12": 7,
+            "13": 7,
+            "14": 7,
+            "15": 7,
+            "16": 7
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 14,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 40,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 7
+            },
+            {
+              "Line": 15,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 63,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 7
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/SessionMetadata.cs": {
+      "Recrd.Core.Ast.SessionMetadata": {
+        "System.String Recrd.Core.Ast.SessionMetadata::get_Id()": {
+          "Lines": {
+            "5": 5
+          },
+          "Branches": []
+        },
+        "System.DateTimeOffset Recrd.Core.Ast.SessionMetadata::get_CreatedAt()": {
+          "Lines": {
+            "6": 4
+          },
+          "Branches": []
+        },
+        "System.String Recrd.Core.Ast.SessionMetadata::get_BrowserEngine()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "Recrd.Core.Ast.ViewportSize Recrd.Core.Ast.SessionMetadata::get_ViewportSize()": {
+          "Lines": {
+            "8": 6
+          },
+          "Branches": []
+        },
+        "System.String Recrd.Core.Ast.SessionMetadata::get_BaseUrl()": {
+          "Lines": {
+            "9": 12
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.SessionMetadata::.ctor(System.String,System.DateTimeOffset,System.String,Recrd.Core.Ast.ViewportSize,System.String)": {
+          "Lines": {
+            "11": 7,
+            "12": 7,
+            "13": 7,
+            "14": 7,
+            "15": 7,
+            "16": 7,
+            "17": 7,
+            "18": 7
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 11,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 15,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 40,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 7
+            },
+            {
+              "Line": 16,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 63,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 7
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/Variable.cs": {
+      "Recrd.Core.Ast.Variable": {
+        "System.String Recrd.Core.Ast.Variable::get_Name()": {
+          "Lines": {
+            "10": 7
+          },
+          "Branches": []
+        },
+        "System.String Recrd.Core.Ast.Variable::get_StepRef()": {
+          "Lines": {
+            "11": 9
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Core.Ast.Variable::.ctor(System.String,System.String)": {
+          "Lines": {
+            "13": 12,
+            "14": 12,
+            "15": 12,
+            "16": 11,
+            "17": 4,
+            "18": 4,
+            "19": 4,
+            "20": 7,
+            "21": 7,
+            "22": 7
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 16,
+              "Offset": 36,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/packages/Recrd.Core/Ast/ViewportSize.cs": {
+      "Recrd.Core.Ast.ViewportSize": {
+        "System.Int32 Recrd.Core.Ast.ViewportSize::get_Width()": {
+          "Lines": {
+            "3": 17
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
