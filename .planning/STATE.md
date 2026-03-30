@@ -132,6 +132,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-29 — Completed Phase 05 Plan 01: CI coverage gates and TDD red-phase support. ci.yml now has DOTNET_SYSTEM_NET_DISABLEIPV6 env, tdd/phase-* trigger, conditional test steps, and four per-project 90% line coverage gates. CI-01/CI-02/CI-03/CI-06 satisfied.
+**Last updated:** 2026-03-30 — Completed quick task 260329-w2f: Fix CI pipeline coverage gate
 
 **To resume:** Phase 05 Plan 02 — mutation testing workflow (mutation.yml).
