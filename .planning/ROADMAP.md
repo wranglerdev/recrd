@@ -130,13 +130,14 @@ Plans:
   4. A `.recrd.partial` snapshot file is written every 30 seconds during a session; `recrd recover` reconstructs a `Session` from the latest partial without manual intervention
   5. The inspector side-panel opens alongside the recording context; right-clicking a field and selecting "Tag as Variable" replaces the literal value with a named placeholder; attempting to reuse a name shows a visible warning; right-click in pause mode inserts an `AssertionStep` into the AST
   6. A single-level OAuth-style popup (new page opened by `window.open`) has its events captured and is automatically treated as a constrained popup context; events from the popup appear on the same channel with a popup scope marker
-**Plans**: 4 plans
+**Plans**: 5 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 06-01-PLAN.md — TDD red phase: IRecorderEngine interface, test deps, 37 failing test stubs on tdd/phase-06
+- [ ] 06-02-PLAN.md — Core engine: PlaywrightRecorderEngine, JS recording agent, 7 event types, selector extraction
+- [ ] 06-03-PLAN.md — Session lifecycle: pause/resume/stop, partial snapshots, recovery
+- [ ] 06-04-PLAN.md — Inspector panel: side-panel UI, live event stream, variable tagging, assertion builder
+- [ ] 06-05-PLAN.md — Popup handling + green phase: constrained popup capture, all 37 tests pass
 **UI hint**: yes
 
 ### Phase 7: Compilers
@@ -257,7 +258,7 @@ Plans:
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
 | 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
 | 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
-| 6. Recording Engine | 0/? | Not started | - |
+| 6. Recording Engine | 0/5 | Not started | - |
 | 7. Compilers | 0/? | Not started | - |
 | 8. CLI Polish | 0/? | Not started | - |
 | 9. Distribution | 0/? | Not started | - |
