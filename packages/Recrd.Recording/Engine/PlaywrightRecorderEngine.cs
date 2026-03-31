@@ -6,6 +6,8 @@ using Recrd.Core.Ast;
 using Recrd.Core.Interfaces;
 using Recrd.Core.Pipeline;
 using Recrd.Core.Serialization;
+using Recrd.Recording.Inspector;
+using Recrd.Recording.Selectors;
 using Recrd.Recording.Snapshots;
 
 namespace Recrd.Recording.Engine;
@@ -30,8 +32,8 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
     private CancellationTokenSource? _snapshotCts;
     private PartialSnapshotWriter? _snapshotWriter;
     private string _partialPath = string.Empty;
+    private InspectorServer? _inspector;
 
-    // Inspector fields — wired in Plan 04
     // Popup tracking — wired in Plan 05
 
     public PlaywrightRecorderEngine(IRecordingChannel channel)
@@ -106,6 +108,11 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
             options.SnapshotInterval);
         _snapshotWriter.Start();
 
+        // Open inspector side-panel in secondary BrowserContext (REC-11)
+        _inspector = new InspectorServer(HandleInspectorCallbackAsync);
+        await _inspector.OpenAsync(_playwright);
+        await _inspector.SetStateAsync("record");
+
         // Navigate to base URL if provided
         if (!string.IsNullOrEmpty(options.BaseUrl))
         {
@@ -123,6 +130,8 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
         {
             await _recordingPage.EvaluateAsync("window.__recrdSetMode('pause')");
         }
+        if (_inspector?.IsOpen == true)
+            await _inspector.SetStateAsync("pause");
     }
 
     /// <inheritdoc/>
@@ -133,6 +142,8 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
         {
             await _recordingPage.EvaluateAsync("window.__recrdSetMode('record')");
         }
+        if (_inspector?.IsOpen == true)
+            await _inspector.SetStateAsync("record");
     }
 
     /// <inheritdoc/>
@@ -157,7 +168,14 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
         // 5. Complete channel — no more events will be written
         _channel.Complete();
 
-        // 6. Close browser resources
+        // 6. Close inspector panel
+        if (_inspector is not null)
+        {
+            await _inspector.DisposeAsync();
+            _inspector = null;
+        }
+
+        // 7. Close browser resources
         if (_recordingPage is not null) await _recordingPage.CloseAsync();
         if (_recordingContext is not null) await _recordingContext.CloseAsync();
         if (_recordingBrowser is not null) await _recordingBrowser.CloseAsync();
@@ -243,6 +261,9 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
         {
             await _channel.WriteAsync(evt);
             _sessionBuilder.AddStep(_sessionBuilder.ConvertToStep(evt));
+            // Push to inspector live event stream (REC-12)
+            if (_inspector?.IsOpen == true)
+                await _inspector.PushEventAsync(evt);
             return;
         }
 
@@ -250,15 +271,131 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
         var special = RecordedEventBuilder.ParseSpecialEvent(payload);
         if (special.HasValue)
         {
-            // Variable tagging and assertion flows — stubbed for Plan 04 (Inspector)
-            HandleSpecialEvent(special.Value.Type, special.Value.Data);
+            await HandleSpecialEventAsync(special.Value.Type, special.Value.Data);
         }
     }
 
-    private static void HandleSpecialEvent(string type, System.Text.Json.JsonElement data)
+    private async Task HandleSpecialEventAsync(string type, JsonElement data)
     {
-        // Plan 04 will implement the full tag/assert confirmation flows.
-        // For now, log to debug output so events are not silently dropped.
-        System.Diagnostics.Debug.WriteLine($"[Recrd] Special event received: {type}");
+        switch (type)
+        {
+            case "TagStart":
+                // Extract selector info from the event data and show tag dialog on inspector
+                if (_inspector?.IsOpen == true)
+                {
+                    var tagDataJson = data.TryGetProperty("selectors", out var selEl)
+                        ? selEl.GetRawText()
+                        : "{}";
+                    // Build a display-friendly object with a 'selector' field for the dialog
+                    var selectorDisplay = ExtractDisplaySelector(data);
+                    var dialogPayload = $"{{\"selector\":{JsonSerializer.Serialize(selectorDisplay)}}}";
+                    await _inspector.ShowTagDialogAsync(dialogPayload);
+                }
+                break;
+
+            case "AssertStart":
+                // Show assertion builder dialog on inspector
+                if (_inspector?.IsOpen == true)
+                {
+                    var textContent = data.TryGetProperty("payload", out var pEl)
+                        && pEl.TryGetProperty("textContent", out var tcEl)
+                        ? tcEl.GetString() ?? string.Empty
+                        : string.Empty;
+                    var assertSel = ExtractDisplaySelector(data);
+                    var assertPayload = $"{{\"selector\":{JsonSerializer.Serialize(assertSel)},\"textContent\":{JsonSerializer.Serialize(textContent)}}}";
+                    await _inspector.ShowAssertDialogAsync(assertPayload);
+                }
+                break;
+
+            default:
+                System.Diagnostics.Debug.WriteLine($"[Recrd] Special event received: {type}");
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Handles callbacks from the inspector panel (TagConfirm, AssertConfirm).
+    /// </summary>
+    private async Task HandleInspectorCallbackAsync(string payload)
+    {
+        if (_sessionBuilder is null) return;
+
+        using var doc = JsonDocument.Parse(payload);
+        var root = doc.RootElement;
+        var type = root.TryGetProperty("type", out var typeProp) ? typeProp.GetString() : null;
+
+        switch (type)
+        {
+            case "TagConfirm":
+            {
+                var name = root.TryGetProperty("name", out var nameProp) ? nameProp.GetString() ?? string.Empty : string.Empty;
+
+                // Server-side validation: regex check (client already validates, but defense-in-depth)
+                if (!System.Text.RegularExpressions.Regex.IsMatch(name, @"^[a-z][a-z0-9_]{0,63}$"))
+                {
+                    if (_inspector?.IsOpen == true)
+                        await _inspector.ShowTagErrorAsync("invalid");
+                    return;
+                }
+
+                // Check for duplicate variable name
+                if (_sessionBuilder.HasVariable(name))
+                {
+                    if (_inspector?.IsOpen == true)
+                        await _inspector.ShowTagErrorAsync("duplicate");
+                    return;
+                }
+
+                // Add variable to session and update inspector
+                _sessionBuilder.AddVariable(new Variable(name));
+                if (_inspector?.IsOpen == true)
+                    await _inspector.ShowTagSuccessAsync(name);
+                break;
+            }
+
+            case "AssertConfirm":
+            {
+                var assertionTypeStr = root.TryGetProperty("assertionType", out var atProp) ? atProp.GetString() ?? "TextEquals" : "TextEquals";
+                var expected = root.TryGetProperty("expected", out var expProp) ? expProp.GetString() ?? string.Empty : string.Empty;
+                var selectorStr = root.TryGetProperty("selector", out var selProp) ? selProp.GetString() ?? string.Empty : string.Empty;
+
+                // Parse assertion type
+                if (!Enum.TryParse<AssertionType>(assertionTypeStr, out var assertionType))
+                    assertionType = AssertionType.TextEquals;
+
+                // Build a minimal selector from the display string
+                var selector = new Selector(
+                    new List<SelectorStrategy> { SelectorStrategy.Css }.AsReadOnly(),
+                    new Dictionary<SelectorStrategy, string> { [SelectorStrategy.Css] = string.IsNullOrEmpty(selectorStr) ? "*" : selectorStr });
+
+                var assertStep = new AssertionStep(
+                    assertionType,
+                    selector,
+                    new Dictionary<string, string> { ["expected"] = expected }.AsReadOnly());
+
+                _sessionBuilder.AddStep(assertStep);
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Extracts the best human-readable selector string from an event's <c>selectors</c> field.
+    /// Returns the first non-empty value from the ranked selector list.
+    /// </summary>
+    private static string ExtractDisplaySelector(JsonElement data)
+    {
+        if (!data.TryGetProperty("selectors", out var selectors)
+            || selectors.ValueKind != JsonValueKind.Object)
+            return string.Empty;
+
+        var sel = SelectorExtractor.Extract(selectors);
+        foreach (var strategy in sel.Strategies)
+        {
+            if (sel.Values.TryGetValue(strategy, out var val) && !string.IsNullOrEmpty(val) && val != "*")
+                return val;
+        }
+
+        return string.Empty;
     }
 }
