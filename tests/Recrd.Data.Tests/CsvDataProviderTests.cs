@@ -108,6 +108,26 @@ public class CsvDataProviderTests
         finally { File.Delete(path); }
     }
 
+    // DATA-02: Bad inline quote (non-RFC-4180) triggers BadDataFound → DataParseException
+    [Fact]
+    public async Task StreamAsync_BadInlineQuote_ThrowsDataParseException()
+    {
+        var path = Path.GetTempFileName();
+        try
+        {
+            // A mid-field quote violates RFC 4180 and triggers CsvHelper's BadDataFound callback
+            await File.WriteAllTextAsync(path, "name,age\r\nval\"bad,30\r\n");
+            var provider = new CsvDataProvider(path);
+            var ex = await Assert.ThrowsAsync<DataParseException>(async () =>
+            {
+                await foreach (var _ in provider.StreamAsync()) { }
+            });
+            Assert.True(ex.LineNumber > 0);
+            Assert.Equal(path, ex.FilePath);
+        }
+        finally { File.Delete(path); }
+    }
+
     // DATA-02: Unclosed quote throws DataParseException
     [Fact]
     public async Task StreamAsync_UnclosedQuote_ThrowsDataParseExceptionWithLineNumber()
@@ -123,6 +143,7 @@ public class CsvDataProviderTests
             });
             Assert.True(ex.LineNumber > 0);
             Assert.NotEmpty(ex.OffendingLine);
+            Assert.Equal(path, ex.FilePath);
         }
         finally { File.Delete(path); }
     }

@@ -163,6 +163,25 @@ public class JsonDataProviderTests
         finally { File.Delete(path); }
     }
 
+    // DATA-04: Non-object array elements (strings/numbers) yield empty-dictionary rows
+    [Fact]
+    public async Task StreamAsync_ArrayOfNonObjects_YieldsEmptyDictionaryPerElement()
+    {
+        var path = Path.GetTempFileName();
+        try
+        {
+            await File.WriteAllTextAsync(path, "[\"string\", 42, true]");
+            var provider = new JsonDataProvider(path);
+            var results = new List<IReadOnlyDictionary<string, string>>();
+            await foreach (var row in provider.StreamAsync())
+                results.Add(row);
+
+            Assert.Equal(3, results.Count);
+            Assert.All(results, r => Assert.Empty(r));
+        }
+        finally { File.Delete(path); }
+    }
+
     // DATA-04: Boolean and number values render as ToString()
     [Theory]
     [InlineData("[{\"active\":true,\"count\":42}]", "active", "True", "count", "42")]
