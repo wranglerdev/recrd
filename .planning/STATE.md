@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-31T00:47:04.512Z"
+last_updated: "2026-03-31T22:08:41.981Z"
 progress:
   total_phases: 12
   completed_phases: 5
   total_plans: 27
-  completed_plans: 25
+  completed_plans: 26
 ---
 
 # State: recrd
@@ -34,7 +34,7 @@ progress:
 
 ```
 Phase: 06 (recording-engine) — EXECUTING
-Plan: 4 of 5
+Plan: 2 of 5
          [██████████] 100%
 ```
 
@@ -75,6 +75,7 @@ Plan: 4 of 5
 | Phase 06 P02 | 25 | 2 tasks | 5 files |
 | Phase 06 P01 | 313 | 3 tasks | 10 files |
 | Phase 06 P03 | 4 | 2 tasks | 5 files |
+| Phase 06 P04 | 20 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -114,6 +115,9 @@ Plan: 4 of 5
 | UTF8Encoding(false) for .recrd and .recrd.partial files | Encoding.UTF8 emits BOM, breaking JSON spec; new UTF8Encoding(encoderShouldEmitUTF8Identifier: false) required |
 | PartialSnapshotWriter takes Func<Session> for decoupling | Snapshot writer calls SessionBuilder.Build() at each tick without coupling to builder directly |
 | InternalsVisibleTo via AssemblyAttribute in csproj | Exposes internal WriteSnapshotAsync to test project without separate AssemblyInfo.cs |
+| window.__recrdInspectorCallback registered on inspector BrowserContext | ExposeFunctionAsync is context-scoped; inspector context doesn't inherit recording context bindings |
+| AssertConfirm selector sent as display string from inspector dialog | Full selector JSON unavailable after user interaction; converted to minimal Css Selector in HandleInspectorCallbackAsync |
+| InspectorServer wraps all EvaluateAsync calls in try/catch PlaywrightException | Closed inspector is non-fatal; sets _isOpen=false and continues recording normally |
 
 ### TDD Mandate
 
@@ -141,6 +145,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-31 — Completed 06-03-PLAN.md: session lifecycle, partial snapshots, RecoverAsync
+**Last updated:** 2026-03-31 — Completed 06-04-PLAN.md: inspector side-panel, InspectorServer, variable tagging, assertion builder
 
-**To resume:** Phase 06 Plan 04 — Inspector panel (variable tagging, assertion builder).
+**To resume:** Phase 06 Plan 05 — Multi-tab/popup support.
