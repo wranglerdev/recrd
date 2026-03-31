@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-31T00:38:22.235Z"
+last_updated: "2026-03-31T00:47:04.512Z"
 progress:
   total_phases: 12
   completed_phases: 5
   total_plans: 27
-  completed_plans: 24
+  completed_plans: 25
 ---
 
 # State: recrd
@@ -34,7 +34,7 @@ progress:
 
 ```
 Phase: 06 (recording-engine) — EXECUTING
-Plan: 3 of 5
+Plan: 4 of 5
          [██████████] 100%
 ```
 
@@ -74,6 +74,7 @@ Plan: 3 of 5
 | Phase 05 P02 | 52 | 2 tasks | 2 files |
 | Phase 06 P02 | 25 | 2 tasks | 5 files |
 | Phase 06 P01 | 313 | 3 tasks | 10 files |
+| Phase 06 P03 | 4 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -110,6 +111,9 @@ Plan: 3 of 5
 | Hover events opt-in via data-recrd-hover attribute | Prevents mouseover noise from passive UI interactions in recording agent |
 | ExposeFunctionAsync before AddInitScriptAsync | JS agent requires __recrdCapture defined before first frame load (RESEARCH.md Pitfall 1) |
 | BrowserContext.ExposeFunctionAsync over Page.ExposeFunctionAsync | Propagates __recrdCapture to all pages in context including popups (REC-15 coverage) |
+| UTF8Encoding(false) for .recrd and .recrd.partial files | Encoding.UTF8 emits BOM, breaking JSON spec; new UTF8Encoding(encoderShouldEmitUTF8Identifier: false) required |
+| PartialSnapshotWriter takes Func<Session> for decoupling | Snapshot writer calls SessionBuilder.Build() at each tick without coupling to builder directly |
+| InternalsVisibleTo via AssemblyAttribute in csproj | Exposes internal WriteSnapshotAsync to test project without separate AssemblyInfo.cs |
 
 ### TDD Mandate
 
@@ -137,6 +141,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-30 — Completed quick task 260329-w2f: Fix CI pipeline coverage gate
+**Last updated:** 2026-03-31 — Completed 06-03-PLAN.md: session lifecycle, partial snapshots, RecoverAsync
 
-**To resume:** Phase 05 Plan 02 — mutation testing workflow (mutation.yml).
+**To resume:** Phase 06 Plan 04 — Inspector panel (variable tagging, assertion builder).
