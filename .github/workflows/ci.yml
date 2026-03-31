@@ -52,6 +52,7 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Core]*"
           /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
@@ -63,6 +64,7 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Data]*"
           /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
@@ -74,6 +76,7 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Gherkin]*"
           /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
@@ -85,6 +88,7 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Compilers]*"
           /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
@@ -99,6 +103,7 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Recording]*"
           /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
