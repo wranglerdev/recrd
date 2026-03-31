@@ -92,6 +92,12 @@ internal static class RecordedEventBuilder
                 }
             }
 
+            // Popup scope marker — added when event originates from a page opened via window.open()
+            var isPopup = root.TryGetProperty("isPopup", out var isPopupProp)
+                && isPopupProp.ValueKind == JsonValueKind.True;
+            if (isPopup)
+                payload["__popupScope"] = "true";
+
             return new RecordedEvent(
                 Id: id,
                 TimestampMs: timestamp,

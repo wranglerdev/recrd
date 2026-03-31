@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
@@ -34,7 +35,8 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
     private string _partialPath = string.Empty;
     private InspectorServer? _inspector;
 
-    // Popup tracking — wired in Plan 05
+    // Popup tracking (REC-15)
+    private readonly ConcurrentDictionary<IPage, string> _activePopups = new();
 
     public PlaywrightRecorderEngine(IRecordingChannel channel)
     {
@@ -89,6 +91,21 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
 
         // Open the recording page
         _recordingPage = await _recordingContext.NewPageAsync();
+
+        // Register popup tracking — BrowserContext.Page fires for every new page in the context,
+        // including pages opened via window.open(). ExposeFunctionAsync and AddInitScriptAsync are
+        // context-level so they propagate automatically; we only need to track the popup page to
+        // associate scope markers with its events (REC-15).
+        _recordingContext.Page += (_, newPage) =>
+        {
+            // Skip the initial recording page itself (already tracked)
+            if (newPage == _recordingPage) return;
+
+            var popupId = Guid.NewGuid().ToString("N")[..8];
+            _activePopups[newPage] = popupId;
+
+            newPage.Close += (_, _) => _activePopups.TryRemove(newPage, out string? _);
+        };
 
         // Build session metadata
         var metadata = new SessionMetadata(
@@ -175,7 +192,15 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
             _inspector = null;
         }
 
-        // 7. Close browser resources
+        // 7. Close any open popup pages
+        foreach (var (page, _) in _activePopups)
+        {
+            try { await page.CloseAsync(); } catch { /* already closed */ }
+        }
+
+        _activePopups.Clear();
+
+        // 8. Close browser resources
         if (_recordingPage is not null) await _recordingPage.CloseAsync();
         if (_recordingContext is not null) await _recordingContext.CloseAsync();
         if (_recordingBrowser is not null) await _recordingBrowser.CloseAsync();

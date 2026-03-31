@@ -164,7 +164,8 @@
             timestamp: performance.now(),
             type: type,
             selectors: selectors,
-            payload: payload
+            payload: payload,
+            isPopup: window.opener !== null
         };
         window.__recrdCapture(JSON.stringify(eventData));
     }
@@ -179,7 +180,8 @@
             timestamp: performance.now(),
             type: type,
             selectors: selectors,
-            payload: payload
+            payload: payload,
+            isPopup: window.opener !== null
         };
         window.__recrdCapture(JSON.stringify(eventData));
     }
