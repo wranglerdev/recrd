@@ -352,55 +352,55 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
         switch (type)
         {
             case "TagConfirm":
-            {
-                var name = root.TryGetProperty("name", out var nameProp) ? nameProp.GetString() ?? string.Empty : string.Empty;
-
-                // Server-side validation: regex check (client already validates, but defense-in-depth)
-                if (!System.Text.RegularExpressions.Regex.IsMatch(name, @"^[a-z][a-z0-9_]{0,63}$"))
                 {
-                    if (_inspector?.IsOpen == true)
-                        await _inspector.ShowTagErrorAsync("invalid");
-                    return;
-                }
+                    var name = root.TryGetProperty("name", out var nameProp) ? nameProp.GetString() ?? string.Empty : string.Empty;
 
-                // Check for duplicate variable name
-                if (_sessionBuilder.HasVariable(name))
-                {
-                    if (_inspector?.IsOpen == true)
-                        await _inspector.ShowTagErrorAsync("duplicate");
-                    return;
-                }
+                    // Server-side validation: regex check (client already validates, but defense-in-depth)
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(name, @"^[a-z][a-z0-9_]{0,63}$"))
+                    {
+                        if (_inspector?.IsOpen == true)
+                            await _inspector.ShowTagErrorAsync("invalid");
+                        return;
+                    }
 
-                // Add variable to session and update inspector
-                _sessionBuilder.AddVariable(new Variable(name));
-                if (_inspector?.IsOpen == true)
-                    await _inspector.ShowTagSuccessAsync(name);
-                break;
-            }
+                    // Check for duplicate variable name
+                    if (_sessionBuilder.HasVariable(name))
+                    {
+                        if (_inspector?.IsOpen == true)
+                            await _inspector.ShowTagErrorAsync("duplicate");
+                        return;
+                    }
+
+                    // Add variable to session and update inspector
+                    _sessionBuilder.AddVariable(new Variable(name));
+                    if (_inspector?.IsOpen == true)
+                        await _inspector.ShowTagSuccessAsync(name);
+                    break;
+                }
 
             case "AssertConfirm":
-            {
-                var assertionTypeStr = root.TryGetProperty("assertionType", out var atProp) ? atProp.GetString() ?? "TextEquals" : "TextEquals";
-                var expected = root.TryGetProperty("expected", out var expProp) ? expProp.GetString() ?? string.Empty : string.Empty;
-                var selectorStr = root.TryGetProperty("selector", out var selProp) ? selProp.GetString() ?? string.Empty : string.Empty;
+                {
+                    var assertionTypeStr = root.TryGetProperty("assertionType", out var atProp) ? atProp.GetString() ?? "TextEquals" : "TextEquals";
+                    var expected = root.TryGetProperty("expected", out var expProp) ? expProp.GetString() ?? string.Empty : string.Empty;
+                    var selectorStr = root.TryGetProperty("selector", out var selProp) ? selProp.GetString() ?? string.Empty : string.Empty;
 
-                // Parse assertion type
-                if (!Enum.TryParse<AssertionType>(assertionTypeStr, out var assertionType))
-                    assertionType = AssertionType.TextEquals;
+                    // Parse assertion type
+                    if (!Enum.TryParse<AssertionType>(assertionTypeStr, out var assertionType))
+                        assertionType = AssertionType.TextEquals;
 
-                // Build a minimal selector from the display string
-                var selector = new Selector(
-                    new List<SelectorStrategy> { SelectorStrategy.Css }.AsReadOnly(),
-                    new Dictionary<SelectorStrategy, string> { [SelectorStrategy.Css] = string.IsNullOrEmpty(selectorStr) ? "*" : selectorStr });
+                    // Build a minimal selector from the display string
+                    var selector = new Selector(
+                        new List<SelectorStrategy> { SelectorStrategy.Css }.AsReadOnly(),
+                        new Dictionary<SelectorStrategy, string> { [SelectorStrategy.Css] = string.IsNullOrEmpty(selectorStr) ? "*" : selectorStr });
 
-                var assertStep = new AssertionStep(
-                    assertionType,
-                    selector,
-                    new Dictionary<string, string> { ["expected"] = expected }.AsReadOnly());
+                    var assertStep = new AssertionStep(
+                        assertionType,
+                        selector,
+                        new Dictionary<string, string> { ["expected"] = expected }.AsReadOnly());
 
-                _sessionBuilder.AddStep(assertStep);
-                break;
-            }
+                    _sessionBuilder.AddStep(assertStep);
+                    break;
+                }
         }
     }
 
