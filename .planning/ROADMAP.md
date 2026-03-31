@@ -13,7 +13,7 @@
 - [x] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling (completed 2026-03-27)
 - [x] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging (completed 2026-03-27)
 - [x] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support (completed 2026-03-29)
-- [ ] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab
+- [x] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab (completed 2026-03-31)
 - [ ] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip
 - [ ] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target
 - [ ] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest
@@ -137,7 +137,7 @@ Plans:
 - [x] 06-02-PLAN.md — Core engine: PlaywrightRecorderEngine, JS recording agent, 7 event types, selector extraction
 - [x] 06-03-PLAN.md — Session lifecycle: pause/resume/stop, partial snapshots, recovery
 - [x] 06-04-PLAN.md — Inspector panel: side-panel UI, live event stream, variable tagging, assertion builder
-- [ ] 06-05-PLAN.md — Popup handling + green phase: constrained popup capture, all 37 tests pass
+- [x] 06-05-PLAN.md — Popup handling + green phase: constrained popup capture, all 37 tests pass
 **UI hint**: yes
 
 ### Phase 7: Compilers
@@ -258,7 +258,7 @@ Plans:
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
 | 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
 | 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
-| 6. Recording Engine | 4/5 | In Progress|  |
+| 6. Recording Engine | 5/5 | Complete   | 2026-03-31 |
 | 7. Compilers | 0/? | Not started | - |
 | 8. CLI Polish | 0/? | Not started | - |
 | 9. Distribution | 0/? | Not started | - |
