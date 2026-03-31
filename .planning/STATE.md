@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-29T22:06:03.809Z"
+last_updated: "2026-03-31T00:38:22.235Z"
 progress:
   total_phases: 12
   completed_phases: 5
-  total_plans: 22
-  completed_plans: 22
+  total_plans: 27
+  completed_plans: 24
 ---
 
 # State: recrd
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 05 — ci-pipeline
+**Current Focus:** Phase 06 — recording-engine
 
 ---
 
@@ -33,8 +33,8 @@ progress:
 **Progress**
 
 ```
-Phase: 6
-Plan: Not started
+Phase: 06 (recording-engine) — EXECUTING
+Plan: 3 of 5
          [██████████] 100%
 ```
 
@@ -72,6 +72,8 @@ Plan: Not started
 | Phase 05 P03 | 41 | 1 tasks | 1 files |
 | Phase 05 P01 | 1 | 1 tasks | 1 files |
 | Phase 05 P02 | 52 | 2 tasks | 2 files |
+| Phase 06 P02 | 25 | 2 tasks | 5 files |
+| Phase 06 P01 | 313 | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -105,6 +107,9 @@ Plan: Not started
 | NU1900 NuGet audit error is pre-existing environment constraint | Offline/restricted network cannot reach api.nuget.org for vulnerability DB; binaries build and tests pass correctly |
 | Coverlet inline thresholds via --threshold 90 --threshold-type line --threshold-stat minimum per project | Fail-fast per project; project name in error message; no extra tooling required (D-01/D-02) |
 | Two conditional test steps for TDD red-phase: continue-on-error on tdd/phase-* branches | Hard-fail on non-TDD branches; coverage gates still enforced on all branches including TDD red-phase (D-08/D-10) |
+| Hover events opt-in via data-recrd-hover attribute | Prevents mouseover noise from passive UI interactions in recording agent |
+| ExposeFunctionAsync before AddInitScriptAsync | JS agent requires __recrdCapture defined before first frame load (RESEARCH.md Pitfall 1) |
+| BrowserContext.ExposeFunctionAsync over Page.ExposeFunctionAsync | Propagates __recrdCapture to all pages in context including popups (REC-15 coverage) |
 
 ### TDD Mandate
 

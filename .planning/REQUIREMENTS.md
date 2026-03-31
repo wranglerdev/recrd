@@ -54,21 +54,21 @@
 
 ### Recording Engine
 
-- [ ] **REC-01**: Launch clean `BrowserContext` (incognito, zero cookies, zero localStorage) via Playwright .NET
-- [ ] **REC-02**: Inject JavaScript recording agent into every frame via `Page.EvaluateAsync` on navigation
-- [ ] **REC-03**: DOM events captured: click, input/change, select, hover (explicit only), navigation, file upload, drag-and-drop
-- [ ] **REC-04**: Each captured event wrapped as `RecordedEvent` and pushed to `Channel<RecordedEvent>`
-- [ ] **REC-05**: Selector extraction per element: `data-testid` > `id` > `role`-based > CSS class chain > XPath; minimum 3 strategies per element
-- [ ] **REC-06**: `recrd pause` freezes event capture, enables assertion mode
-- [ ] **REC-07**: `recrd resume` returns to recording mode
-- [ ] **REC-08**: `recrd stop` flushes AST to `.recrd` session file (JSON, UTF-8)
-- [ ] **REC-09**: Incremental `.recrd.partial` snapshots written every 30 seconds during session
-- [ ] **REC-10**: `recrd recover` reconstructs session from latest `.recrd.partial` snapshot
-- [ ] **REC-11**: Inspector side-panel opens as secondary `BrowserContext` with `--app` flag
-- [ ] **REC-12**: Inspector panel displays live event stream from `Channel<RecordedEvent>`
-- [ ] **REC-13**: Right-click → "Tag as Variable" in inspector replaces literal value with named placeholder; duplicate names rejected with visible warning
-- [ ] **REC-14**: Right-click → assertion builder (pause mode) inserts `AssertionStep` into AST
-- [ ] **REC-15**: Multi-tab constrained: single-level popup handling (OAuth redirect opens new page, events captured, page closed automatically on navigation back)
+- [x] **REC-01**: Launch clean `BrowserContext` (incognito, zero cookies, zero localStorage) via Playwright .NET
+- [x] **REC-02**: Inject JavaScript recording agent into every frame via `Page.EvaluateAsync` on navigation
+- [x] **REC-03**: DOM events captured: click, input/change, select, hover (explicit only), navigation, file upload, drag-and-drop
+- [x] **REC-04**: Each captured event wrapped as `RecordedEvent` and pushed to `Channel<RecordedEvent>`
+- [x] **REC-05**: Selector extraction per element: `data-testid` > `id` > `role`-based > CSS class chain > XPath; minimum 3 strategies per element
+- [x] **REC-06**: `recrd pause` freezes event capture, enables assertion mode
+- [x] **REC-07**: `recrd resume` returns to recording mode
+- [x] **REC-08**: `recrd stop` flushes AST to `.recrd` session file (JSON, UTF-8)
+- [x] **REC-09**: Incremental `.recrd.partial` snapshots written every 30 seconds during session
+- [x] **REC-10**: `recrd recover` reconstructs session from latest `.recrd.partial` snapshot
+- [x] **REC-11**: Inspector side-panel opens as secondary `BrowserContext` with `--app` flag
+- [x] **REC-12**: Inspector panel displays live event stream from `Channel<RecordedEvent>`
+- [x] **REC-13**: Right-click → "Tag as Variable" in inspector replaces literal value with named placeholder; duplicate names rejected with visible warning
+- [x] **REC-14**: Right-click → assertion builder (pause mode) inserts `AssertionStep` into AST
+- [x] **REC-15**: Multi-tab constrained: single-level popup handling (OAuth redirect opens new page, events captured, page closed automatically on navigation back)
 
 ### Compilers
 
@@ -195,21 +195,21 @@
 | CI-04 | Phase 5 | Complete |
 | CI-05 | Phase 5 | Complete |
 | CI-06 | Phase 5 | Complete |
-| REC-01 | Phase 6 | Pending |
-| REC-02 | Phase 6 | Pending |
-| REC-03 | Phase 6 | Pending |
-| REC-04 | Phase 6 | Pending |
-| REC-05 | Phase 6 | Pending |
-| REC-06 | Phase 6 | Pending |
-| REC-07 | Phase 6 | Pending |
-| REC-08 | Phase 6 | Pending |
-| REC-09 | Phase 6 | Pending |
-| REC-10 | Phase 6 | Pending |
-| REC-11 | Phase 6 | Pending |
-| REC-12 | Phase 6 | Pending |
-| REC-13 | Phase 6 | Pending |
-| REC-14 | Phase 6 | Pending |
-| REC-15 | Phase 6 | Pending |
+| REC-01 | Phase 6 | Complete |
+| REC-02 | Phase 6 | Complete |
+| REC-03 | Phase 6 | Complete |
+| REC-04 | Phase 6 | Complete |
+| REC-05 | Phase 6 | Complete |
+| REC-06 | Phase 6 | Complete |
+| REC-07 | Phase 6 | Complete |
+| REC-08 | Phase 6 | Complete |
+| REC-09 | Phase 6 | Complete |
+| REC-10 | Phase 6 | Complete |
+| REC-11 | Phase 6 | Complete |
+| REC-12 | Phase 6 | Complete |
+| REC-13 | Phase 6 | Complete |
+| REC-14 | Phase 6 | Complete |
+| REC-15 | Phase 6 | Complete |
 | COMP-01 | Phase 7 | Pending |
 | COMP-02 | Phase 7 | Pending |
 | COMP-03 | Phase 7 | Pending |

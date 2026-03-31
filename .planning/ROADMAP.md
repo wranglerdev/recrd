@@ -133,8 +133,8 @@ Plans:
 **Plans**: 5 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — TDD red phase: IRecorderEngine interface, test deps, 37 failing test stubs on tdd/phase-06
-- [ ] 06-02-PLAN.md — Core engine: PlaywrightRecorderEngine, JS recording agent, 7 event types, selector extraction
+- [x] 06-01-PLAN.md — TDD red phase: IRecorderEngine interface, test deps, 37 failing test stubs on tdd/phase-06
+- [x] 06-02-PLAN.md — Core engine: PlaywrightRecorderEngine, JS recording agent, 7 event types, selector extraction
 - [ ] 06-03-PLAN.md — Session lifecycle: pause/resume/stop, partial snapshots, recovery
 - [ ] 06-04-PLAN.md — Inspector panel: side-panel UI, live event stream, variable tagging, assertion builder
 - [ ] 06-05-PLAN.md — Popup handling + green phase: constrained popup capture, all 37 tests pass
@@ -258,7 +258,7 @@ Plans:
 | 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
 | 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
 | 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
-| 6. Recording Engine | 0/5 | Not started | - |
+| 6. Recording Engine | 2/5 | In Progress|  |
 | 7. Compilers | 0/? | Not started | - |
 | 8. CLI Polish | 0/? | Not started | - |
 | 9. Distribution | 0/? | Not started | - |
