@@ -10,4 +10,9 @@
     <EmbeddedResource Include="Scripts\recording-agent.js" Condition="Exists('Scripts\recording-agent.js')" />
     <EmbeddedResource Include="Panel\inspector.html" Condition="Exists('Panel\inspector.html')" />
   </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>Recrd.Recording.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 </Project>

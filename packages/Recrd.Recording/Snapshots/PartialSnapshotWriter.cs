@@ -46,7 +46,8 @@ internal sealed class PartialSnapshotWriter : IAsyncDisposable
     {
         var session = _sessionProvider();
         var json = JsonSerializer.Serialize(session, RecrdJsonContext.Default.Session);
-        await File.WriteAllTextAsync(_partialPath, json, Encoding.UTF8, ct);
+        // UTF-8 without BOM per JSON spec
+        await File.WriteAllTextAsync(_partialPath, json, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false), ct);
     }
 
     public void DeletePartialFile()

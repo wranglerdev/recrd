@@ -6,6 +6,7 @@ using Recrd.Core.Ast;
 using Recrd.Core.Interfaces;
 using Recrd.Core.Pipeline;
 using Recrd.Core.Serialization;
+using Recrd.Recording.Snapshots;
 
 namespace Recrd.Recording.Engine;
 
@@ -23,10 +24,12 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
     private IPage? _recordingPage;
     private SessionBuilder? _sessionBuilder;
     private string _agentScript = string.Empty;
-#pragma warning disable CS0414 // Field assigned but never read — used in Plan 03/04
+#pragma warning disable CS0414 // Field assigned but never read — used in Plan 04 (Inspector)
     private bool _isPaused;
 #pragma warning restore CS0414
     private CancellationTokenSource? _snapshotCts;
+    private PartialSnapshotWriter? _snapshotWriter;
+    private string _partialPath = string.Empty;
 
     // Inspector fields — wired in Plan 04
     // Popup tracking — wired in Plan 05
@@ -95,6 +98,14 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
 
         _sessionBuilder = new SessionBuilder(metadata);
 
+        // Start partial snapshot writer (30s interval by default per REC-09)
+        _partialPath = Path.Combine(options.OutputDirectory, $"{metadata.Id}.recrd.partial");
+        _snapshotWriter = new PartialSnapshotWriter(
+            () => _sessionBuilder!.Build(),
+            _partialPath,
+            options.SnapshotInterval);
+        _snapshotWriter.Start();
+
         // Navigate to base URL if provided
         if (!string.IsNullOrEmpty(options.BaseUrl))
         {
@@ -129,29 +140,53 @@ public sealed class PlaywrightRecorderEngine : IRecorderEngine
     {
         ArgumentException.ThrowIfNullOrEmpty(outputPath);
 
+        // 1. Cancel snapshot timer
+        if (_snapshotWriter is not null)
+            await _snapshotWriter.DisposeAsync();
+
+        // 2. Build final session
         var session = _sessionBuilder!.Build();
 
-        // Serialize session to JSON using source-generated context
+        // 3. Serialize and write .recrd file (UTF-8 without BOM per JSON spec)
         var json = JsonSerializer.Serialize(session, RecrdJsonContext.Default.Session);
-        await File.WriteAllTextAsync(outputPath, json, Encoding.UTF8, cancellationToken);
+        await File.WriteAllTextAsync(outputPath, json, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false), cancellationToken);
 
-        // Signal channel is complete — no more events will be written
+        // 4. Delete .recrd.partial per D-11
+        _snapshotWriter?.DeletePartialFile();
+
+        // 5. Complete channel — no more events will be written
         _channel.Complete();
+
+        // 6. Close browser resources
+        if (_recordingPage is not null) await _recordingPage.CloseAsync();
+        if (_recordingContext is not null) await _recordingContext.CloseAsync();
+        if (_recordingBrowser is not null) await _recordingBrowser.CloseAsync();
 
         return session;
     }
 
     /// <inheritdoc/>
-    public Task<Session> RecoverAsync(string partialPath, CancellationToken cancellationToken = default)
+    public async Task<Session> RecoverAsync(string partialPath, CancellationToken cancellationToken = default)
     {
-        // Implemented in Plan 03 — reads .recrd.partial and returns deserialized Session
-        throw new NotImplementedException("RecoverAsync is implemented in Plan 03 (lifecycle management).");
+        if (!File.Exists(partialPath))
+            throw new FileNotFoundException($"No partial snapshot found at '{partialPath}'.", partialPath);
+
+        var json = await File.ReadAllTextAsync(partialPath, Encoding.UTF8, cancellationToken);
+        var session = JsonSerializer.Deserialize(json, RecrdJsonContext.Default.Session)
+            ?? throw new InvalidOperationException($"Failed to deserialize session from '{partialPath}'.");
+        return session;
     }
 
     /// <inheritdoc/>
     public async ValueTask DisposeAsync()
     {
         // Cancel snapshot timer if running
+        if (_snapshotWriter is not null)
+        {
+            await _snapshotWriter.DisposeAsync();
+            _snapshotWriter = null;
+        }
+
         if (_snapshotCts is not null)
         {
             await _snapshotCts.CancelAsync();
