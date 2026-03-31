@@ -101,4 +101,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-27 after Phase 04 completion — Recrd.Gherkin pt-BR generator complete, all 22 Gherkin tests green (83/83 total)*
+*Last updated: 2026-03-31 after Phase 06 completion — Playwright recording engine complete, all 37 recording tests green (TDD cycle), inspector panel, session lifecycle, popup handling (REC-01–REC-15 validated)*

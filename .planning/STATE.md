@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-29T22:06:03.809Z"
+last_updated: "2026-03-31T22:25:44.794Z"
 progress:
   total_phases: 12
-  completed_phases: 5
-  total_plans: 22
-  completed_plans: 22
+  completed_phases: 6
+  total_plans: 27
+  completed_plans: 27
 ---
 
 # State: recrd
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 05 — ci-pipeline
+**Current Focus:** Phase 06 — recording-engine
 
 ---
 
@@ -33,7 +33,7 @@ progress:
 **Progress**
 
 ```
-Phase: 6
+Phase: 7
 Plan: Not started
          [██████████] 100%
 ```
@@ -72,6 +72,11 @@ Plan: Not started
 | Phase 05 P03 | 41 | 1 tasks | 1 files |
 | Phase 05 P01 | 1 | 1 tasks | 1 files |
 | Phase 05 P02 | 52 | 2 tasks | 2 files |
+| Phase 06 P02 | 25 | 2 tasks | 5 files |
+| Phase 06 P01 | 313 | 3 tasks | 10 files |
+| Phase 06 P03 | 4 | 2 tasks | 5 files |
+| Phase 06 P04 | 20 | 2 tasks | 3 files |
+| Phase 06 P05 | 457 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -105,6 +110,18 @@ Plan: Not started
 | NU1900 NuGet audit error is pre-existing environment constraint | Offline/restricted network cannot reach api.nuget.org for vulnerability DB; binaries build and tests pass correctly |
 | Coverlet inline thresholds via --threshold 90 --threshold-type line --threshold-stat minimum per project | Fail-fast per project; project name in error message; no extra tooling required (D-01/D-02) |
 | Two conditional test steps for TDD red-phase: continue-on-error on tdd/phase-* branches | Hard-fail on non-TDD branches; coverage gates still enforced on all branches including TDD red-phase (D-08/D-10) |
+| Hover events opt-in via data-recrd-hover attribute | Prevents mouseover noise from passive UI interactions in recording agent |
+| ExposeFunctionAsync before AddInitScriptAsync | JS agent requires __recrdCapture defined before first frame load (RESEARCH.md Pitfall 1) |
+| BrowserContext.ExposeFunctionAsync over Page.ExposeFunctionAsync | Propagates __recrdCapture to all pages in context including popups (REC-15 coverage) |
+| UTF8Encoding(false) for .recrd and .recrd.partial files | Encoding.UTF8 emits BOM, breaking JSON spec; new UTF8Encoding(encoderShouldEmitUTF8Identifier: false) required |
+| PartialSnapshotWriter takes Func<Session> for decoupling | Snapshot writer calls SessionBuilder.Build() at each tick without coupling to builder directly |
+| InternalsVisibleTo via AssemblyAttribute in csproj | Exposes internal WriteSnapshotAsync to test project without separate AssemblyInfo.cs |
+| window.__recrdInspectorCallback registered on inspector BrowserContext | ExposeFunctionAsync is context-scoped; inspector context doesn't inherit recording context bindings |
+| AssertConfirm selector sent as display string from inspector dialog | Full selector JSON unavailable after user interaction; converted to minimal Css Selector in HandleInspectorCallbackAsync |
+| InspectorServer wraps all EvaluateAsync calls in try/catch PlaywrightException | Closed inspector is non-fatal; sets _isOpen=false and continues recording normally |
+| InspectorPanel tests use SessionBuilder directly for TagConfirm/AssertConfirm | Avoids two-browser overhead per test; tests C# logic without Playwright browser |
+| BrowserContextTests.ZeroLocalStorage uses StorageStateAsync JSON check | Avoids SecurityError from opaque-origin pages (about:blank, data: URLs) |
+| isPopup top-level JSON field + __popupScope in RecordedEvent.Payload | Popup scope via window.opener; RecordedEventBuilder enriches Payload dict from top-level fields |
 
 ### TDD Mandate
 
@@ -132,6 +149,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-30 — Completed quick task 260329-w2f: Fix CI pipeline coverage gate
+**Last updated:** 2026-03-31 — Completed 06-05-PLAN.md: popup handling (REC-15), all 37 tests green, TDD red-green cycle complete for Phase 06
 
-**To resume:** Phase 05 Plan 02 — mutation testing workflow (mutation.yml).
+**To resume:** Phase 06 Plan 05 — Multi-tab/popup support.

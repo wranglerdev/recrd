@@ -102,4 +102,83 @@ public class FixedScenarioTests
 
         Assert.Contains($"Funcionalidade: {baseUrl}", sw.ToString());
     }
+
+    // D-04: Tags emitted above Cenário when options.Tags is provided
+    [Fact]
+    public async Task GenerateAsync_WithTags_EmitsTagsAboveScenario()
+    {
+        var generator = new GherkinGenerator();
+        var sw = new StringWriter();
+        var options = new GherkinGeneratorOptions { Tags = ["@smoke", "@regression"] };
+
+        await generator.GenerateAsync(MakeZeroVariableSession(), null, sw, options);
+
+        var output = sw.ToString();
+        Assert.Contains("@smoke", output);
+        Assert.Contains("@regression", output);
+        // Tags must appear before Cenário
+        var tagPos = output.IndexOf("@smoke", StringComparison.Ordinal);
+        var scenarioPos = output.IndexOf("Cenário:", StringComparison.Ordinal);
+        Assert.True(tagPos < scenarioPos);
+    }
+
+    // StepTextRenderer: assertion types TextEquals, TextContains, Enabled, UrlMatches
+    [Theory]
+    [InlineData(AssertionType.TextEquals, "O texto do elemento")]
+    [InlineData(AssertionType.TextContains, "contém")]
+    [InlineData(AssertionType.Enabled, "habilitado")]
+    [InlineData(AssertionType.UrlMatches, "URL corresponde")]
+    public async Task GenerateAsync_AssertionTypes_RenderCorrectPtBrText(
+        AssertionType assertionType, string expectedFragment)
+    {
+        var generator = new GherkinGenerator();
+        var sw = new StringWriter();
+        var session = new Session(
+            SchemaVersion: 1,
+            Metadata: new SessionMetadata("id", DateTimeOffset.UtcNow, "chromium", new ViewportSize(1280, 720), null),
+            Variables: [],
+            Steps: [new AssertionStep(
+                AssertionType: assertionType,
+                Selector: MakeSelector("btn"),
+                Payload: new Dictionary<string, string>
+                {
+                    ["expected"] = "value",
+                    ["pattern"] = ".*example.*"
+                }.AsReadOnly()
+            )]
+        );
+
+        await generator.GenerateAsync(session, null, sw);
+
+        Assert.Contains(expectedFragment, sw.ToString(), StringComparison.OrdinalIgnoreCase);
+    }
+
+    // StepTextRenderer: Upload and DragDrop action types render pt-BR text
+    [Theory]
+    [InlineData(ActionType.Upload, "Envia o arquivo")]
+    [InlineData(ActionType.DragDrop, "Arrasta")]
+    public async Task GenerateAsync_ActionTypes_RenderCorrectPtBrText(
+        ActionType actionType, string expectedFragment)
+    {
+        var generator = new GherkinGenerator();
+        var sw = new StringWriter();
+        var session = new Session(
+            SchemaVersion: 1,
+            Metadata: new SessionMetadata("id", DateTimeOffset.UtcNow, "chromium", new ViewportSize(1280, 720), null),
+            Variables: [],
+            Steps: [new ActionStep(
+                ActionType: actionType,
+                Selector: MakeSelector("dropzone"),
+                Payload: new Dictionary<string, string>
+                {
+                    ["filename"] = "file.csv",
+                    ["target"] = "[data-testid=\"target\"]"
+                }.AsReadOnly()
+            )]
+        );
+
+        await generator.GenerateAsync(session, null, sw);
+
+        Assert.Contains(expectedFragment, sw.ToString(), StringComparison.OrdinalIgnoreCase);
+    }
 }

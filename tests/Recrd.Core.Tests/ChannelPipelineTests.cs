@@ -121,6 +121,29 @@ public sealed class ChannelPipelineTests
     }
 
     [Fact]
+    public async Task RecordingChannel_Cancel_StopsReader()
+    {
+        var channel = new RecordingChannel(capacity: 10);
+
+        var readTask = Task.Run(async () =>
+        {
+            var results = new List<RecordedEvent>();
+            await foreach (var item in channel.ReadAllAsync())
+            {
+                results.Add(item);
+            }
+            return results;
+        });
+
+        await Task.Delay(20);
+        channel.Cancel();
+
+        // Reader should complete (channel faulted) — just ensure it doesn't hang
+        await Task.WhenAny(readTask, Task.Delay(2000));
+        Assert.True(readTask.IsCompleted || readTask.IsFaulted || readTask.IsCanceled);
+    }
+
+    [Fact]
     public void RecordedEvent_HasAllRequiredFields()
     {
         var id = Guid.NewGuid().ToString();

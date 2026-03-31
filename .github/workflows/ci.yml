@@ -52,6 +52,8 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Core]*"
+          /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
@@ -62,6 +64,8 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Data]*"
+          /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
@@ -72,6 +76,8 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Gherkin]*"
+          /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
@@ -82,6 +88,23 @@ jobs:
           --no-build
           /p:CollectCoverage=true
           /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Compilers]*"
+          /p:ExcludeByFile="**/obj/**/*.cs"
+          /p:Threshold=90
+          /p:ThresholdType=line
+          /p:ThresholdStat=minimum
+
+      - name: Install Playwright browsers (for Recording tests)
+        run: bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install chromium
+
+      - name: Coverage gate — Recrd.Recording (90% line)
+        run: >
+          dotnet test tests/Recrd.Recording.Tests/Recrd.Recording.Tests.csproj
+          --no-build
+          /p:CollectCoverage=true
+          /p:CoverletOutputFormat=cobertura
+          /p:Include="[Recrd.Recording]*"
+          /p:ExcludeByFile="**/obj/**/*.cs"
           /p:Threshold=90
           /p:ThresholdType=line
           /p:ThresholdStat=minimum

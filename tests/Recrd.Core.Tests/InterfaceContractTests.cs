@@ -100,6 +100,48 @@ public sealed class InterfaceContractTests
         Assert.Empty(packageRefs);
     }
 
+    [Fact]
+    public void CompilationResult_StoresPropertiesAndRejectsNulls()
+    {
+        var files = new List<string> { "out.robot" };
+        var warnings = new List<string> { "warn" };
+        var deps = new Dictionary<string, string> { ["lib"] = "1.0" };
+
+        var result = new CompilationResult(files, warnings, deps);
+
+        Assert.Same(files, result.GeneratedFiles);
+        Assert.Same(warnings, result.Warnings);
+        Assert.Same(deps, result.DependencyManifest);
+
+        Assert.Throws<ArgumentNullException>(() => new CompilationResult(null!, warnings, deps));
+        Assert.Throws<ArgumentNullException>(() => new CompilationResult(files, null!, deps));
+        Assert.Throws<ArgumentNullException>(() => new CompilationResult(files, warnings, null!));
+    }
+
+    [Fact]
+    public void CompilerOptions_HasExpectedDefaults()
+    {
+        var opts = new CompilerOptions();
+
+        Assert.Equal(".", opts.OutputDirectory);
+        Assert.Equal(SelectorStrategy.DataTestId, opts.PreferredSelectorStrategy);
+        Assert.Equal(30, opts.TimeoutSeconds);
+    }
+
+    [Fact]
+    public void RecorderOptions_HasExpectedDefaults()
+    {
+        var opts = new RecorderOptions();
+
+        Assert.Equal("chromium", opts.BrowserEngine);
+        Assert.True(opts.Headed);
+        Assert.Equal(1280, opts.ViewportSize.Width);
+        Assert.Equal(720, opts.ViewportSize.Height);
+        Assert.Null(opts.BaseUrl);
+        Assert.Equal(".", opts.OutputDirectory);
+        Assert.Equal(TimeSpan.FromSeconds(30), opts.SnapshotInterval);
+    }
+
     private static string FindRepoRoot()
     {
         var dir = new DirectoryInfo(AppContext.BaseDirectory);
