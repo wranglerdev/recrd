@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inspector - recrd</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #1a1a1a;
+      color: #e5e5e5;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 8px 16px;
+      border-bottom: 1px solid #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+    }
+    h2 {
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin: 0 0 8px 0;
+      color: #a3a3a3;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    #state-badge {
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.4;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .badge-rec { background: #3b82f6; color: white; }
+    .badge-paused { background: #ef4444; color: white; }
+    .badge-idle { background: #2a2a2a; color: #a3a3a3; }
+    #event-stream {
+      padding: 0;
+    }
+    #event-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+    #event-list li {
+      padding: 8px 16px;
+      border-bottom: 1px solid #3a3a3a;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    #event-list li:nth-child(even) { background: #2a2a2a; }
+    .event-type {
+      font-size: 11px;
+      font-weight: 600;
+      min-width: 80px;
+    }
+    .event-selector {
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      font-size: 12px;
+      color: #a3a3a3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 300px;
+    }
+    .event-time {
+      font-size: 11px;
+      color: #a3a3a3;
+      margin-left: auto;
+    }
+    #empty-state {
+      text-align: center;
+      padding: 24px 16px;
+      color: #a3a3a3;
+    }
+    #empty-state p { margin: 4px 0; }
+    #variable-list {
+      padding: 16px;
+      border-top: 1px solid #3a3a3a;
+    }
+    #variable-chips { display: flex; flex-wrap: wrap; gap: 0; }
+    .var-chip {
+      display: inline-block;
+      padding: 2px 8px;
+      margin: 4px;
+      background: #2a2a2a;
+      border: 1px solid #3b82f6;
+      border-radius: 4px;
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      font-size: 12px;
+    }
+    .var-chip.duplicate { border-color: #ef4444; }
+    dialog {
+      background: #1a1a1a;
+      color: #e5e5e5;
+      border: 1px solid #3a3a3a;
+      border-radius: 8px;
+      padding: 16px;
+      min-width: 320px;
+    }
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    dialog input, dialog select {
+      background: #2a2a2a;
+      color: #e5e5e5;
+      border: 1px solid #3a3a3a;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    dialog label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #a3a3a3;
+    }
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-primary:hover { background: #2563eb; }
+    .btn-secondary {
+      background: transparent;
+      color: #a3a3a3;
+      border: 1px solid #3a3a3a;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-secondary:hover { background: #2a2a2a; }
+    .warning {
+      background: #ef4444;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-top: 8px;
+      display: none;
+    }
+    .selector-display {
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      font-size: 12px;
+      color: #a3a3a3;
+      margin: 0 0 16px;
+      word-break: break-all;
+    }
+    .assert-selector-display {
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      font-size: 12px;
+      color: #a3a3a3;
+      margin: 0 0 16px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inspector</h1>
+    <span id="state-badge" class="badge-idle">IDLE</span>
+  </header>
+  <section id="event-stream">
+    <ul id="event-list"></ul>
+    <div id="empty-state">
+      <p><strong>No events yet</strong></p>
+      <p>Start interacting with the page to capture events.</p>
+    </div>
+  </section>
+  <section id="variable-list">
+    <h2>Variables</h2>
+    <div id="variable-chips"></div>
+  </section>
+
+  <dialog id="tag-dialog">
+    <h2 style="font-size:16px;font-weight:600;margin:0 0 16px;text-transform:none;letter-spacing:normal;color:#e5e5e5">Tag as Variable</h2>
+    <p class="selector-display"></p>
+    <label for="tag-varname">Variable name</label>
+    <input id="tag-varname" name="varname" type="text" placeholder="variable_name (e.g. username)" autocomplete="off" />
+    <div class="warning"></div>
+    <div style="display:flex;gap:8px;margin-top:16px;justify-content:flex-end">
+      <button type="button" class="btn-secondary" onclick="document.getElementById('tag-dialog').close()">Discard Tag</button>
+      <button type="button" class="btn-primary" id="tag-confirm-btn">Tag</button>
+    </div>
+  </dialog>
+
+  <dialog id="assert-dialog">
+    <h2 style="font-size:16px;font-weight:600;margin:0 0 16px;text-transform:none;letter-spacing:normal;color:#e5e5e5">Add Assertion</h2>
+    <p class="assert-selector-display"></p>
+    <label for="assert-type">Assertion Type</label>
+    <select id="assert-type" name="asserttype" style="margin-bottom:16px">
+      <option value="TextEquals">Text Equals</option>
+      <option value="TextContains">Text Contains</option>
+      <option value="Visible">Visible</option>
+      <option value="Enabled">Enabled</option>
+      <option value="UrlMatches">URL Matches</option>
+    </select>
+    <label for="assert-expected">Expected Value</label>
+    <input id="assert-expected" name="expected" type="text" placeholder="Expected value" />
+    <div style="display:flex;gap:8px;margin-top:16px;justify-content:flex-end">
+      <button type="button" class="btn-secondary" onclick="document.getElementById('assert-dialog').close()">Discard Assertion</button>
+      <button type="button" class="btn-primary" id="assert-confirm-btn">Add Assertion</button>
+    </div>
+  </dialog>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var MAX_EVENTS = 500;
+      var eventList = document.getElementById('event-list');
+      var emptyState = document.getElementById('empty-state');
+
+      // ── Live event stream ──────────────────────────────────────────────────
+
+      window.__recrdPush = function (eventJson) {
+        var evt = typeof eventJson === 'string' ? JSON.parse(eventJson) : eventJson;
+        emptyState.style.display = 'none';
+        var li = document.createElement('li');
+        var typeSpan = document.createElement('span');
+        typeSpan.className = 'event-type';
+        typeSpan.textContent = evt.type || '';
+        var selectorVal = evt.selector || '';
+        var selectorSpan = document.createElement('span');
+        selectorSpan.className = 'event-selector';
+        selectorSpan.title = selectorVal;
+        selectorSpan.textContent = selectorVal.slice(0, 40);
+        var timeSpan = document.createElement('span');
+        timeSpan.className = 'event-time';
+        timeSpan.textContent = evt.timestamp || '';
+        li.appendChild(typeSpan);
+        li.appendChild(selectorSpan);
+        li.appendChild(timeSpan);
+        eventList.appendChild(li);
+        // Trim to MAX_EVENTS
+        while (eventList.children.length > MAX_EVENTS) {
+          eventList.removeChild(eventList.firstChild);
+        }
+        li.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      // ── State badge ────────────────────────────────────────────────────────
+
+      window.__recrdSetState = function (state) {
+        var badge = document.getElementById('state-badge');
+        if (state === 'record') {
+          badge.textContent = 'REC';
+          badge.className = 'badge-rec';
+        } else if (state === 'pause') {
+          badge.textContent = 'PAUSED';
+          badge.className = 'badge-paused';
+        } else {
+          badge.textContent = 'IDLE';
+          badge.className = 'badge-idle';
+        }
+      };
+
+      // ── Tag dialog ─────────────────────────────────────────────────────────
+
+      window.__recrdShowTagDialog = function (data) {
+        var dialog = document.getElementById('tag-dialog');
+        var input = dialog.querySelector('input[name="varname"]');
+        var warning = dialog.querySelector('.warning');
+        var selectorDisplay = dialog.querySelector('.selector-display');
+        selectorDisplay.textContent = data.selector || '';
+        input.value = '';
+        warning.style.display = 'none';
+        dialog.showModal();
+        input.focus();
+      };
+
+      window.__recrdTagError = function (errorType) {
+        var dialog = document.getElementById('tag-dialog');
+        var warning = dialog.querySelector('.warning');
+        var input = dialog.querySelector('input[name="varname"]');
+        if (errorType === 'duplicate') {
+          warning.textContent = "A variable named '" + input.value + "' already exists. Choose a different name.";
+        } else {
+          warning.textContent = "Name must match: lowercase letters, digits, underscores only.";
+        }
+        warning.style.display = 'block';
+      };
+
+      window.__recrdTagSuccess = function (name) {
+        var dialog = document.getElementById('tag-dialog');
+        dialog.close();
+        var chips = document.getElementById('variable-chips');
+        var chip = document.createElement('span');
+        chip.className = 'var-chip';
+        chip.textContent = '<' + name + '>';
+        chips.appendChild(chip);
+      };
+
+      // Tag confirm button handler
+      document.getElementById('tag-confirm-btn').addEventListener('click', function () {
+        var dialog = document.getElementById('tag-dialog');
+        var input = dialog.querySelector('input[name="varname"]');
+        var warning = dialog.querySelector('.warning');
+        var name = input.value.trim();
+        // Client-side validation before calling C#
+        if (!/^[a-z][a-z0-9_]{0,63}$/.test(name)) {
+          warning.textContent = "Name must match: lowercase letters, digits, underscores only.";
+          warning.style.display = 'block';
+          return;
+        }
+        warning.style.display = 'none';
+        if (typeof window.__recrdInspectorCallback === 'function') {
+          window.__recrdInspectorCallback(JSON.stringify({ type: 'TagConfirm', name: name }));
+        }
+      });
+
+      // Allow Enter key to confirm tag
+      document.getElementById('tag-varname').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          document.getElementById('tag-confirm-btn').click();
+        }
+      });
+
+      // ── Assert dialog ──────────────────────────────────────────────────────
+
+      window.__recrdShowAssertDialog = function (data) {
+        var dialog = document.getElementById('assert-dialog');
+        var selectorDisplay = dialog.querySelector('.assert-selector-display');
+        var expectedInput = dialog.querySelector('input[name="expected"]');
+        selectorDisplay.textContent = data.selector || '';
+        expectedInput.value = data.textContent || '';
+        dialog.showModal();
+        expectedInput.focus();
+        // Store selector data for use in confirm
+        dialog._assertData = data;
+      };
+
+      // Assert confirm button handler
+      document.getElementById('assert-confirm-btn').addEventListener('click', function () {
+        var dialog = document.getElementById('assert-dialog');
+        var assertType = dialog.querySelector('select[name="asserttype"]').value;
+        var expected = dialog.querySelector('input[name="expected"]').value;
+        var data = dialog._assertData || {};
+        if (typeof window.__recrdInspectorCallback === 'function') {
+          window.__recrdInspectorCallback(JSON.stringify({
+            type: 'AssertConfirm',
+            assertionType: assertType,
+            expected: expected,
+            selector: data.selector || ''
+          }));
+        }
+        dialog.close();
+      });
+
+      // Allow Enter key to confirm assertion
+      document.getElementById('assert-expected').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          document.getElementById('assert-confirm-btn').click();
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
