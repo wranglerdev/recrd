@@ -81,7 +81,7 @@
 - [x] **COMP-07**: Both compilers emit traceability header: `recrd` version, compilation timestamp, source `.recrd` SHA-256, compiler target name
 - [x] **COMP-08**: Both compilers emit `*** Settings ***` block declaring minimum RF version
 - [x] **COMP-09**: `CompilationResult` includes: generated file list, warnings list, dependency manifest
-- [ ] **COMP-10**: Round-trip E2E: `record → compile → execute` passes on fixture web app (static HTML + simple SPA) with zero manual edits
+- [x] **COMP-10**: Round-trip E2E: `record → compile → execute` passes on fixture web app (static HTML + simple SPA) with zero manual edits
 
 ### CLI Surface
 
@@ -219,7 +219,7 @@
 | COMP-07 | Phase 7 | Complete |
 | COMP-08 | Phase 7 | Complete |
 | COMP-09 | Phase 7 | Complete |
-| COMP-10 | Phase 7 | Pending |
+| COMP-10 | Phase 7 | Complete |
 | CLI-01 | Phase 8 | Pending |
 | CLI-02 | Phase 8 | Pending |
 | CLI-03 | Phase 8 | Pending |

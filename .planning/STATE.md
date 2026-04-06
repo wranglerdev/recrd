@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-06T03:12:04.921Z"
+last_updated: "2026-04-06T03:33:30.555Z"
 progress:
   total_phases: 12
-  completed_phases: 6
+  completed_phases: 7
   total_plans: 31
-  completed_plans: 28
+  completed_plans: 31
 ---
 
 # State: recrd
@@ -26,15 +26,15 @@ progress:
 | Field | Value |
 |-------|-------|
 | Phase | 07 — compilers |
-| Plan | 2 of 4 |
-| Status | In Progress |
-| TDD State | Red phase complete (tdd/phase-07 branch) |
+| Plan | 4 of 4 |
+| Status | Complete |
+| TDD State | Green phase complete — all 45 compiler tests pass |
 
 **Progress**
 
 ```
-Phase: 07 (compilers) — EXECUTING
-Plan: 3 of 4
+Phase: 07 (compilers) — COMPLETE
+Plan: 4 of 4
          [██████████] 100%
 ```
 
@@ -79,6 +79,7 @@ Plan: 3 of 4
 | Phase 06 P05 | 457 | 2 tasks | 7 files |
 | Phase 07-compilers P01 | 5min | 2 tasks | 15 files |
 | Phase 07 P02 | 4 | 2 tasks | 6 files |
+| Phase 07-compilers P04 | 2min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -127,6 +128,8 @@ Plan: 3 of 4
 | InternalsVisibleTo in Recrd.Compilers.csproj for test project | Exposes KeywordNameBuilder (internal) to Recrd.Compilers.Tests without separate AssemblyInfo.cs |
 | tdd/phase-07 branch for Phase 7 red tests | TDD mandate D-11: all 45 compiler tests committed failing before any implementation begins |
 | SeleniumKeywordEmitter uses implicit wait only | Set Selenium Implicit Wait emitted once in Abrir Suite; no per-step Wait Until Element calls (D-08) |
+| python3 -m robot for E2E subprocess invocation | Portable on Linux CI: robot binary may not be on PATH but python3 is guaranteed; also works with pip venv installs |
+| IAsyncLifetime + Kestrel TestServer for integration fixture | Free-port TcpListener pattern avoids port collisions; xUnit lifecycle manages server start/stop around test class |
 
 ### TDD Mandate
 
@@ -154,6 +157,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-04-06 — Completed 07-03-PLAN.md: RobotSeleniumCompiler green phase, all 45 compiler tests pass
+**Last updated:** 2026-04-06 — Completed 07-04-PLAN.md: E2E round-trip tests + CI integration for Robot Framework execution
 
-**To resume:** Phase 07 Plan 04 — integration tests or next plan in phase.
+**To resume:** Phase 07 complete. Ready for Phase 08 (CLI / recrd-cli entry point).

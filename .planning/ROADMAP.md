@@ -154,9 +154,9 @@ Plans:
 
 Plans:
 - [x] 07-01-PLAN.md — TDD red phase: 9 test suites + production stubs committed failing on tdd/phase-07
-- [ ] 07-02-PLAN.md — RobotBrowserCompiler implementation + shared helpers (KeywordNameBuilder, SelectorResolver, HeaderEmitter)
+- [x] 07-02-PLAN.md — RobotBrowserCompiler implementation + shared helpers (KeywordNameBuilder, SelectorResolver, HeaderEmitter)
 - [x] 07-03-PLAN.md — RobotSeleniumCompiler implementation + SeleniumKeywordEmitter
-- [ ] 07-04-PLAN.md — E2E round-trip tests (Kestrel + robot subprocess) + CI RF installation step
+- [x] 07-04-PLAN.md — E2E round-trip tests (Kestrel + robot subprocess) + CI RF installation step
 
 ### Phase 8: CLI Polish
 **Goal**: The `recrd` CLI exposes its complete command surface with structured logging, human-readable help text, machine-parseable output mode, and a cold-start time under 500 ms.
