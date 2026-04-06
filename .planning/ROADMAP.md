@@ -155,7 +155,7 @@ Plans:
 Plans:
 - [x] 07-01-PLAN.md — TDD red phase: 9 test suites + production stubs committed failing on tdd/phase-07
 - [ ] 07-02-PLAN.md — RobotBrowserCompiler implementation + shared helpers (KeywordNameBuilder, SelectorResolver, HeaderEmitter)
-- [ ] 07-03-PLAN.md — RobotSeleniumCompiler implementation + SeleniumKeywordEmitter
+- [x] 07-03-PLAN.md — RobotSeleniumCompiler implementation + SeleniumKeywordEmitter
 - [ ] 07-04-PLAN.md — E2E round-trip tests (Kestrel + robot subprocess) + CI RF installation step
 
 ### Phase 8: CLI Polish

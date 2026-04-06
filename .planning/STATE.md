@@ -125,6 +125,7 @@ Plan: 2 of 4
 | isPopup top-level JSON field + __popupScope in RecordedEvent.Payload | Popup scope via window.opener; RecordedEventBuilder enriches Payload dict from top-level fields |
 | InternalsVisibleTo in Recrd.Compilers.csproj for test project | Exposes KeywordNameBuilder (internal) to Recrd.Compilers.Tests without separate AssemblyInfo.cs |
 | tdd/phase-07 branch for Phase 7 red tests | TDD mandate D-11: all 45 compiler tests committed failing before any implementation begins |
+| SeleniumKeywordEmitter uses implicit wait only | Set Selenium Implicit Wait emitted once in Abrir Suite; no per-step Wait Until Element calls (D-08) |
 
 ### TDD Mandate
 
@@ -152,6 +153,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-04-06 — Completed 07-01-PLAN.md: TDD red phase, 45 failing tests for COMP-01–COMP-09 on tdd/phase-07 branch
+**Last updated:** 2026-04-06 — Completed 07-03-PLAN.md: RobotSeleniumCompiler green phase, all 45 compiler tests pass
 
-**To resume:** Phase 07 Plan 02 — RobotBrowserCompiler implementation (green phase).
+**To resume:** Phase 07 Plan 04 — integration tests or next plan in phase.
