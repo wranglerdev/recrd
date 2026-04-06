@@ -3,6 +3,11 @@
     <AssemblyName>Recrd.Compilers</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Recrd.Compilers.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\packages\Recrd.Core\Recrd.Core.csproj" />
     <ProjectReference Include="..\..\packages\Recrd.Gherkin\Recrd.Gherkin.csproj" />
   </ItemGroup>
