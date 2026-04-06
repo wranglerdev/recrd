@@ -72,15 +72,15 @@
 
 ### Compilers
 
-- [ ] **COMP-01**: `RobotBrowserCompiler` emits RF7-compatible `.robot` suite and `.resource` file
-- [ ] **COMP-02**: `RobotBrowserCompiler` uses `css=[data-testid="..."]` as preferred selector; falls back per `--selector-strategy`
-- [ ] **COMP-03**: `RobotBrowserCompiler` inserts `Wait For Elements State` before every interaction keyword
-- [ ] **COMP-04**: `RobotSeleniumCompiler` emits RF7-compatible `.robot` suite and `.resource` file
-- [ ] **COMP-05**: `RobotSeleniumCompiler` prefers `id:...` selector; falls back to `css:...` then `xpath:...`
-- [ ] **COMP-06**: `RobotSeleniumCompiler` emits configurable implicit/explicit waits (default 10s)
-- [ ] **COMP-07**: Both compilers emit traceability header: `recrd` version, compilation timestamp, source `.recrd` SHA-256, compiler target name
-- [ ] **COMP-08**: Both compilers emit `*** Settings ***` block declaring minimum RF version
-- [ ] **COMP-09**: `CompilationResult` includes: generated file list, warnings list, dependency manifest
+- [x] **COMP-01**: `RobotBrowserCompiler` emits RF7-compatible `.robot` suite and `.resource` file
+- [x] **COMP-02**: `RobotBrowserCompiler` uses `css=[data-testid="..."]` as preferred selector; falls back per `--selector-strategy`
+- [x] **COMP-03**: `RobotBrowserCompiler` inserts `Wait For Elements State` before every interaction keyword
+- [x] **COMP-04**: `RobotSeleniumCompiler` emits RF7-compatible `.robot` suite and `.resource` file
+- [x] **COMP-05**: `RobotSeleniumCompiler` prefers `id:...` selector; falls back to `css:...` then `xpath:...`
+- [x] **COMP-06**: `RobotSeleniumCompiler` emits configurable implicit/explicit waits (default 10s)
+- [x] **COMP-07**: Both compilers emit traceability header: `recrd` version, compilation timestamp, source `.recrd` SHA-256, compiler target name
+- [x] **COMP-08**: Both compilers emit `*** Settings ***` block declaring minimum RF version
+- [x] **COMP-09**: `CompilationResult` includes: generated file list, warnings list, dependency manifest
 - [ ] **COMP-10**: Round-trip E2E: `record → compile → execute` passes on fixture web app (static HTML + simple SPA) with zero manual edits
 
 ### CLI Surface
@@ -210,15 +210,15 @@
 | REC-13 | Phase 6 | Complete |
 | REC-14 | Phase 6 | Complete |
 | REC-15 | Phase 6 | Complete |
-| COMP-01 | Phase 7 | Pending |
-| COMP-02 | Phase 7 | Pending |
-| COMP-03 | Phase 7 | Pending |
-| COMP-04 | Phase 7 | Pending |
-| COMP-05 | Phase 7 | Pending |
-| COMP-06 | Phase 7 | Pending |
-| COMP-07 | Phase 7 | Pending |
-| COMP-08 | Phase 7 | Pending |
-| COMP-09 | Phase 7 | Pending |
+| COMP-01 | Phase 7 | Complete |
+| COMP-02 | Phase 7 | Complete |
+| COMP-03 | Phase 7 | Complete |
+| COMP-04 | Phase 7 | Complete |
+| COMP-05 | Phase 7 | Complete |
+| COMP-06 | Phase 7 | Complete |
+| COMP-07 | Phase 7 | Complete |
+| COMP-08 | Phase 7 | Complete |
+| COMP-09 | Phase 7 | Complete |
 | COMP-10 | Phase 7 | Pending |
 | CLI-01 | Phase 8 | Pending |
 | CLI-02 | Phase 8 | Pending |
