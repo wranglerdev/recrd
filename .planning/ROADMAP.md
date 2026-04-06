@@ -153,10 +153,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 07-01-PLAN.md — TDD red phase: 9 test suites + production stubs committed failing on tdd/phase-07
+- [ ] 07-02-PLAN.md — RobotBrowserCompiler implementation + shared helpers (KeywordNameBuilder, SelectorResolver, HeaderEmitter)
+- [ ] 07-03-PLAN.md — RobotSeleniumCompiler implementation + SeleniumKeywordEmitter
+- [ ] 07-04-PLAN.md — E2E round-trip tests (Kestrel + robot subprocess) + CI RF installation step
 
 ### Phase 8: CLI Polish
 **Goal**: The `recrd` CLI exposes its complete command surface with structured logging, human-readable help text, machine-parseable output mode, and a cold-start time under 500 ms.
@@ -259,7 +259,7 @@ Plans:
 | 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
 | 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
 | 6. Recording Engine | 5/5 | Complete   | 2026-03-31 |
-| 7. Compilers | 0/? | Not started | - |
+| 7. Compilers | 0/4 | Not started | - |
 | 8. CLI Polish | 0/? | Not started | - |
 | 9. Distribution | 0/? | Not started | - |
 | 10. VS Code Extension | 0/? | Not started | - |
