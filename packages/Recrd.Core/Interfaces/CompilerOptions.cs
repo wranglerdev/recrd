@@ -7,4 +7,5 @@ public sealed record CompilerOptions
     public string OutputDirectory { get; init; } = ".";
     public SelectorStrategy PreferredSelectorStrategy { get; init; } = SelectorStrategy.DataTestId;
     public int TimeoutSeconds { get; init; } = 30;
+    public string? SourceFilePath { get; init; }
 }
