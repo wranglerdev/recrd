@@ -119,3 +119,12 @@ None - no external service configuration required.
 ---
 *Phase: 07-compilers*
 *Completed: 2026-04-06*
+
+## Self-Check: PASSED
+
+- `tests/Recrd.Integration.Tests/RoundTripTests.cs` — FOUND
+- `tests/Recrd.Integration.Tests/Recrd.Integration.Tests.csproj` — FOUND
+- `.github/workflows/ci.yml` — FOUND
+- `.planning/phases/07-compilers/07-04-SUMMARY.md` — FOUND
+- Commit `125d7e4` (Task 1) — FOUND
+- Commit `4ad1333` (Task 2) — FOUND
