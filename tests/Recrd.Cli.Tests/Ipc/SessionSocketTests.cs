@@ -12,7 +12,7 @@ public class SessionSocketTests
     public void Server_AcceptsConnectionAndReadsJsonCommand()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var server = new SessionSocket();
 
         // Assert — server accepts connection and reads a JSON command message
@@ -23,7 +23,7 @@ public class SessionSocketTests
     public void Server_CleansUpSocketFileOnStop()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var server = new SessionSocket();
 
         // Assert — socket file is deleted when server stops
@@ -34,7 +34,7 @@ public class SessionSocketTests
     public void Server_RejectsNewConnectionWhenSessionAlreadyRunning()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var server = new SessionSocket();
 
         // Assert — if session.sock already exists on startup, server signals error

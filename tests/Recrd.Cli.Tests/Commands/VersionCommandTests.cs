@@ -12,7 +12,7 @@ public class VersionCommandTests
     public void Version_PrintsAssemblyVersionString_AndExitsWithCode0()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = VersionCommand.Create();
 
         // Assert — prints assembly version string and exits 0
@@ -23,7 +23,7 @@ public class VersionCommandTests
     public void Version_HasCorrectCommandName()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = VersionCommand.Create();
 
         // Assert — command.Name == "version"

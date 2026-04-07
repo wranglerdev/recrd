@@ -12,7 +12,7 @@ public class SanitizeCommandTests
     public void Sanitize_ProducesOutputAtBasenameWithSanitizedExtension()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SanitizeCommand.Create();
 
         // Assert — output file is <basename>.sanitized.recrd in same directory
@@ -23,7 +23,7 @@ public class SanitizeCommandTests
     public void Sanitize_OutputHasNoLiteralValuesInSelectorValuesOrStepPayload()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SanitizeCommand.Create();
 
         // Assert — output has no literal values in Selector.Values or step Payload
@@ -34,7 +34,7 @@ public class SanitizeCommandTests
     public void Sanitize_WithExplicitOut_WritesOutputToSpecifiedPath()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SanitizeCommand.Create();
 
         // Assert — --out <path> overrides default output location
@@ -45,7 +45,7 @@ public class SanitizeCommandTests
     public void Sanitize_OriginalFileIsNeverModified()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SanitizeCommand.Create();
 
         // Assert — input session file is not modified by sanitize operation

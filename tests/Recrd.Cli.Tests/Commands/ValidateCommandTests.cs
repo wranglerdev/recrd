@@ -12,7 +12,7 @@ public class ValidateCommandTests
     public void Validate_ValidSession_ExitsWithCode0()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = ValidateCommand.Create();
 
         // Assert — valid session.recrd exits 0
@@ -23,7 +23,7 @@ public class ValidateCommandTests
     public void Validate_InvalidJson_ExitsWithCode1AndErrorOnStderr()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = ValidateCommand.Create();
 
         // Assert — invalid JSON exits 1 with error on stderr
@@ -34,7 +34,7 @@ public class ValidateCommandTests
     public void Validate_HasSessionArgument()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = ValidateCommand.Create();
 
         // Assert — command accepts <session> FileInfo argument

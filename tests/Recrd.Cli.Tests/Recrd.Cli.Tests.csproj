@@ -14,6 +14,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="System.CommandLine" Version="2.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.5" />
     <ProjectReference Include="..\..\apps\recrd-cli\recrd-cli.csproj" />
     <ProjectReference Include="..\..\packages\Recrd.Core\Recrd.Core.csproj" />
   </ItemGroup>

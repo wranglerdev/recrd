@@ -12,7 +12,7 @@ public class PluginsCommandTests
     public void PluginsList_ScansRecrdPluginsDirectory()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = PluginsCommand.Create();
 
         // Assert — plugins list scans ~/.recrd/plugins/ directory
@@ -23,7 +23,7 @@ public class PluginsCommandTests
     public void PluginsList_WithEmptyDirectory_PrintsNoPluginsInstalledMessage()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = PluginsCommand.Create();
 
         // Assert — empty plugins dir prints "No plugins installed"
@@ -34,7 +34,7 @@ public class PluginsCommandTests
     public void PluginsCommand_HasListSubcommand()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = PluginsCommand.Create();
 
         // Assert — command has a "list" subcommand
@@ -45,7 +45,7 @@ public class PluginsCommandTests
     public void PluginsCommand_HasInstallSubcommandWithPackageArgument()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = PluginsCommand.Create();
 
         // Assert — command has an "install" subcommand with <package> string argument

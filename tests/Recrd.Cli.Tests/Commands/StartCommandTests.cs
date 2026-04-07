@@ -13,7 +13,7 @@ public class StartCommandTests
     public void Start_WithDefaultOptions_ProducesRecorderOptionsWithChromiumAndHeadedAndDefaultViewport()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = StartCommand.Create();
 
         // Assert — default options: BrowserEngine="chromium", Headed=true, ViewportSize=1280x720
@@ -24,7 +24,7 @@ public class StartCommandTests
     public void Start_WithBrowserFirefox_ProducesRecorderOptionsWithFirefoxBrowserEngine()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = StartCommand.Create();
 
         // Assert — --browser firefox results in BrowserEngine="firefox"
@@ -35,7 +35,7 @@ public class StartCommandTests
     public void Start_WhenSessionSockExists_ExitsWithCode1AndErrorMessageContainingAlreadyRunning()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = StartCommand.Create();
 
         // Assert — exits 1 with error "already running" when session.sock exists
@@ -46,7 +46,7 @@ public class StartCommandTests
     public void Start_WithBaseUrl_SetsBaseUrlInRecorderOptions()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = StartCommand.Create();
 
         // Assert — --base-url https://example.com propagates to RecorderOptions.BaseUrl
@@ -57,7 +57,7 @@ public class StartCommandTests
     public void Start_HasAllExpectedOptions()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = StartCommand.Create();
 
         // Assert — command exposes --browser, --headed, --viewport, --base-url

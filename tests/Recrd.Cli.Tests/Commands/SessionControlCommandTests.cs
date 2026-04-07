@@ -12,7 +12,7 @@ public class SessionControlCommandTests
     public void Pause_SendsPauseCommandJsonOverSocket()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SessionControlCommand.CreatePause();
 
         // Assert — sends {"command":"pause"} over session.sock
@@ -23,7 +23,7 @@ public class SessionControlCommandTests
     public void Resume_SendsResumeCommandJsonOverSocket()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SessionControlCommand.CreateResume();
 
         // Assert — sends {"command":"resume"} over session.sock
@@ -34,7 +34,7 @@ public class SessionControlCommandTests
     public void Stop_SendsStopCommandJsonOverSocket()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SessionControlCommand.CreateStop();
 
         // Assert — sends {"command":"stop"} over session.sock
@@ -45,7 +45,7 @@ public class SessionControlCommandTests
     public void Pause_HasCorrectCommandName()
     {
         // Arrange / Act
-        Assert.True(false, "Not implemented — red phase");
+        Assert.Fail("Not implemented — red phase");
         var command = SessionControlCommand.CreatePause();
 
         // Assert — command.Name == "pause"
