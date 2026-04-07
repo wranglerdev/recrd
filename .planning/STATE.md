@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-31T22:25:44.794Z"
+last_updated: "2026-04-06T03:33:30.555Z"
 progress:
   total_phases: 12
-  completed_phases: 6
-  total_plans: 27
-  completed_plans: 27
+  completed_phases: 7
+  total_plans: 31
+  completed_plans: 31
 ---
 
 # State: recrd
@@ -17,7 +17,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 06 — recording-engine
+**Current Focus:** Phase 07 — compilers
 
 ---
 
@@ -25,16 +25,16 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| Phase | 1 — Monorepo Scaffold & Solution Structure |
-| Plan | None started |
-| Status | Not started |
-| TDD State | Pre-red |
+| Phase | 07 — compilers |
+| Plan | 4 of 4 |
+| Status | Complete |
+| TDD State | Green phase complete — all 45 compiler tests pass |
 
 **Progress**
 
 ```
-Phase: 7
-Plan: Not started
+Phase: 07 (compilers) — COMPLETE
+Plan: 4 of 4
          [██████████] 100%
 ```
 
@@ -77,6 +77,9 @@ Plan: Not started
 | Phase 06 P03 | 4 | 2 tasks | 5 files |
 | Phase 06 P04 | 20 | 2 tasks | 3 files |
 | Phase 06 P05 | 457 | 2 tasks | 7 files |
+| Phase 07-compilers P01 | 5min | 2 tasks | 15 files |
+| Phase 07 P02 | 4 | 2 tasks | 6 files |
+| Phase 07-compilers P04 | 2min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -122,6 +125,11 @@ Plan: Not started
 | InspectorPanel tests use SessionBuilder directly for TagConfirm/AssertConfirm | Avoids two-browser overhead per test; tests C# logic without Playwright browser |
 | BrowserContextTests.ZeroLocalStorage uses StorageStateAsync JSON check | Avoids SecurityError from opaque-origin pages (about:blank, data: URLs) |
 | isPopup top-level JSON field + __popupScope in RecordedEvent.Payload | Popup scope via window.opener; RecordedEventBuilder enriches Payload dict from top-level fields |
+| InternalsVisibleTo in Recrd.Compilers.csproj for test project | Exposes KeywordNameBuilder (internal) to Recrd.Compilers.Tests without separate AssemblyInfo.cs |
+| tdd/phase-07 branch for Phase 7 red tests | TDD mandate D-11: all 45 compiler tests committed failing before any implementation begins |
+| SeleniumKeywordEmitter uses implicit wait only | Set Selenium Implicit Wait emitted once in Abrir Suite; no per-step Wait Until Element calls (D-08) |
+| python3 -m robot for E2E subprocess invocation | Portable on Linux CI: robot binary may not be on PATH but python3 is guaranteed; also works with pip venv installs |
+| IAsyncLifetime + Kestrel TestServer for integration fixture | Free-port TcpListener pattern avoids port collisions; xUnit lifecycle manages server start/stop around test class |
 
 ### TDD Mandate
 
@@ -149,6 +157,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-03-31 — Completed 06-05-PLAN.md: popup handling (REC-15), all 37 tests green, TDD red-green cycle complete for Phase 06
+**Last updated:** 2026-04-06 — Completed 07-04-PLAN.md: E2E round-trip tests + CI integration for Robot Framework execution
 
-**To resume:** Phase 06 Plan 05 — Multi-tab/popup support.
+**To resume:** Phase 07 complete. Ready for Phase 08 (CLI / recrd-cli entry point).

@@ -109,5 +109,30 @@ jobs:
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
 
+      - name: Setup Node.js (for rfbrowser init)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Robot Framework and libraries
+        run: |
+          pip install robotframework robotframework-browser robotframework-seleniumlibrary
+          rfbrowser init
+
+      - name: Integration tests (E2E round-trip)
+        if: ${{ !startsWith(github.ref_name, 'tdd/phase-') }}
+        run: >
+          dotnet test tests/Recrd.Integration.Tests/Recrd.Integration.Tests.csproj
+          --no-build
+          --filter "Category=Integration"
+
+      - name: Integration tests (TDD red-phase — failures allowed)
+        if: ${{ startsWith(github.ref_name, 'tdd/phase-') }}
+        continue-on-error: true
+        run: >
+          dotnet test tests/Recrd.Integration.Tests/Recrd.Integration.Tests.csproj
+          --no-build
+          --filter "Category=Integration"
+
       - name: Check code style
         run: dotnet format --verify-no-changes
