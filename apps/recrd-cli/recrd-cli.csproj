@@ -10,4 +10,7 @@
     <ProjectReference Include="..\..\packages\Recrd.Gherkin\Recrd.Gherkin.csproj" />
     <ProjectReference Include="..\..\packages\Recrd.Compilers\Recrd.Compilers.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Recrd.Cli.Tests" />
+  </ItemGroup>
 </Project>

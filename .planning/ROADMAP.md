@@ -172,10 +172,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — TDD red phase + CLI skeleton: test project, System.CommandLine command tree, LoggingSetup, CliOutput
-- [ ] 08-02-PLAN.md — Session lifecycle: StartCommand with IPC socket server, pause/resume/stop clients, stop summary
-- [ ] 08-03-PLAN.md — File-processing commands: compile, validate, sanitize
-- [ ] 08-04-PLAN.md — Utility commands: version, recover, plugins + green phase + cold-start ReadyToRun
+- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
+- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
+- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
+- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
 
 ### Phase 9: Distribution
 **Goal**: A tagged release produces self-contained single-file binaries for all four platforms, attached to a GitHub Release, with a Homebrew formula and a winget manifest ready for submission.

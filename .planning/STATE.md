@@ -3,13 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-07T03:51:44.399Z"
+last_updated: "2026-04-06T03:33:30.555Z"
 progress:
   total_phases: 12
   completed_phases: 7
-  total_plans: 35
+  total_plans: 31
   completed_plans: 31
-  percent: 89
 ---
 
 # State: recrd
