@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { StatusBarManager } from './statusBar.js';
 import { RecordingManager } from './commands/recording.js';
+import { compileSession } from './commands/compile.js';
 
 let statusBarManager: StatusBarManager;
 let recordingManager: RecordingManager;
@@ -29,6 +30,12 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('recrd.stop', () => {
             recordingManager.stop();
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand('recrd.compile', (uri?: vscode.Uri) => {
+            compileSession(uri);
         })
     );
 }
