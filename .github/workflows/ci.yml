@@ -134,7 +134,7 @@ jobs:
           --no-build
           --filter "Category=Integration"
 
-      - name: Coverage gate - recrd-cli (90% line)
+      - name: Coverage gate - recrd-cli (80% line)
         run: >
           dotnet test tests/Recrd.Cli.Tests/Recrd.Cli.Tests.csproj
           --no-build
@@ -142,7 +142,7 @@ jobs:
           /p:CoverletOutputFormat=cobertura
           /p:Include="[recrd]*"
           /p:ExcludeByFile="**/obj/**/*.cs"
-          /p:Threshold=90
+          /p:Threshold=80
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
 

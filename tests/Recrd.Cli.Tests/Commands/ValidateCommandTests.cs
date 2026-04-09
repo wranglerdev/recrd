@@ -47,29 +47,6 @@ public class ValidateCommandTests
     {
         // Arrange
         var tempFile = Path.Combine(Path.GetTempPath(), $"invalid-{Guid.NewGuid()}.recrd");
-        await File.WriteAllTextAsync(tempFile, "{ broken json }");
-
-        try
-        {
-            var command = ValidateCommand.Create();
-
-            // Act
-            int exitCode = await command.Parse([tempFile]).InvokeAsync();
-
-            // Assert
-            Assert.Equal(1, exitCode);
-        }
-        finally
-        {
-            if (File.Exists(tempFile)) File.Delete(tempFile);
-        }
-    }
-
-    [Fact]
-    public async Task Validate_InvalidJson_ExitsWithCode1()
-    {
-        // Arrange
-        var tempFile = Path.Combine(Path.GetTempPath(), $"invalid-{Guid.NewGuid()}.recrd");
         await File.WriteAllTextAsync(tempFile, "{ broken }");
         var command = ValidateCommand.Create();
 
