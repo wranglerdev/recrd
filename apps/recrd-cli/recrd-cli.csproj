@@ -2,6 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AssemblyName>recrd</AssemblyName>
+    <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\packages\Recrd.Core\Recrd.Core.csproj" />

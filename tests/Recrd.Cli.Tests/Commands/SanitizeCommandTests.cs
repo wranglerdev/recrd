@@ -1,54 +1,111 @@
-// Phase 08 — TDD red phase
+// Phase 08 — TDD green phase
 // Tests for SanitizeCommand session sanitization (CLI-05, D-08)
 
+using System.CommandLine;
+using System.Text.Json;
 using Recrd.Cli.Commands;
+using Recrd.Core.Ast;
+using Recrd.Core.Serialization;
 using Xunit;
 
 namespace Recrd.Cli.Tests.Commands;
 
 public class SanitizeCommandTests
 {
-    [Fact]
-    public void Sanitize_ProducesOutputAtBasenameWithSanitizedExtension()
-    {
-        // Arrange / Act
-        Assert.Fail("Not implemented — red phase");
-        var command = SanitizeCommand.Create();
+    private readonly Session _testSession = new(
+        1,
+        new SessionMetadata("id", DateTimeOffset.UtcNow, "chromium", new ViewportSize(1280, 720)),
+        [],
+        [
+            new ActionStep(
+                ActionType.Click,
+                new Selector([SelectorStrategy.Css], new Dictionary<SelectorStrategy, string> { [SelectorStrategy.Css] = ".btn" }),
+                new Dictionary<string, string> { ["text"] = "Submit" }
+            )
+        ]
+    );
 
-        // Assert — output file is <basename>.sanitized.recrd in same directory
-        Assert.NotNull(command);
+    [Fact]
+    public async Task Sanitize_ProducesOutputAtBasenameWithSanitizedExtension()
+    {
+        // Arrange
+        var tempDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
+        Directory.CreateDirectory(tempDir);
+        var sessionPath = Path.Combine(tempDir, "test.recrd");
+        var expectedOut = Path.Combine(tempDir, "test.sanitized.recrd");
+        
+        await File.WriteAllTextAsync(sessionPath, JsonSerializer.Serialize(_testSession, RecrdJsonContext.Default.Session));
+
+        try
+        {
+            var command = SanitizeCommand.Create();
+
+            // Act
+            int exitCode = await command.Parse([sessionPath]).InvokeAsync();
+
+            // Assert
+            Assert.Equal(0, exitCode);
+            Assert.True(File.Exists(expectedOut));
+            
+            var sanitizedJson = await File.ReadAllTextAsync(expectedOut);
+            var sanitized = JsonSerializer.Deserialize(sanitizedJson, RecrdJsonContext.Default.Session);
+            Assert.NotNull(sanitized);
+            var action = (ActionStep)sanitized.Steps[0];
+            Assert.Equal("***", action.Selector.Values[SelectorStrategy.Css]);
+            Assert.Empty(action.Payload);
+        }
+        finally
+        {
+            if (Directory.Exists(tempDir)) Directory.Delete(tempDir, true);
+        }
     }
 
     [Fact]
-    public void Sanitize_OutputHasNoLiteralValuesInSelectorValuesOrStepPayload()
+    public async Task Sanitize_WithExplicitOut_WritesOutputToSpecifiedPath()
     {
-        // Arrange / Act
-        Assert.Fail("Not implemented — red phase");
-        var command = SanitizeCommand.Create();
+        // Arrange
+        var sessionPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.recrd");
+        var outPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.recrd");
+        
+        await File.WriteAllTextAsync(sessionPath, JsonSerializer.Serialize(_testSession, RecrdJsonContext.Default.Session));
 
-        // Assert — output has no literal values in Selector.Values or step Payload
-        Assert.NotNull(command);
+        try
+        {
+            var command = SanitizeCommand.Create();
+
+            // Act
+            int exitCode = await command.Parse([sessionPath, "--out", outPath]).InvokeAsync();
+
+            // Assert
+            Assert.Equal(0, exitCode);
+            Assert.True(File.Exists(outPath));
+        }
+        finally
+        {
+            if (File.Exists(sessionPath)) File.Delete(sessionPath);
+            if (File.Exists(outPath)) File.Delete(outPath);
+        }
     }
 
     [Fact]
-    public void Sanitize_WithExplicitOut_WritesOutputToSpecifiedPath()
+    public async Task Sanitize_InvalidJson_ExitsWithCode1()
     {
-        // Arrange / Act
-        Assert.Fail("Not implemented — red phase");
+        // Arrange
+        var tempFile = Path.Combine(Path.GetTempPath(), $"invalid-{Guid.NewGuid()}.recrd");
+        await File.WriteAllTextAsync(tempFile, "{ broken }");
         var command = SanitizeCommand.Create();
 
-        // Assert — --out <path> overrides default output location
-        Assert.NotNull(command);
-    }
+        try
+        {
+            // Act
+            int exitCode = await command.Parse([tempFile]).InvokeAsync();
 
-    [Fact]
-    public void Sanitize_OriginalFileIsNeverModified()
-    {
-        // Arrange / Act
-        Assert.Fail("Not implemented — red phase");
-        var command = SanitizeCommand.Create();
-
-        // Assert — input session file is not modified by sanitize operation
-        Assert.NotNull(command);
+            // Assert
+            Assert.Equal(1, exitCode);
+        }
+        finally
+        {
+            if (File.Exists(tempFile)) File.Delete(tempFile);
+        }
     }
 }

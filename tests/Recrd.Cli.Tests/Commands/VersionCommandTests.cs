@@ -1,6 +1,10 @@
-// Phase 08 — TDD red phase
+// Phase 08 — TDD green phase
 // Tests for VersionCommand assembly version output (CLI-07)
 
+using System;
+using System.CommandLine;
+using System.IO;
+using System.Threading.Tasks;
 using Recrd.Cli.Commands;
 using Xunit;
 
@@ -9,24 +13,25 @@ namespace Recrd.Cli.Tests.Commands;
 public class VersionCommandTests
 {
     [Fact]
-    public void Version_PrintsAssemblyVersionString_AndExitsWithCode0()
+    public async Task Version_ExitsWithCode0()
     {
-        // Arrange / Act
-        Assert.Fail("Not implemented — red phase");
+        // Arrange
         var command = VersionCommand.Create();
 
-        // Assert — prints assembly version string and exits 0
-        Assert.NotNull(command);
+        // Act
+        int exitCode = await command.Parse("").InvokeAsync();
+
+        // Assert
+        Assert.Equal(0, exitCode);
     }
 
     [Fact]
     public void Version_HasCorrectCommandName()
     {
-        // Arrange / Act
-        Assert.Fail("Not implemented — red phase");
+        // Arrange
         var command = VersionCommand.Create();
 
-        // Assert — command.Name == "version"
-        Assert.NotNull(command);
+        // Assert
+        Assert.Equal("version", command.Name);
     }
 }

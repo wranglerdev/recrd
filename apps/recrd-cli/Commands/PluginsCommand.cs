@@ -1,12 +1,13 @@
 // PluginsCommand — recrd plugins list / plugins install <package> (CLI-08)
 
 using System.CommandLine;
+using Recrd.Cli.Output;
 
 namespace Recrd.Cli.Commands;
 
 internal static class PluginsCommand
 {
-    public static Command Create()
+    public static Command Create(string? pluginsDirOverride = null)
     {
         var command = new Command("plugins", "Manage recrd plugins");
 
@@ -14,19 +15,28 @@ internal static class PluginsCommand
         var listCommand = new Command("list", "List installed plugins from ~/.recrd/plugins/");
         listCommand.SetAction((ParseResult result) =>
         {
-            var pluginsDir = Path.Combine(
+            var pluginsDir = pluginsDirOverride ?? Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
                 ".recrd", "plugins");
 
-            if (!Directory.Exists(pluginsDir) || !Directory.EnumerateFileSystemEntries(pluginsDir).Any())
+            if (!Directory.Exists(pluginsDir))
             {
                 Console.Out.WriteLine("No plugins installed");
                 return 0;
             }
 
-            foreach (var entry in Directory.EnumerateFileSystemEntries(pluginsDir))
+            var dlls = Directory.GetFiles(pluginsDir, "*.dll");
+
+            if (dlls.Length == 0)
             {
-                Console.Out.WriteLine(Path.GetFileName(entry));
+                Console.Out.WriteLine("No plugins installed");
+                return 0;
+            }
+
+            Console.Out.WriteLine("Installed plugins:");
+            foreach (var dll in dlls)
+            {
+                Console.Out.WriteLine($"  - {Path.GetFileNameWithoutExtension(dll)}");
             }
 
             return 0;
@@ -39,10 +49,16 @@ internal static class PluginsCommand
         };
         var installCommand = new Command("install", "Install a plugin from NuGet");
         installCommand.Arguments.Add(packageArg);
-        installCommand.SetAction(async (ParseResult result, CancellationToken ct) =>
+        installCommand.SetAction((ParseResult result) =>
         {
-            // Stub — full plugin install implementation in Plan 04
-            return await Task.FromResult(0);
+            var package = result.GetValue(packageArg);
+            var pluginsDir = pluginsDirOverride ?? Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                ".recrd", "plugins");
+
+            CliOutput.WriteInfo($"Plugin installation for '{package}' is not yet implemented.");
+            CliOutput.WriteInfo($"To install a plugin manually, place the plugin DLL in {pluginsDir}");
+            return 1;
         });
 
         command.Subcommands.Add(listCommand);

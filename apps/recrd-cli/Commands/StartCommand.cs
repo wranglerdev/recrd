@@ -17,7 +17,8 @@ internal static class StartCommand
 {
     public static Command Create(
         Option<string> verbosityOption,
-        Option<string> logOutputOption)
+        Option<string> logOutputOption,
+        IRecorderEngine? engineOverride = null)
     {
         var command = new Command("start", "Start a recording session");
 
@@ -84,7 +85,7 @@ internal static class StartCommand
 
             // Launch recording engine
             using var channel = new RecordingChannel();
-            await using var engine = new PlaywrightRecorderEngine(channel);
+            await using var engine = engineOverride ?? new PlaywrightRecorderEngine(channel);
 
             await engine.StartAsync(options, ct);
 

@@ -35,8 +35,9 @@ internal sealed class SessionSocket : IAsyncDisposable
     /// Checks if there is an active session by probing the socket.
     /// If the socket file exists but no listener responds, the stale file is deleted (Pitfall 3).
     /// </summary>
-    public static async Task<bool> IsSessionActiveAsync(string socketPath)
+    public static async Task<bool> IsSessionActiveAsync(string? socketPath = null)
     {
+        socketPath ??= DefaultSocketPath;
         if (!File.Exists(socketPath))
             return false;
 

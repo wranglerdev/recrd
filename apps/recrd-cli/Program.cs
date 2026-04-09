@@ -5,45 +5,59 @@
 using System.CommandLine;
 using Recrd.Cli.Commands;
 
-// Shared global options — passed to subcommands that need to resolve logging
-var verbosityOption = new Option<string>("--verbosity", "-v")
+namespace Recrd.Cli;
+
+public static class Program
 {
-    Description = "Output verbosity: quiet|normal|detailed|diagnostic",
-    DefaultValueFactory = _ => "normal",
-};
-var logOutputOption = new Option<string>("--log-output")
-{
-    Description = "Log format: json for machine-parseable output",
-};
+    public static async Task<int> Main(string[] args)
+    {
+        var rootCommand = CreateRootCommand();
+        return await rootCommand.Parse(args).InvokeAsync();
+    }
 
-var rootCommand = new RootCommand("recrd - record browser interactions, compile Robot Framework suites");
-rootCommand.Options.Add(verbosityOption);
-rootCommand.Options.Add(logOutputOption);
+    public static RootCommand CreateRootCommand()
+    {
+        // Shared global options — passed to subcommands that need to resolve logging
+        var verbosityOption = new Option<string>("--verbosity", "-v")
+        {
+            Description = "Output verbosity: quiet|normal|detailed|diagnostic",
+            DefaultValueFactory = _ => "normal",
+        };
+        var logOutputOption = new Option<string>("--log-output")
+        {
+            Description = "Log format: json for machine-parseable output",
+        };
 
-// start
-rootCommand.Subcommands.Add(StartCommand.Create(verbosityOption, logOutputOption));
+        var rootCommand = new RootCommand("recrd - record browser interactions, compile Robot Framework suites");
+        rootCommand.Options.Add(verbosityOption);
+        rootCommand.Options.Add(logOutputOption);
 
-// pause / resume / stop
-rootCommand.Subcommands.Add(SessionControlCommand.CreatePause(verbosityOption, logOutputOption));
-rootCommand.Subcommands.Add(SessionControlCommand.CreateResume(verbosityOption, logOutputOption));
-rootCommand.Subcommands.Add(SessionControlCommand.CreateStop(verbosityOption, logOutputOption));
+        // start
+        rootCommand.Subcommands.Add(StartCommand.Create(verbosityOption, logOutputOption));
 
-// compile
-rootCommand.Subcommands.Add(CompileCommand.Create(verbosityOption, logOutputOption));
+        // pause / resume / stop
+        rootCommand.Subcommands.Add(SessionControlCommand.CreatePause(verbosityOption, logOutputOption));
+        rootCommand.Subcommands.Add(SessionControlCommand.CreateResume(verbosityOption, logOutputOption));
+        rootCommand.Subcommands.Add(SessionControlCommand.CreateStop(verbosityOption, logOutputOption));
 
-// validate
-rootCommand.Subcommands.Add(ValidateCommand.Create(verbosityOption, logOutputOption));
+        // compile
+        rootCommand.Subcommands.Add(CompileCommand.Create(verbosityOption, logOutputOption));
 
-// sanitize
-rootCommand.Subcommands.Add(SanitizeCommand.Create(verbosityOption, logOutputOption));
+        // validate
+        rootCommand.Subcommands.Add(ValidateCommand.Create(verbosityOption, logOutputOption));
 
-// recover
-rootCommand.Subcommands.Add(RecoverCommand.Create(verbosityOption, logOutputOption));
+        // sanitize
+        rootCommand.Subcommands.Add(SanitizeCommand.Create(verbosityOption, logOutputOption));
 
-// version
-rootCommand.Subcommands.Add(VersionCommand.Create());
+        // recover
+        rootCommand.Subcommands.Add(RecoverCommand.Create(verbosityOption, logOutputOption));
 
-// plugins (list + install subcommands grouped)
-rootCommand.Subcommands.Add(PluginsCommand.Create());
+        // version
+        rootCommand.Subcommands.Add(VersionCommand.Create());
 
-return await rootCommand.Parse(args).InvokeAsync();
+        // plugins (list + install subcommands grouped)
+        rootCommand.Subcommands.Add(PluginsCommand.Create());
+
+        return rootCommand;
+    }
+}

@@ -14,9 +14,13 @@ internal static class VersionCommand
         command.SetAction((ParseResult result) =>
         {
             var version = Assembly.GetEntryAssembly()?.GetName().Version?.ToString() ?? "unknown";
-            var runtime = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
+            var runtime = Environment.Version.ToString();
+            var os = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+
             Console.Out.WriteLine($"recrd {version}");
-            Console.Out.WriteLine($"Runtime: {runtime}");
+            Console.Out.WriteLine($".NET {runtime}");
+            Console.Out.WriteLine($"OS {os}");
+
             return 0;
         });
 

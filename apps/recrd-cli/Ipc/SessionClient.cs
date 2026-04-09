@@ -20,10 +20,11 @@ internal static class SessionClient
     /// <param name="command">One of: "pause", "resume", "stop"</param>
     /// <param name="logger">Logger for diagnostic output.</param>
     /// <param name="ct">Cancellation token.</param>
+    /// <param name="socketPath">Optional custom socket path (for tests).</param>
     /// <returns>0 on success, 1 if no active session is found.</returns>
-    public static async Task<int> SendCommandAsync(string command, ILogger logger, CancellationToken ct)
+    public static async Task<int> SendCommandAsync(string command, ILogger logger, CancellationToken ct, string? socketPath = null)
     {
-        var socketPath = SessionSocket.DefaultSocketPath;
+        socketPath ??= SessionSocket.DefaultSocketPath;
 
         if (!File.Exists(socketPath))
         {

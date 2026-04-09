@@ -14,7 +14,8 @@ internal static class SessionControlCommand
 {
     public static Command CreatePause(
         Option<string>? verbosityOption = null,
-        Option<string>? logOutputOption = null)
+        Option<string>? logOutputOption = null,
+        string? socketPath = null)
     {
         var command = new Command("pause", "Pause the active recording session");
         command.SetAction(async (ParseResult result, CancellationToken ct) =>
@@ -24,7 +25,7 @@ internal static class SessionControlCommand
             using var loggerFactory = LoggingSetup.Create(verbosity, logJson);
             var logger = loggerFactory.CreateLogger("recrd.pause");
 
-            var exitCode = await SessionClient.SendCommandAsync("pause", logger, ct);
+            var exitCode = await SessionClient.SendCommandAsync("pause", logger, ct, socketPath);
             if (exitCode == 0)
                 CliOutput.WriteSuccess("Session paused");
             return exitCode;
@@ -34,7 +35,8 @@ internal static class SessionControlCommand
 
     public static Command CreateResume(
         Option<string>? verbosityOption = null,
-        Option<string>? logOutputOption = null)
+        Option<string>? logOutputOption = null,
+        string? socketPath = null)
     {
         var command = new Command("resume", "Resume a paused recording session");
         command.SetAction(async (ParseResult result, CancellationToken ct) =>
@@ -44,7 +46,7 @@ internal static class SessionControlCommand
             using var loggerFactory = LoggingSetup.Create(verbosity, logJson);
             var logger = loggerFactory.CreateLogger("recrd.resume");
 
-            var exitCode = await SessionClient.SendCommandAsync("resume", logger, ct);
+            var exitCode = await SessionClient.SendCommandAsync("resume", logger, ct, socketPath);
             if (exitCode == 0)
                 CliOutput.WriteSuccess("Session resumed");
             return exitCode;
@@ -54,7 +56,8 @@ internal static class SessionControlCommand
 
     public static Command CreateStop(
         Option<string>? verbosityOption = null,
-        Option<string>? logOutputOption = null)
+        Option<string>? logOutputOption = null,
+        string? socketPath = null)
     {
         var command = new Command("stop", "Stop the active recording session and emit output");
         command.SetAction(async (ParseResult result, CancellationToken ct) =>
@@ -64,7 +67,7 @@ internal static class SessionControlCommand
             using var loggerFactory = LoggingSetup.Create(verbosity, logJson);
             var logger = loggerFactory.CreateLogger("recrd.stop");
 
-            var exitCode = await SessionClient.SendCommandAsync("stop", logger, ct);
+            var exitCode = await SessionClient.SendCommandAsync("stop", logger, ct, socketPath);
             if (exitCode == 0)
                 CliOutput.WriteSuccess("Stop signal sent");
             return exitCode;
