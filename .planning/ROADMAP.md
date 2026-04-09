@@ -222,10 +222,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 10-01-PLAN.md — Extension scaffold and status bar
-- [ ] 10-02-PLAN.md — CLI invocation and session lifecycle
+- [ ] 10-01-PLAN.md — Scaffold extension and implement Status Bar
+- [ ] 10-02-PLAN.md — CLI process management (start/stop)
 - [ ] 10-03-PLAN.md — Target/Data pickers and compiler integration
-- [ ] 10-04-PLAN.md — Live preview WebView and packaging
+- [ ] 10-04-PLAN.md — Live Preview WebView and Packaging
 **UI hint**: yes
 
 ### Phase 11: Plugin System
@@ -278,7 +278,7 @@ Plans:
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
 | 8.1 CI Fixes & Cleanup | 2/2 | Complete | 2026-04-09 |
 | 9. Distribution | 4/4 | Complete | 2026-04-09 |
-| 10. VS Code Extension | 0/4 | Not Started | - |
+| 10. VS Code Extension | 0/4 | In Progress | - |
 | 11. Plugin System | 0/4 | Not Started | - |
 | 12. Hardening | 0/4 | Not Started | - |
 
