@@ -189,7 +189,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 08.1-01-PLAN.md — Fix redundant framework reference and reorder CI tasks
+- [x] 08.1-01-PLAN.md — Fix redundant framework reference and reorder CI tasks
 
 ### Phase 9: Distribution
 **Goal**: A tagged release produces self-contained single-file binaries for all four platforms, attached to a GitHub Release, with a Homebrew formula and a winget manifest ready for submission.
