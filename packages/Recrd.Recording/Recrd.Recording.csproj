@@ -7,7 +7,7 @@
     <PackageReference Include="Microsoft.Playwright" Version="1.58.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="playwright.sh">
+    <None Include="playwright.sh">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

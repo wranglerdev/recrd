@@ -23,7 +23,7 @@ After building `Recrd.Recording`, install browsers using the shell script (not `
 
 ```bash
 DOTNET_SYSTEM_NET_DISABLEIPV6=1 dotnet build packages/Recrd.Recording
-bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install
+bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install chromium
 ```
 
 ```bash
