@@ -204,7 +204,7 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 09-01-PLAN.md — TDD red phase: Distribution test scaffold
+- [x] 09-01-PLAN.md — TDD red phase: Distribution test scaffold
 - [ ] 09-02-PLAN.md — Self-contained publish pipeline
 - [ ] 09-03-PLAN.md — GitHub Releases + Release Notes automation
 - [ ] 09-04-PLAN.md — Homebrew formula and winget manifest
