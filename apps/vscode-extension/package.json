@@ -1,0 +1,49 @@
+{
+  "name": "recrd-vscode",
+  "displayName": "recrd",
+  "description": "E2E test recorder for Robot Framework",
+  "version": "0.1.0",
+  "publisher": "recrd",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Testing"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "recrd",
+      "properties": {
+        "recrd.executablePath": {
+          "type": "string",
+          "default": "recrd",
+          "description": "Path to the recrd CLI executable."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "recrd.showInfo",
+        "title": "recrd: Show Status Information"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node esbuild.js --minify",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@vscode/webview-ui-toolkit": "^1.2.2"
+  }
+}
