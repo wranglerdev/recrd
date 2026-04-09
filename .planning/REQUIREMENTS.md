@@ -102,8 +102,8 @@
 
 - [x] **DIST-01**: Self-contained single-file publish for win-x64, osx-arm64, osx-x64, linux-x64
 - [x] **DIST-02**: GitHub Releases automation (binary assets attached on tag push)
-- [ ] **DIST-03**: Homebrew tap formula
-- [ ] **DIST-04**: winget manifest
+- [x] **DIST-03**: Homebrew tap formula
+- [x] **DIST-04**: winget manifest
 
 ### VS Code Extension
 
@@ -234,8 +234,8 @@
 | CLI-12 | Phase 8 | Complete |
 | DIST-01 | Phase 9 | Complete |
 | DIST-02 | Phase 9 | Complete |
-| DIST-03 | Phase 9 | Pending |
-| DIST-04 | Phase 9 | Pending |
+| DIST-03 | Phase 9 | Complete |
+| DIST-04 | Phase 9 | Complete |
 | VSCE-01 | Phase 10 | Pending |
 | VSCE-02 | Phase 10 | Pending |
 | VSCE-03 | Phase 10 | Pending |

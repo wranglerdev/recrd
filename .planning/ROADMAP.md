@@ -207,7 +207,7 @@ Plans:
 - [x] 09-01-PLAN.md — TDD red phase: Distribution test scaffold
 - [x] 09-02-PLAN.md — Self-contained publish pipeline
 - [x] 09-03-PLAN.md — GitHub Releases + Release Notes automation
-- [ ] 09-04-PLAN.md — Homebrew formula and winget manifest
+- [x] 09-04-PLAN.md — Homebrew formula and winget manifest
 
 ### Phase 10: VS Code Extension
 **Goal**: The VS Code extension provides start/stop recording, target and data file pickers, a live preview WebView, and a status bar — all via CLI subprocess calls — and is publishable to the Marketplace.
