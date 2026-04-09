@@ -275,7 +275,7 @@ Plans:
 | 6. Recording Engine | 5/5 | Complete | 2026-03-31 |
 | 7. Compilers | 4/4 | Complete | 2026-04-06 |
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
-| 8.1 CI Fixes & Cleanup | 0/1 | Not Started | - |
+| 8.1 CI Fixes & Cleanup | 1/1 | Complete | 2026-04-09 |
 | 9. Distribution | 0/4 | Not Started | - |
 | 10. VS Code Extension | 0/4 | Not Started | - |
 | 11. Plugin System | 0/4 | Not Started | - |

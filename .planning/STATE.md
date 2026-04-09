@@ -18,7 +18,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 07 — compilers
+**Current Focus:** Phase 09 — distribution
 
 ---
 
@@ -26,16 +26,16 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| Phase | 08 — cli-polish |
-| Plan | 4 of 4 |
+| Phase | 08.1 — ci-fixes |
+| Plan | 1 of 1 |
 | Status | Complete |
-| TDD State | Green phase complete — all 52 CLI tests pass |
+| TDD State | Green phase complete — build warnings fixed and CI reordered |
 
 **Progress**
 
 ```
-Phase: 08 (cli-polish) — COMPLETE
-Plan: 4 of 4
+Phase: 08.1 (ci-fixes) — COMPLETE
+Plan: 1 of 1
          [██████████] 100%
 ```
 
