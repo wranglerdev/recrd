@@ -75,10 +75,33 @@ jobs:
             fi
           done
 
-      - name: Upload Release Assets
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: binaries-${{ matrix.rid }}
+          path: |
+            recrd-*
+          if-no-files-found: error
+
+  release:
+    name: Create GitHub Release
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          pattern: binaries-*
+          merge-multiple: true
+
+      - name: List files
+        run: ls -R dist/
+
+      - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            recrd-*
+          files: dist/*
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
