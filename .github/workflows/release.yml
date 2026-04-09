@@ -83,9 +83,68 @@ jobs:
             recrd-*
           if-no-files-found: error
 
+  validate:
+    name: Validate Manifests (${{ matrix.type }})
+    needs: publish
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            type: homebrew
+          - os: windows-latest
+            type: winget
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist-artifacts
+          pattern: binaries-*
+          merge-multiple: true
+
+      - name: Prepare Manifests
+        shell: bash
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          SHA256_WIN=$(cat dist-artifacts/recrd-$VERSION-win-x64.zip.sha256 | cut -d' ' -f1)
+          SHA256_OSX_X64=$(cat dist-artifacts/recrd-$VERSION-osx-x64.tar.gz.sha256 | cut -d' ' -f1)
+          SHA256_OSX_ARM64=$(cat dist-artifacts/recrd-$VERSION-osx-arm64.tar.gz.sha256 | cut -d' ' -f1)
+          
+          sed -i "s/{{VERSION}}/$VERSION/g" dist/homebrew/recrd.rb
+          sed -i "s/{{SHA256}}/$SHA256_OSX_X64/g" dist/homebrew/recrd.rb
+          sed -i "s/{{SHA256_ARM}}/$SHA256_OSX_ARM64/g" dist/homebrew/recrd.rb
+          
+          # Replace remote URL with local file URL for testing
+          # pwd output starts with / so file://$(pwd) is file:///home/...
+          sed -i "s|https://github.com/recrd/recrd/releases/download/v$VERSION|file://$(pwd)/dist-artifacts|g" dist/homebrew/recrd.rb
+          
+          sed -i "s/{{VERSION}}/$VERSION/g" dist/winget/recrd.yaml
+          sed -i "s/{{SHA256_WIN}}/$SHA256_WIN/g" dist/winget/recrd.yaml
+
+      - name: Validate Homebrew
+        if: matrix.type == 'homebrew'
+        run: |
+          brew install --build-from-source ./dist/homebrew/recrd.rb
+          recrd --version
+
+      - name: Validate Winget
+        if: matrix.type == 'winget'
+        shell: pwsh
+        run: |
+          if (Get-Command winget -ErrorAction SilentlyContinue) {
+            winget validate dist/winget/recrd.yaml
+          } else {
+            Write-Host "winget command not found, skipping validation but file exists."
+            Get-Content dist/winget/recrd.yaml
+          }
+
   release:
     name: Create GitHub Release
-    needs: publish
+    needs: [publish, validate]
     runs-on: ubuntu-latest
     steps:
       - name: Download all artifacts
