@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-export enum RecordingStatus {
+export enum RecordingState {
     Idle,
     Recording,
     Paused
@@ -8,47 +8,48 @@ export enum RecordingStatus {
 
 export class StatusBarManager {
     private _statusBarItem: vscode.StatusBarItem;
-    private _status: RecordingStatus = RecordingStatus.Idle;
 
     constructor() {
         this._statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
         this._statusBarItem.command = 'recrd.showInfo';
-        this.update();
+        this.update(RecordingState.Idle);
         this._statusBarItem.show();
     }
 
-    public setStatus(status: RecordingStatus) {
-        this._status = status;
-        this.update();
-    }
-
-    private update() {
+    public update(state: RecordingState, elapsedSeconds?: number) {
         let text = '$(record) recrd: ';
         let tooltip = 'recrd E2E Recorder';
+        let color: vscode.ThemeColor | undefined;
 
-        switch (this._status) {
-            case RecordingStatus.Idle:
+        switch (state) {
+            case RecordingState.Idle:
                 text += 'Idle';
-                tooltip += ' (Idle)';
+                tooltip = 'recrd: Click to start recording';
                 break;
-            case RecordingStatus.Recording:
+            case RecordingState.Recording:
                 text += 'Recording';
-                tooltip += ' (Recording...)';
-                this._statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.errorBackground');
+                if (elapsedSeconds !== undefined) {
+                    text += ` (${this._formatTime(elapsedSeconds)})`;
+                }
+                tooltip = 'recrd: Recording interaction...';
+                color = new vscode.ThemeColor('statusBarItem.errorBackground');
                 break;
-            case RecordingStatus.Paused:
+            case RecordingState.Paused:
                 text += 'Paused';
-                tooltip += ' (Paused)';
-                this._statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
+                tooltip = 'recrd: Recording paused';
+                color = new vscode.ThemeColor('statusBarItem.warningBackground');
                 break;
         }
 
         this._statusBarItem.text = text;
         this._statusBarItem.tooltip = tooltip;
+        this._statusBarItem.backgroundColor = color;
+    }
 
-        if (this._status === RecordingStatus.Idle) {
-            this._statusBarItem.backgroundColor = undefined;
-        }
+    private _formatTime(seconds: number): string {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return `${m}:${s.toString().padStart(2, '0')}`;
     }
 
     public dispose() {

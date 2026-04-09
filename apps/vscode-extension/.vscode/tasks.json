@@ -4,23 +4,10 @@
     {
       "type": "npm",
       "script": "compile",
-      "path": "apps/vscode-extension",
-      "problemMatcher": "$esbuild-watch",
-      "isBackground": false,
-      "label": "npm: compile",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "type": "npm",
-      "script": "watch",
-      "path": "apps/vscode-extension",
+      "group": "build",
+      "problemMatcher": "$tsc-watch",
       "isBackground": true,
-      "problemMatcher": "$esbuild-watch",
-      "label": "npm: watch",
-      "group": "build"
+      "label": "npm: compile"
     }
   ]
 }
