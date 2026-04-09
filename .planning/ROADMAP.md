@@ -186,10 +186,11 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. `dotnet build` on the solution produces zero NETSDK1086 warnings
   2. CI workflow `ci.yml` installs Playwright browsers before any test execution step
-**Plans**: 1 plan
+**Plans**: 2 plans
 
 Plans:
 - [x] 08.1-01-PLAN.md — Fix redundant framework reference and reorder CI tasks
+- [ ] 08.1-02-PLAN.md — Update Node.js to 22 and fix Playwright installation path
 
 ### Phase 9: Distribution
 **Goal**: A tagged release produces self-contained single-file binaries for all four platforms, attached to a GitHub Release, with a Homebrew formula and a winget manifest ready for submission.
@@ -275,7 +276,7 @@ Plans:
 | 6. Recording Engine | 5/5 | Complete | 2026-03-31 |
 | 7. Compilers | 4/4 | Complete | 2026-04-06 |
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
-| 8.1 CI Fixes & Cleanup | 1/1 | Complete | 2026-04-09 |
+| 8.1 CI Fixes & Cleanup | 1/2 | In Progress | - |
 | 9. Distribution | 0/4 | Not Started | - |
 | 10. VS Code Extension | 0/4 | Not Started | - |
 | 11. Plugin System | 0/4 | Not Started | - |
