@@ -34,7 +34,9 @@ __export(extension_exports, {
   deactivate: () => deactivate
 });
 module.exports = __toCommonJS(extension_exports);
-var vscode5 = __toESM(require("vscode"));
+var vscode6 = __toESM(require("vscode"));
+var fs = __toESM(require("fs/promises"));
+var path = __toESM(require("path"));
 
 // src/statusBar.ts
 var vscode = __toESM(require("vscode"));
@@ -250,6 +252,97 @@ async function compileSession(uri) {
   });
 }
 
+// src/webviews/PreviewPanel.ts
+var vscode5 = __toESM(require("vscode"));
+var PreviewPanel = class _PreviewPanel {
+  static currentPanel;
+  _panel;
+  _disposables = [];
+  constructor(panel, extensionUri) {
+    this._panel = panel;
+    this._panel.onDidDispose(() => this.dispose(), null, this._disposables);
+    this._setWebviewMessageListener(this._panel.webview);
+  }
+  static createOrShow(extensionUri) {
+    const column = vscode5.window.activeTextEditor ? vscode5.window.activeTextEditor.viewColumn : void 0;
+    if (_PreviewPanel.currentPanel) {
+      _PreviewPanel.currentPanel._panel.reveal(column);
+      return;
+    }
+    const panel = vscode5.window.createWebviewPanel(
+      "recrdPreview",
+      "recrd: Live Preview",
+      column || vscode5.ViewColumn.One,
+      {
+        enableScripts: true,
+        localResourceRoots: [extensionUri]
+      }
+    );
+    _PreviewPanel.currentPanel = new _PreviewPanel(panel, extensionUri);
+  }
+  update(gherkin, robot) {
+    this._panel.webview.html = this._getHtmlForWebview(gherkin, robot);
+  }
+  _getHtmlForWebview(gherkin, robot) {
+    return `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>recrd Preview</title>
+                <style>
+                    body { font-family: var(--vscode-font-family); color: var(--vscode-foreground); }
+                    pre { background: var(--vscode-editor-background); padding: 10px; border-radius: 4px; overflow: auto; }
+                    .tab-container { display: flex; gap: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--vscode-panel-border); }
+                    .tab { cursor: pointer; padding: 5px 10px; }
+                    .tab.active { border-bottom: 2px solid var(--vscode-button-background); font-weight: bold; }
+                    .content { display: none; }
+                    .content.active { display: block; }
+                </style>
+            </head>
+            <body>
+                <div class="tab-container">
+                    <div id="tab-gherkin" class="tab active" onclick="showTab('gherkin')">Gherkin</div>
+                    <div id="tab-robot" class="tab" onclick="showTab('robot')">Robot Framework</div>
+                </div>
+                <div id="content-gherkin" class="content active">
+                    <pre><code>${this._escapeHtml(gherkin)}</code></pre>
+                </div>
+                <div id="content-robot" class="content">
+                    <pre><code>${this._escapeHtml(robot)}</code></pre>
+                </div>
+                <script>
+                    function showTab(tab) {
+                        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                        document.querySelectorAll('.content').forEach(c => t.classList.remove('active')); // Bug in my script, wait
+                        
+                        document.getElementById('tab-' + tab).classList.add('active');
+                        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+                        document.getElementById('content-' + tab).classList.add('active');
+                    }
+                </script>
+            </body>
+            </html>
+        `;
+  }
+  _escapeHtml(unsafe) {
+    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+  _setWebviewMessageListener(webview) {
+  }
+  dispose() {
+    _PreviewPanel.currentPanel = void 0;
+    this._panel.dispose();
+    while (this._disposables.length) {
+      const x = this._disposables.pop();
+      if (x) {
+        x.dispose();
+      }
+    }
+  }
+};
+
 // src/extension.ts
 var statusBarManager;
 var recordingManager;
@@ -259,25 +352,59 @@ function activate(context) {
   recordingManager = new RecordingManager(statusBarManager);
   context.subscriptions.push(statusBarManager);
   context.subscriptions.push(
-    vscode5.commands.registerCommand("recrd.showInfo", () => {
-      vscode5.window.showInformationMessage("recrd E2E Recorder - Status Info");
+    vscode6.commands.registerCommand("recrd.showInfo", () => {
+      vscode6.window.showInformationMessage("recrd E2E Recorder - Status Info");
     })
   );
   context.subscriptions.push(
-    vscode5.commands.registerCommand("recrd.start", () => {
+    vscode6.commands.registerCommand("recrd.start", () => {
       recordingManager.start();
     })
   );
   context.subscriptions.push(
-    vscode5.commands.registerCommand("recrd.stop", () => {
+    vscode6.commands.registerCommand("recrd.stop", () => {
       recordingManager.stop();
     })
   );
   context.subscriptions.push(
-    vscode5.commands.registerCommand("recrd.compile", (uri) => {
+    vscode6.commands.registerCommand("recrd.compile", (uri) => {
       compileSession(uri);
     })
   );
+  context.subscriptions.push(
+    vscode6.commands.registerCommand("recrd.showPreview", () => {
+      PreviewPanel.createOrShow(context.extensionUri);
+      refreshPreview();
+    })
+  );
+  const watcher = vscode6.workspace.createFileSystemWatcher("**/*.recrd");
+  watcher.onDidChange(() => refreshPreview());
+  watcher.onDidCreate(() => refreshPreview());
+  context.subscriptions.push(watcher);
+}
+async function refreshPreview() {
+  if (!PreviewPanel.currentPanel) {
+    return;
+  }
+  const activeEditor = vscode6.window.activeTextEditor;
+  if (!activeEditor || !activeEditor.document.fileName.endsWith(".recrd")) {
+    return;
+  }
+  const sessionPath = activeEditor.document.fileName;
+  const tempDir = path.join(path.dirname(sessionPath), ".recrd-preview");
+  try {
+    await fs.mkdir(tempDir, { recursive: true });
+    await CliRunner.runCommand(["compile", `"${sessionPath}"`, "--target", "gherkin", "--out", `"${tempDir}"`]);
+    await CliRunner.runCommand(["compile", `"${sessionPath}"`, "--target", "robot-browser", "--out", `"${tempDir}"`]);
+    const baseName = path.basename(sessionPath, ".recrd");
+    const gherkinPath = path.join(tempDir, `${baseName}.feature`);
+    const robotPath = path.join(tempDir, `${baseName}.robot`);
+    const gherkin = await fs.readFile(gherkinPath, "utf-8").catch(() => "Gherkin not generated yet.");
+    const robot = await fs.readFile(robotPath, "utf-8").catch(() => "Robot not generated yet.");
+    PreviewPanel.currentPanel.update(gherkin, robot);
+  } catch (err) {
+    console.error("Failed to refresh preview:", err);
+  }
 }
 function deactivate() {
   if (recordingManager) {

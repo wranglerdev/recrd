@@ -29,9 +29,21 @@
       {
         "command": "recrd.compile",
         "title": "recrd: Compile Session"
+      },
+      {
+        "command": "recrd.showPreview",
+        "title": "recrd: Show Live Preview",
+        "icon": "$(preview)"
       }
     ],
     "menus": {
+      "editor/title": [
+        {
+          "command": "recrd.showPreview",
+          "when": "resourceExtname == .recrd",
+          "group": "navigation"
+        }
+      ],
       "explorer/context": [
         {
           "command": "recrd.compile",
@@ -59,9 +71,12 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/node": "20.x",
+    "@types/vscode": "^1.85.0",
     "esbuild": "^0.20.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@vscode/webview-ui-toolkit": "^1.4.0"
   }
 }

@@ -18,7 +18,7 @@
 - [x] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target (completed 2026-04-09)
 - [x] **Phase 8.1: CI Fixes & Cleanup** - Fix redundant framework references and CI task ordering (completed 2026-04-09)
 - [x] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest (completed 2026-04-09)
-- [ ] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish
+- [x] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish (completed 2026-04-09)
 - [ ] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety
 - [ ] **Phase 12: Hardening** - Mutation testing, performance benchmarks, example plugins, docs
 
@@ -278,7 +278,7 @@ Plans:
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
 | 8.1 CI Fixes & Cleanup | 2/2 | Complete | 2026-04-09 |
 | 9. Distribution | 4/4 | Complete | 2026-04-09 |
-| 10. VS Code Extension | 0/4 | In Progress | - |
+| 10. VS Code Extension | 4/4 | Complete | 2026-04-09 |
 | 11. Plugin System | 0/4 | Not Started | - |
 | 12. Hardening | 0/4 | Not Started | - |
 

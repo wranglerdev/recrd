@@ -1,0 +1,9 @@
+.vscode/**
+.vscode-test/**
+src/**
+tsconfig.json
+esbuild.js
+.gitignore
+.gitattributes
+node_modules/**
+!node_modules/@vscode/webview-ui-toolkit/**
