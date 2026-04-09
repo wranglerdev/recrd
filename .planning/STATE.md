@@ -3,12 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-06T03:33:30.555Z"
+last_updated: "2026-04-09T04:36:12.635Z"
 progress:
-  total_phases: 12
-  completed_phases: 7
-  total_plans: 31
-  completed_plans: 31
+  total_phases: 13
+  completed_phases: 9
+  total_plans: 37
+  completed_plans: 37
+  percent: 100
 ---
 
 # State: recrd
@@ -17,7 +18,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 07 — compilers
+**Current Focus:** Phase 09 — distribution
 
 ---
 
@@ -25,16 +26,16 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| Phase | 07 — compilers |
-| Plan | 4 of 4 |
+| Phase | 08.1 — ci-fixes |
+| Plan | 1 of 1 |
 | Status | Complete |
-| TDD State | Green phase complete — all 45 compiler tests pass |
+| TDD State | Green phase complete — build warnings fixed and CI reordered |
 
 **Progress**
 
 ```
-Phase: 07 (compilers) — COMPLETE
-Plan: 4 of 4
+Phase: 08.1 (ci-fixes) — COMPLETE
+Plan: 1 of 1
          [██████████] 100%
 ```
 
@@ -80,6 +81,8 @@ Plan: 4 of 4
 | Phase 07-compilers P01 | 5min | 2 tasks | 15 files |
 | Phase 07 P02 | 4 | 2 tasks | 6 files |
 | Phase 07-compilers P04 | 2min | 2 tasks | 3 files |
+| Phase 08.1-ci-fixes P01 | 120s | 2 tasks | 2 files |
+| Phase 08.1-ci-fixes P02 | 120s | 3 tasks | 2 files |
 
 ## Accumulated Context
 

@@ -9,13 +9,14 @@
 ## Phases
 
 - [x] **Phase 1: Monorepo Scaffold & Solution Structure** - sln, Directory.Build.props, project files, CI skeleton, dependency enforcement (completed 2026-03-26)
-- [ ] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps)
+- [x] **Phase 2: Core AST Types & Interfaces** - All AST types, interfaces, and Channel pipeline in Recrd.Core (zero Recrd.* deps) (completed 2026-03-26)
 - [x] **Phase 3: Data Providers** - CsvDataProvider and JsonDataProvider with streaming and error handling (completed 2026-03-27)
 - [x] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging (completed 2026-03-27)
 - [x] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support (completed 2026-03-29)
 - [x] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab (completed 2026-03-31)
-- [ ] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip
-- [ ] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target
+- [x] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip (completed 2026-04-06)
+- [x] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target (completed 2026-04-09)
+- [ ] **Phase 8.1: CI Fixes & Cleanup** - Fix redundant framework references and CI task ordering
 - [ ] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest
 - [ ] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish
 - [ ] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety
@@ -172,10 +173,24 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [x] 08-01-PLAN.md — TDD red phase: all CLI commands stubs + failing tests
+- [x] 08-02-PLAN.md — Core commands: start, stop, pause, resume, version
+- [x] 08-03-PLAN.md — Processing commands: compile, validate, sanitize, recover
+- [x] 08-04-PLAN.md — Polish: plugins, verbosity, log-output, stop summary
+**UI hint**: no
+
+### Phase 8.1: CI Fixes & Cleanup
+**Goal**: Fix build warnings and CI task ordering to ensure stable pipeline execution and clean local development experience.
+**Depends on**: Phase 5, Phase 7
+**Requirements**: CI-01, COMP-10
+**Success Criteria** (what must be TRUE):
+  1. `dotnet build` on the solution produces zero NETSDK1086 warnings
+  2. CI workflow `ci.yml` installs Playwright browsers before any test execution step
+**Plans**: 2 plans
+
+Plans:
+- [x] 08.1-01-PLAN.md — Fix redundant framework reference and reorder CI tasks
+- [x] 08.1-02-PLAN.md — Update Node.js to 22 and fix Playwright installation path
 
 ### Phase 9: Distribution
 **Goal**: A tagged release produces self-contained single-file binaries for all four platforms, attached to a GitHub Release, with a Homebrew formula and a winget manifest ready for submission.
@@ -189,10 +204,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 09-01-PLAN.md — TDD red phase: Distribution test scaffold
+- [ ] 09-02-PLAN.md — Self-contained publish pipeline
+- [ ] 09-03-PLAN.md — GitHub Releases + Release Notes automation
+- [ ] 09-04-PLAN.md — Homebrew formula and winget manifest
 
 ### Phase 10: VS Code Extension
 **Goal**: The VS Code extension provides start/stop recording, target and data file pickers, a live preview WebView, and a status bar — all via CLI subprocess calls — and is publishable to the Marketplace.
@@ -207,10 +222,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 10-01-PLAN.md — Extension scaffold and status bar
+- [ ] 10-02-PLAN.md — CLI invocation and session lifecycle
+- [ ] 10-03-PLAN.md — Target/Data pickers and compiler integration
+- [ ] 10-04-PLAN.md — Live preview WebView
 **UI hint**: yes
 
 ### Phase 11: Plugin System
@@ -225,10 +240,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 11-01-PLAN.md — TDD red phase: Plugin discovery tests
+- [ ] 11-02-PLAN.md — AssemblyLoadContext implementation and isolation
+- [ ] 11-03-PLAN.md — Version gating and host integration
+- [ ] 11-04-PLAN.md — Exception safety and reporting
 
 ### Phase 12: Hardening
 **Goal**: The codebase achieves measurable resilience through mutation testing, performance benchmarks, example plugin implementations, and contributor documentation.
@@ -242,10 +257,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — TDD red phase: all 5 test suites committed failing on tdd/phase-02 branch
-- [ ] 02-02-PLAN.md — AST types: IStep, step records, enums, Selector, Variable, Session
-- [ ] 02-03-PLAN.md — Interfaces (ITestCompiler, IDataProvider, IEventInterceptor, IAssertionProvider) + RecordingChannel pipeline
-- [ ] 02-04-PLAN.md — RecrdJsonContext serialization + green phase (all tests pass)
+- [ ] 12-01-PLAN.md — Performance benchmarks (BenchmarkDotNet)
+- [ ] 12-02-PLAN.md — Mutation testing hardening (Stryker.NET)
+- [ ] 12-03-PLAN.md — Example plugin implementation
+- [ ] 12-04-PLAN.md — Contributor docs and project cleanup
 
 ---
 
@@ -253,18 +268,19 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Monorepo Scaffold & Solution Structure | 7/7 | Complete   | 2026-03-26 |
-| 2. Core AST Types & Interfaces | 3/4 | In Progress|  |
-| 3. Data Providers | 4/4 | Complete   | 2026-03-27 |
-| 4. Gherkin Generator | 4/4 | Complete   | 2026-03-27 |
-| 5. CI Pipeline | 3/3 | Complete   | 2026-03-29 |
-| 6. Recording Engine | 5/5 | Complete   | 2026-03-31 |
-| 7. Compilers | 0/4 | Not started | - |
-| 8. CLI Polish | 0/? | Not started | - |
-| 9. Distribution | 0/? | Not started | - |
-| 10. VS Code Extension | 0/? | Not started | - |
-| 11. Plugin System | 0/? | Not started | - |
-| 12. Hardening | 0/? | Not started | - |
+| 1. Monorepo Scaffold & Structure | 7/7 | Complete | 2026-03-26 |
+| 2. Core AST Types & Interfaces | 4/4 | Complete | 2026-03-26 |
+| 3. Data Providers | 4/4 | Complete | 2026-03-27 |
+| 4. Gherkin Generator | 4/4 | Complete | 2026-03-27 |
+| 5. CI Pipeline | 3/3 | Complete | 2026-03-29 |
+| 6. Recording Engine | 5/5 | Complete | 2026-03-31 |
+| 7. Compilers | 4/4 | Complete | 2026-04-06 |
+| 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
+| 8.1 CI Fixes & Cleanup | 1/2 | In Progress | - |
+| 9. Distribution | 0/4 | Not Started | - |
+| 10. VS Code Extension | 0/4 | Not Started | - |
+| 11. Plugin System | 0/4 | Not Started | - |
+| 12. Hardening | 0/4 | Not Started | - |
 
 ---
 
@@ -274,76 +290,76 @@ All 78 v1 requirements map to exactly one phase. No orphans.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | Phase 2 | Pending |
-| CORE-02 | Phase 2 | Pending |
-| CORE-03 | Phase 2 | Pending |
-| CORE-04 | Phase 2 | Pending |
-| CORE-05 | Phase 2 | Pending |
-| CORE-06 | Phase 2 | Pending |
-| CORE-07 | Phase 2 | Pending |
-| CORE-08 | Phase 2 | Pending |
-| CORE-09 | Phase 2 | Pending |
-| CORE-10 | Phase 2 | Pending |
-| CORE-11 | Phase 2 | Pending |
-| CORE-12 | Phase 2 | Pending |
-| CORE-13 | Phase 2 | Pending |
-| DATA-01 | Phase 3 | Pending |
-| DATA-02 | Phase 3 | Pending |
-| DATA-03 | Phase 3 | Pending |
-| DATA-04 | Phase 3 | Pending |
-| DATA-05 | Phase 3 | Pending |
-| GHER-01 | Phase 4 | Pending |
-| GHER-02 | Phase 4 | Pending |
-| GHER-03 | Phase 4 | Pending |
-| GHER-04 | Phase 4 | Pending |
-| GHER-05 | Phase 4 | Pending |
-| GHER-06 | Phase 4 | Pending |
-| GHER-07 | Phase 4 | Pending |
-| GHER-08 | Phase 4 | Pending |
-| GHER-09 | Phase 4 | Pending |
-| CI-01 | Phase 5 | Pending |
-| CI-02 | Phase 5 | Pending |
-| CI-03 | Phase 5 | Pending |
-| CI-04 | Phase 5 | Pending |
-| CI-05 | Phase 5 | Pending |
-| CI-06 | Phase 5 | Pending |
-| REC-01 | Phase 6 | Pending |
-| REC-02 | Phase 6 | Pending |
-| REC-03 | Phase 6 | Pending |
-| REC-04 | Phase 6 | Pending |
-| REC-05 | Phase 6 | Pending |
-| REC-06 | Phase 6 | Pending |
-| REC-07 | Phase 6 | Pending |
-| REC-08 | Phase 6 | Pending |
-| REC-09 | Phase 6 | Pending |
-| REC-10 | Phase 6 | Pending |
-| REC-11 | Phase 6 | Pending |
-| REC-12 | Phase 6 | Pending |
-| REC-13 | Phase 6 | Pending |
-| REC-14 | Phase 6 | Pending |
-| REC-15 | Phase 6 | Pending |
-| COMP-01 | Phase 7 | Pending |
-| COMP-02 | Phase 7 | Pending |
-| COMP-03 | Phase 7 | Pending |
-| COMP-04 | Phase 7 | Pending |
-| COMP-05 | Phase 7 | Pending |
-| COMP-06 | Phase 7 | Pending |
-| COMP-07 | Phase 7 | Pending |
-| COMP-08 | Phase 7 | Pending |
-| COMP-09 | Phase 7 | Pending |
-| COMP-10 | Phase 7 | Pending |
-| CLI-01 | Phase 8 | Pending |
-| CLI-02 | Phase 8 | Pending |
-| CLI-03 | Phase 8 | Pending |
-| CLI-04 | Phase 8 | Pending |
-| CLI-05 | Phase 8 | Pending |
-| CLI-06 | Phase 8 | Pending |
-| CLI-07 | Phase 8 | Pending |
-| CLI-08 | Phase 8 | Pending |
-| CLI-09 | Phase 8 | Pending |
-| CLI-10 | Phase 8 | Pending |
-| CLI-11 | Phase 8 | Pending |
-| CLI-12 | Phase 8 | Pending |
+| CORE-01 | Phase 2 | Complete |
+| CORE-02 | Phase 2 | Complete |
+| CORE-03 | Phase 2 | Complete |
+| CORE-04 | Phase 2 | Complete |
+| CORE-05 | Phase 2 | Complete |
+| CORE-06 | Phase 2 | Complete |
+| CORE-07 | Phase 2 | Complete |
+| CORE-08 | Phase 2 | Complete |
+| CORE-09 | Phase 2 | Complete |
+| CORE-10 | Phase 2 | Complete |
+| CORE-11 | Phase 2 | Complete |
+| CORE-12 | Phase 2 | Complete |
+| CORE-13 | Phase 2 | Complete |
+| DATA-01 | Phase 3 | Complete |
+| DATA-02 | Phase 3 | Complete |
+| DATA-03 | Phase 3 | Complete |
+| DATA-04 | Phase 3 | Complete |
+| DATA-05 | Phase 3 | Complete |
+| GHER-01 | Phase 4 | Complete |
+| GHER-02 | Phase 4 | Complete |
+| GHER-03 | Phase 4 | Complete |
+| GHER-04 | Phase 4 | Complete |
+| GHER-05 | Phase 4 | Complete |
+| GHER-06 | Phase 4 | Complete |
+| GHER-07 | Phase 4 | Complete |
+| GHER-08 | Phase 4 | Complete |
+| GHER-09 | Phase 4 | Complete |
+| CI-01 | Phase 5 | Complete |
+| CI-02 | Phase 5 | Complete |
+| CI-03 | Phase 5 | Complete |
+| CI-04 | Phase 5 | Complete |
+| CI-05 | Phase 5 | Complete |
+| CI-06 | Phase 5 | Complete |
+| REC-01 | Phase 6 | Complete |
+| REC-02 | Phase 6 | Complete |
+| REC-03 | Phase 6 | Complete |
+| REC-04 | Phase 6 | Complete |
+| REC-05 | Phase 6 | Complete |
+| REC-06 | Phase 6 | Complete |
+| REC-07 | Phase 6 | Complete |
+| REC-08 | Phase 6 | Complete |
+| REC-09 | Phase 6 | Complete |
+| REC-10 | Phase 6 | Complete |
+| REC-11 | Phase 6 | Complete |
+| REC-12 | Phase 6 | Complete |
+| REC-13 | Phase 6 | Complete |
+| REC-14 | Phase 6 | Complete |
+| REC-15 | Phase 6 | Complete |
+| COMP-01 | Phase 7 | Complete |
+| COMP-02 | Phase 7 | Complete |
+| COMP-03 | Phase 7 | Complete |
+| COMP-04 | Phase 7 | Complete |
+| COMP-05 | Phase 7 | Complete |
+| COMP-06 | Phase 7 | Complete |
+| COMP-07 | Phase 7 | Complete |
+| COMP-08 | Phase 7 | Complete |
+| COMP-09 | Phase 7 | Complete |
+| COMP-10 | Phase 7 | Complete |
+| CLI-01 | Phase 8 | Complete |
+| CLI-02 | Phase 8 | Complete |
+| CLI-03 | Phase 8 | Complete |
+| CLI-04 | Phase 8 | Complete |
+| CLI-05 | Phase 8 | Complete |
+| CLI-06 | Phase 8 | Complete |
+| CLI-07 | Phase 8 | Complete |
+| CLI-08 | Phase 8 | Complete |
+| CLI-09 | Phase 8 | Complete |
+| CLI-10 | Phase 8 | Complete |
+| CLI-11 | Phase 8 | Complete |
+| CLI-12 | Phase 8 | Complete |
 | DIST-01 | Phase 9 | Pending |
 | DIST-02 | Phase 9 | Pending |
 | DIST-03 | Phase 9 | Pending |
@@ -365,6 +381,5 @@ All 78 v1 requirements map to exactly one phase. No orphans.
 **Unmapped: 0**
 
 ---
-
 *Roadmap created: 2026-03-26*
-*Granularity: fine (12 phases)*
+*Last updated: 2026-04-09 — Fixed summary table inconsistencies and added Phase 8.1*

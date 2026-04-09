@@ -2,6 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AssemblyName>recrd</AssemblyName>
+    <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\packages\Recrd.Core\Recrd.Core.csproj" />
@@ -9,5 +10,13 @@
     <ProjectReference Include="..\..\packages\Recrd.Data\Recrd.Data.csproj" />
     <ProjectReference Include="..\..\packages\Recrd.Gherkin\Recrd.Gherkin.csproj" />
     <ProjectReference Include="..\..\packages\Recrd.Compilers\Recrd.Compilers.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Recrd.Cli.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.5" />
+    <PackageReference Include="System.CommandLine" Version="2.0.5" />
   </ItemGroup>
 </Project>

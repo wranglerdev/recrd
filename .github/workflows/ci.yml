@@ -37,6 +37,9 @@ jobs:
           fi
           echo "OK: Recrd.Core has zero Recrd.* references"
 
+      - name: Install Playwright browsers (for Recording tests)
+        run: bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install chromium
+
       - name: Test
         if: ${{ !startsWith(github.ref_name, 'tdd/phase-') }}
         run: dotnet test --no-build --filter "Category!=Integration"
@@ -94,9 +97,6 @@ jobs:
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
 
-      - name: Install Playwright browsers (for Recording tests)
-        run: bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install chromium
-
       - name: Coverage gate — Recrd.Recording (90% line)
         run: >
           dotnet test tests/Recrd.Recording.Tests/Recrd.Recording.Tests.csproj
@@ -112,7 +112,7 @@ jobs:
       - name: Setup Node.js (for rfbrowser init)
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install Robot Framework and libraries
         run: |
@@ -133,6 +133,18 @@ jobs:
           dotnet test tests/Recrd.Integration.Tests/Recrd.Integration.Tests.csproj
           --no-build
           --filter "Category=Integration"
+
+      - name: Coverage gate - recrd-cli (80% line)
+        run: >
+          dotnet test tests/Recrd.Cli.Tests/Recrd.Cli.Tests.csproj
+          --no-build
+          /p:CollectCoverage=true
+          /p:CoverletOutputFormat=cobertura
+          /p:Include="[recrd]*"
+          /p:ExcludeByFile="**/obj/**/*.cs"
+          /p:Threshold=80
+          /p:ThresholdType=line
+          /p:ThresholdStat=minimum
 
       - name: Check code style
         run: dotnet format --verify-no-changes

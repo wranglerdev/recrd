@@ -7,6 +7,11 @@
     <PackageReference Include="Microsoft.Playwright" Version="1.58.0" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="playwright.sh">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Scripts\recording-agent.js" Condition="Exists('Scripts\recording-agent.js')" />
     <EmbeddedResource Include="Panel\inspector.html" Condition="Exists('Panel\inspector.html')" />
   </ItemGroup>

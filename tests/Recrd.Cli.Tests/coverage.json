@@ -1,0 +1,2899 @@
+{
+  "Recrd.Data.dll": {},
+  "Recrd.Compilers.dll": {},
+  "Recrd.Core.dll": {},
+  "Recrd.Gherkin.dll": {},
+  "Recrd.Recording.dll": {},
+  "recrd.dll": {
+    "/home/gil/dev/recrd/apps/recrd-cli/Program.cs": {
+      "Recrd.Cli.Program": {
+        "System.CommandLine.RootCommand Recrd.Cli.Program::CreateRootCommand()": {
+          "Lines": {
+            "19": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 2,
+            "25": 3,
+            "26": 3,
+            "27": 3,
+            "28": 3,
+            "29": 3,
+            "31": 3,
+            "32": 3,
+            "33": 3,
+            "36": 3,
+            "39": 3,
+            "40": 3,
+            "41": 3,
+            "44": 3,
+            "47": 3,
+            "50": 3,
+            "53": 3,
+            "56": 3,
+            "59": 3,
+            "61": 3,
+            "62": 3
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Program/<Main>d__0": {
+        "System.Void Recrd.Cli.Program/<Main>d__0::MoveNext()": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Output/CliOutput.cs": {
+      "Recrd.Cli.Output.CliOutput": {
+        "System.Void Recrd.Cli.Output.CliOutput::WriteError(System.String)": {
+          "Lines": {
+            "9": 12,
+            "10": 12,
+            "11": 12,
+            "12": 12,
+            "13": 12,
+            "14": 12
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Cli.Output.CliOutput::WriteSuccess(System.String)": {
+          "Lines": {
+            "18": 8,
+            "19": 8,
+            "20": 8,
+            "21": 8,
+            "22": 8,
+            "23": 8
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Cli.Output.CliOutput::WriteInfo(System.String)": {
+          "Lines": {
+            "27": 1,
+            "28": 1,
+            "29": 1
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Cli.Output.CliOutput::WriteSummary(System.Int32,System.Int32,System.TimeSpan,System.String,System.Int64,System.Boolean)": {
+          "Lines": {
+            "48": 3,
+            "49": 3,
+            "50": 3,
+            "51": 3,
+            "53": 3,
+            "55": 3,
+            "56": 3,
+            "57": 3,
+            "58": 3,
+            "59": 3,
+            "61": 3,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 3
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 49,
+              "Offset": 17,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 392,
+              "EndOffset": 394,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 392,
+              "EndOffset": 423,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Logging/LoggingSetup.cs": {
+      "Recrd.Cli.Logging.LoggingSetup": {
+        "Microsoft.Extensions.Logging.ILoggerFactory Recrd.Cli.Logging.LoggingSetup::Create(System.String,System.Boolean)": {
+          "Lines": {
+            "15": 20,
+            "16": 20,
+            "17": 20,
+            "18": 1,
+            "19": 16,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 20,
+            "25": 20,
+            "26": 20,
+            "27": 20,
+            "28": 20,
+            "29": 20,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 20,
+            "34": 19,
+            "35": 19,
+            "36": 19,
+            "37": 40,
+            "38": 20
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 29,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 19
+            },
+            {
+              "Line": 16,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3
+            },
+            {
+              "Line": 16,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 29,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 16,
+              "Offset": 42,
+              "EndOffset": 76,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 16
+            },
+            {
+              "Line": 16,
+              "Offset": 55,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 16,
+              "Offset": 68,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 16,
+              "Offset": 68,
+              "EndOffset": 88,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 22,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 19
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Ipc/IpcMessage.cs": {
+      "Recrd.Cli.Ipc.IpcMessage": {
+        "System.String Recrd.Cli.Ipc.IpcMessage::get_Command()": {
+          "Lines": {
+            "10": 38
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Ipc/SessionClient.cs": {
+      "Recrd.Cli.Ipc.SessionClient/<SendCommandAsync>d__0": {
+        "System.Void Recrd.Cli.Ipc.SessionClient/<SendCommandAsync>d__0::MoveNext()": {
+          "Lines": {
+            "26": 6,
+            "27": 6,
+            "29": 6,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "35": 5,
+            "38": 5,
+            "39": 5,
+            "40": 5,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "48": 5,
+            "49": 5,
+            "51": 5,
+            "52": 5,
+            "54": 5,
+            "55": 5,
+            "56": 6
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 22,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            },
+            {
+              "Line": 29,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 51,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            },
+            {
+              "Line": 55,
+              "Offset": 638,
+              "EndOffset": 640,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 5
+            },
+            {
+              "Line": 55,
+              "Offset": 638,
+              "EndOffset": 749,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 5
+            },
+            {
+              "Line": 55,
+              "Offset": 855,
+              "EndOffset": 857,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 5
+            },
+            {
+              "Line": 55,
+              "Offset": 855,
+              "EndOffset": 966,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 5
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Ipc/SessionSocket.cs": {
+      "Recrd.Cli.Ipc.SessionSocket": {
+        "System.String Recrd.Cli.Ipc.SessionSocket::get_DefaultSocketPath()": {
+          "Lines": {
+            "22": 6
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Cli.Ipc.SessionSocket::.ctor(System.String,Microsoft.Extensions.Logging.ILogger)": {
+          "Lines": {
+            "28": 3,
+            "29": 3,
+            "30": 3,
+            "31": 3,
+            "32": 3
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Cli.Ipc.SessionSocket::.cctor()": {
+          "Lines": {
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Ipc.SessionSocket/<>c__DisplayClass8_0": {
+        "System.Boolean Recrd.Cli.Ipc.SessionSocket/<>c__DisplayClass8_0::<StartListeningAsync>b__0(System.String)": {
+          "Lines": {
+            "112": 10
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Ipc.SessionSocket/<DisposeAsync>d__9": {
+        "System.Void Recrd.Cli.Ipc.SessionSocket/<DisposeAsync>d__9::MoveNext()": {
+          "Lines": {
+            "132": 3,
+            "133": 3,
+            "134": 3,
+            "135": 3,
+            "136": 3,
+            "137": 3,
+            "139": 3,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "144": 3,
+            "145": 3
+          },
+          "Branches": [
+            {
+              "Line": 133,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 133,
+              "Offset": 37,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 139,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 139,
+              "Offset": 88,
+              "EndOffset": 118,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      },
+      "Recrd.Cli.Ipc.SessionSocket/<IsSessionActiveAsync>d__7": {
+        "System.Void Recrd.Cli.Ipc.SessionSocket/<IsSessionActiveAsync>d__7::MoveNext()": {
+          "Lines": {
+            "39": 4,
+            "40": 4,
+            "41": 4,
+            "42": 2,
+            "44": 2,
+            "46": 2,
+            "47": 2,
+            "48": 1,
+            "50": 1,
+            "51": 1,
+            "53": 3,
+            "54": 1,
+            "56": 4
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 21,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 41,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 41,
+              "Offset": 50,
+              "EndOffset": 59,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "Recrd.Cli.Ipc.SessionSocket/<StartListeningAsync>d__8": {
+        "System.Void Recrd.Cli.Ipc.SessionSocket/<StartListeningAsync>d__8::MoveNext()": {
+          "Lines": {
+            "65": 3,
+            "67": 3,
+            "69": 3,
+            "70": 3,
+            "71": 3,
+            "73": 3,
+            "76": 3,
+            "77": 4,
+            "78": 4,
+            "81": 4,
+            "82": 4,
+            "83": 3,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "89": 3,
+            "90": 3,
+            "92": 3,
+            "93": 3,
+            "94": 0,
+            "98": 3,
+            "99": 3,
+            "100": 3,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "107": 3,
+            "108": 0,
+            "111": 3,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "118": 3,
+            "120": 3,
+            "121": 2,
+            "122": 1,
+            "123": 3,
+            "125": 3,
+            "126": 3,
+            "127": 3,
+            "128": 3,
+            "129": 3
+          },
+          "Branches": [
+            {
+              "Line": 77,
+              "Offset": 1306,
+              "EndOffset": 196,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 4
+            },
+            {
+              "Line": 89,
+              "Offset": 403,
+              "EndOffset": 409,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 89,
+              "Offset": 403,
+              "EndOffset": 426,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 93,
+              "Offset": 597,
+              "EndOffset": 599,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 93,
+              "Offset": 597,
+              "EndOffset": 604,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 107,
+              "Offset": 709,
+              "EndOffset": 711,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 107,
+              "Offset": 709,
+              "EndOffset": 716,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 112,
+              "Offset": 787,
+              "EndOffset": 789,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 112,
+              "Offset": 787,
+              "EndOffset": 842,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 120,
+              "Offset": 992,
+              "EndOffset": 994,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 120,
+              "Offset": 992,
+              "EndOffset": 996,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 121,
+              "Offset": 1061,
+              "EndOffset": 1063,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 3
+            },
+            {
+              "Line": 121,
+              "Offset": 1061,
+              "EndOffset": 1171,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 3
+            },
+            {
+              "Line": 121,
+              "Offset": 1230,
+              "EndOffset": 1238,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 121,
+              "Offset": 1230,
+              "EndOffset": 1311,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 3
+            },
+            {
+              "Line": 77,
+              "Offset": 1306,
+              "EndOffset": 1311,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/CompileCommand.cs": {
+      "Recrd.Cli.Commands.CompileCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.CompileCommand::Create(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>)": {
+          "Lines": {
+            "23": 12,
+            "24": 12,
+            "26": 12,
+            "27": 12,
+            "28": 12,
+            "29": 12,
+            "30": 12,
+            "31": 12,
+            "32": 12,
+            "33": 6,
+            "34": 12,
+            "35": 12,
+            "36": 12,
+            "37": 12,
+            "38": 12,
+            "39": 12,
+            "40": 12,
+            "41": 12,
+            "42": 6,
+            "43": 12,
+            "44": 12,
+            "45": 12,
+            "46": 12,
+            "47": 6,
+            "48": 12,
+            "49": 12,
+            "50": 12,
+            "51": 12,
+            "52": 6,
+            "53": 12,
+            "54": 12,
+            "55": 12,
+            "56": 12,
+            "57": 6,
+            "58": 12,
+            "59": 12,
+            "60": 12,
+            "61": 12,
+            "62": 6,
+            "63": 12,
+            "65": 12,
+            "66": 12,
+            "67": 12,
+            "68": 12,
+            "69": 12,
+            "70": 12,
+            "71": 12,
+            "72": 12,
+            "74": 12,
+            "75": 6,
+            "76": 6,
+            "77": 6,
+            "78": 6,
+            "79": 6,
+            "80": 6,
+            "81": 6,
+            "82": 6,
+            "83": 6,
+            "84": 12,
+            "85": 12,
+            "86": 6,
+            "87": 6,
+            "88": 6,
+            "89": 6,
+            "90": 12,
+            "91": 12,
+            "92": 6,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 12,
+            "97": 12,
+            "98": 5,
+            "99": 12,
+            "100": 5,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 12,
+            "105": 12,
+            "106": 12,
+            "107": 4,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 12,
+            "112": 12,
+            "113": 4,
+            "114": 12,
+            "115": 12,
+            "116": 4,
+            "117": 4,
+            "118": 3,
+            "119": 1,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 12,
+            "124": 12,
+            "125": 3,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 12,
+            "130": 12,
+            "131": 12,
+            "132": 3,
+            "133": 3,
+            "134": 3,
+            "135": 3,
+            "136": 3,
+            "137": 12,
+            "138": 3,
+            "139": 1,
+            "140": 1,
+            "141": 1,
+            "142": 1,
+            "143": 12,
+            "144": 12,
+            "145": 12,
+            "146": 2,
+            "147": 2,
+            "148": 2,
+            "149": 2,
+            "150": 12,
+            "151": 2,
+            "152": 1,
+            "153": 1,
+            "154": 1,
+            "155": 12,
+            "156": 12,
+            "157": 1,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 1,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 12,
+            "166": 1,
+            "167": 1,
+            "168": 1,
+            "169": 12,
+            "170": 0,
+            "171": 12,
+            "172": 12,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 12,
+            "183": 12,
+            "184": 0,
+            "185": 0,
+            "186": 12,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 12,
+            "195": 12,
+            "196": 0,
+            "197": 12,
+            "198": 12,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 12,
+            "204": 12,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 12,
+            "211": 12,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 12,
+            "217": 0,
+            "218": 0,
+            "219": 12,
+            "221": 12,
+            "222": 18
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Commands.CompileCommand/<>c__DisplayClass0_0/<<Create>b__0>d": {
+        "System.Void Recrd.Cli.Commands.CompileCommand/<>c__DisplayClass0_0/<<Create>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 255,
+              "EndOffset": 257,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 6
+            },
+            {
+              "Line": 86,
+              "Offset": 255,
+              "EndOffset": 264,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 287,
+              "EndOffset": 289,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 287,
+              "EndOffset": 295,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            },
+            {
+              "Line": 87,
+              "Offset": 312,
+              "EndOffset": 314,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 6
+            },
+            {
+              "Line": 87,
+              "Offset": 312,
+              "EndOffset": 317,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 460,
+              "EndOffset": 462,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 92,
+              "Offset": 460,
+              "EndOffset": 497,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 5
+            },
+            {
+              "Line": 100,
+              "Offset": 541,
+              "EndOffset": 543,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 100,
+              "Offset": 541,
+              "EndOffset": 573,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            },
+            {
+              "Line": 107,
+              "Offset": 583,
+              "EndOffset": 585,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 107,
+              "Offset": 583,
+              "EndOffset": 609,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 4
+            },
+            {
+              "Line": 125,
+              "Offset": 833,
+              "EndOffset": 835,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 125,
+              "Offset": 833,
+              "EndOffset": 854,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 3
+            },
+            {
+              "Line": 138,
+              "Offset": 934,
+              "EndOffset": 936,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 934,
+              "EndOffset": 992,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 2
+            },
+            {
+              "Line": 147,
+              "Offset": 1012,
+              "EndOffset": 1017,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 1058,
+              "EndOffset": 1060,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 1
+            },
+            {
+              "Line": 151,
+              "Offset": 1058,
+              "EndOffset": 1090,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 1
+            },
+            {
+              "Line": 157,
+              "Offset": 1111,
+              "EndOffset": 1113,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 157,
+              "Offset": 1111,
+              "EndOffset": 1145,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 1
+            },
+            {
+              "Line": 161,
+              "Offset": 1166,
+              "EndOffset": 1168,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 161,
+              "Offset": 1166,
+              "EndOffset": 1189,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 1
+            },
+            {
+              "Line": 147,
+              "Offset": 1012,
+              "EndOffset": 1216,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1257,
+              "EndOffset": 1259,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1271,
+              "EndOffset": 1273,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1285,
+              "EndOffset": 1287,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1299,
+              "EndOffset": 1301,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1257,
+              "EndOffset": 1317,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1271,
+              "EndOffset": 1322,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1285,
+              "EndOffset": 1327,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1299,
+              "EndOffset": 1332,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1313,
+              "EndOffset": 1337,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 173,
+              "Offset": 1313,
+              "EndOffset": 1342,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 205,
+              "Offset": 1909,
+              "EndOffset": 1860,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 0
+            },
+            {
+              "Line": 205,
+              "Offset": 1909,
+              "EndOffset": 1911,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 212,
+              "Offset": 2041,
+              "EndOffset": 1982,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 0
+            },
+            {
+              "Line": 212,
+              "Offset": 2041,
+              "EndOffset": 2043,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 0
+            },
+            {
+              "Line": 218,
+              "Offset": 2188,
+              "EndOffset": 2190,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 0
+            },
+            {
+              "Line": 218,
+              "Offset": 2188,
+              "EndOffset": 2299,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 0
+            },
+            {
+              "Line": 218,
+              "Offset": 2309,
+              "EndOffset": 2311,
+              "Path": 0,
+              "Ordinal": 40,
+              "Hits": 0
+            },
+            {
+              "Line": 218,
+              "Offset": 2309,
+              "EndOffset": 2340,
+              "Path": 1,
+              "Ordinal": 41,
+              "Hits": 0
+            },
+            {
+              "Line": 218,
+              "Offset": 2351,
+              "EndOffset": 2355,
+              "Path": 1,
+              "Ordinal": 43,
+              "Hits": 0
+            },
+            {
+              "Line": 218,
+              "Offset": 2351,
+              "EndOffset": 2367,
+              "Path": 0,
+              "Ordinal": 42,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/PluginsCommand.cs": {
+      "Recrd.Cli.Commands.PluginsCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.PluginsCommand::Create()": {
+          "Lines": {
+            "11": 6,
+            "12": 6,
+            "15": 6,
+            "16": 6,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 6,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 6,
+            "27": 6,
+            "28": 0,
+            "29": 6,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 6,
+            "35": 6,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 6,
+            "42": 0,
+            "43": 7,
+            "46": 6,
+            "47": 6,
+            "48": 6,
+            "49": 6,
+            "50": 6,
+            "51": 6,
+            "52": 6,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 6,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 6,
+            "64": 6,
+            "65": 6,
+            "67": 6,
+            "68": 6
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 35,
+              "EndOffset": 58,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 79,
+              "EndOffset": 81,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 79,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 37,
+              "Offset": 176,
+              "EndOffset": 127,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 37,
+              "Offset": 176,
+              "EndOffset": 178,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/RecoverCommand.cs": {
+      "Recrd.Cli.Commands.RecoverCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.RecoverCommand::Create(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>)": {
+          "Lines": {
+            "20": 7,
+            "21": 7,
+            "22": 7,
+            "23": 7,
+            "25": 7,
+            "26": 7,
+            "27": 7,
+            "28": 7,
+            "29": 7,
+            "31": 7,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 7,
+            "37": 2,
+            "38": 2,
+            "39": 7,
+            "40": 2,
+            "41": 7,
+            "42": 7,
+            "43": 2,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 7,
+            "48": 1,
+            "49": 1,
+            "50": 0,
+            "51": 0,
+            "52": 1,
+            "53": 7,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 7,
+            "59": 7,
+            "60": 0,
+            "61": 0,
+            "62": 7,
+            "63": 1,
+            "64": 7,
+            "65": 7,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "70": 7,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 7,
+            "75": 0,
+            "76": 0,
+            "77": 7,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 7,
+            "87": 7,
+            "89": 7,
+            "90": 9
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Commands.RecoverCommand/<>c__DisplayClass0_0/<<Create>b__0>d": {
+        "System.Void Recrd.Cli.Commands.RecoverCommand/<>c__DisplayClass0_0/<<Create>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 33,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 33,
+              "Offset": 31,
+              "EndOffset": 40,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 63,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 34,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 34,
+              "Offset": 88,
+              "EndOffset": 97,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 120,
+              "EndOffset": 122,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 120,
+              "EndOffset": 128,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 43,
+              "Offset": 252,
+              "EndOffset": 254,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 43,
+              "Offset": 252,
+              "EndOffset": 278,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 389,
+              "EndOffset": 391,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 389,
+              "EndOffset": 410,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 723,
+              "EndOffset": 725,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 723,
+              "EndOffset": 743,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 981,
+              "EndOffset": 983,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 79,
+              "Offset": 981,
+              "EndOffset": 1092,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 1
+            },
+            {
+              "Line": 79,
+              "Offset": 1102,
+              "EndOffset": 1104,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            },
+            {
+              "Line": 79,
+              "Offset": 1102,
+              "EndOffset": 1133,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 1144,
+              "EndOffset": 1148,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 1144,
+              "EndOffset": 1160,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/SanitizeCommand.cs": {
+      "Recrd.Cli.Commands.SanitizeCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.SanitizeCommand::Create(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>)": {
+          "Lines": {
+            "17": 6,
+            "18": 6,
+            "19": 6,
+            "20": 6,
+            "22": 6,
+            "23": 6,
+            "24": 6,
+            "25": 6,
+            "26": 6,
+            "27": 6,
+            "28": 6,
+            "29": 6,
+            "31": 6,
+            "32": 6,
+            "34": 6,
+            "35": 3,
+            "36": 3,
+            "37": 3,
+            "38": 6,
+            "39": 6,
+            "40": 3,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 6,
+            "45": 6,
+            "46": 3,
+            "47": 6,
+            "48": 6,
+            "49": 3,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 6,
+            "54": 6,
+            "55": 6,
+            "56": 3,
+            "57": 6,
+            "58": 6,
+            "59": 3,
+            "60": 3,
+            "61": 3,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 6,
+            "67": 6,
+            "68": 3,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 6,
+            "73": 6,
+            "74": 6,
+            "75": 3,
+            "76": 6,
+            "77": 6,
+            "78": 3,
+            "79": 6,
+            "80": 6,
+            "81": 6,
+            "82": 3,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 6,
+            "87": 2,
+            "88": 2,
+            "89": 2,
+            "90": 2,
+            "91": 2,
+            "92": 6,
+            "93": 6,
+            "94": 3,
+            "95": 3,
+            "96": 6,
+            "97": 3,
+            "98": 3,
+            "99": 9,
+            "101": 6,
+            "102": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep> Recrd.Cli.Commands.SanitizeCommand::SanitizeSteps(System.Collections.Generic.IReadOnlyList`1<Recrd.Core.Ast.IStep>)": {
+          "Lines": {
+            "105": 3,
+            "106": 3,
+            "107": 15,
+            "108": 3,
+            "109": 3,
+            "110": 3,
+            "111": 3,
+            "112": 3
+          },
+          "Branches": [
+            {
+              "Line": 107,
+              "Offset": 51,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 107,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            }
+          ]
+        },
+        "Recrd.Core.Ast.IStep Recrd.Cli.Commands.SanitizeCommand::SanitizeStep(Recrd.Core.Ast.IStep)": {
+          "Lines": {
+            "114": 3,
+            "115": 3,
+            "116": 3,
+            "117": 3,
+            "118": 3,
+            "119": 3,
+            "120": 3,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 3,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 3,
+            "130": 0,
+            "131": 3
+          },
+          "Branches": [
+            {
+              "Line": 114,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 12,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 114,
+              "Offset": 22,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 32,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 32,
+              "EndOffset": 127,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            }
+          ]
+        },
+        "Recrd.Core.Ast.Selector Recrd.Cli.Commands.SanitizeCommand::SanitizeSelector(Recrd.Core.Ast.Selector)": {
+          "Lines": {
+            "134": 3,
+            "135": 3,
+            "136": 6,
+            "137": 3,
+            "138": 3
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Commands.SanitizeCommand/<>c__DisplayClass0_0/<<Create>b__0>d": {
+        "System.Void Recrd.Cli.Commands.SanitizeCommand/<>c__DisplayClass0_0/<<Create>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 101,
+              "EndOffset": 103,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 101,
+              "EndOffset": 138,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 49,
+              "Offset": 182,
+              "EndOffset": 184,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 182,
+              "EndOffset": 214,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 68,
+              "Offset": 438,
+              "EndOffset": 440,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 438,
+              "EndOffset": 459,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 82,
+              "Offset": 544,
+              "EndOffset": 546,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 82,
+              "Offset": 544,
+              "EndOffset": 572,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/SessionControlCommand.cs": {
+      "Recrd.Cli.Commands.SessionControlCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.SessionControlCommand::CreatePause(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>,System.String)": {
+          "Lines": {
+            "19": 5,
+            "20": 5,
+            "21": 5,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 5,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 6,
+            "33": 5,
+            "34": 5
+          },
+          "Branches": []
+        },
+        "System.CommandLine.Command Recrd.Cli.Commands.SessionControlCommand::CreateResume(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>,System.String)": {
+          "Lines": {
+            "40": 4,
+            "41": 4,
+            "42": 4,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 4,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 5,
+            "54": 4,
+            "55": 4
+          },
+          "Branches": []
+        },
+        "System.CommandLine.Command Recrd.Cli.Commands.SessionControlCommand::CreateStop(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>,System.String)": {
+          "Lines": {
+            "61": 4,
+            "62": 4,
+            "63": 4,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 4,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 5,
+            "75": 4,
+            "76": 4
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Commands.SessionControlCommand/<>c__DisplayClass0_0/<<CreatePause>b__0>d": {
+        "System.Void Recrd.Cli.Commands.SessionControlCommand/<>c__DisplayClass0_0/<<CreatePause>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 23,
+              "Offset": 30,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 62,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 87,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 335,
+              "EndOffset": 337,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 335,
+              "EndOffset": 348,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Recrd.Cli.Commands.SessionControlCommand/<>c__DisplayClass1_0/<<CreateResume>b__0>d": {
+        "System.Void Recrd.Cli.Commands.SessionControlCommand/<>c__DisplayClass1_0/<<CreateResume>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 44,
+              "Offset": 30,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 44,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 44,
+              "Offset": 62,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 87,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 50,
+              "Offset": 335,
+              "EndOffset": 337,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 50,
+              "Offset": 335,
+              "EndOffset": 348,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Recrd.Cli.Commands.SessionControlCommand/<>c__DisplayClass2_0/<<CreateStop>b__0>d": {
+        "System.Void Recrd.Cli.Commands.SessionControlCommand/<>c__DisplayClass2_0/<<CreateStop>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 65,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 65,
+              "Offset": 30,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 62,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 66,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 87,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 71,
+              "Offset": 335,
+              "EndOffset": 337,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 71,
+              "Offset": 335,
+              "EndOffset": 348,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/StartCommand.cs": {
+      "Recrd.Cli.Commands.StartCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.StartCommand::Create(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>,Recrd.Core.Interfaces.IRecorderEngine)": {
+          "Lines": {
+            "22": 8,
+            "23": 8,
+            "25": 8,
+            "26": 8,
+            "27": 8,
+            "28": 3,
+            "29": 8,
+            "30": 8,
+            "31": 8,
+            "32": 8,
+            "33": 3,
+            "34": 8,
+            "35": 8,
+            "36": 8,
+            "37": 8,
+            "38": 2,
+            "39": 8,
+            "40": 8,
+            "41": 8,
+            "42": 8,
+            "43": 8,
+            "45": 8,
+            "46": 8,
+            "47": 8,
+            "48": 8,
+            "50": 8,
+            "51": 3,
+            "52": 3,
+            "53": 3,
+            "54": 3,
+            "55": 3,
+            "56": 8,
+            "57": 8,
+            "58": 3,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 8,
+            "63": 8,
+            "64": 8,
+            "65": 2,
+            "66": 8,
+            "67": 8,
+            "68": 2,
+            "69": 2,
+            "70": 2,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 8,
+            "77": 8,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 8,
+            "86": 8,
+            "87": 1,
+            "88": 1,
+            "89": 8,
+            "90": 1,
+            "91": 8,
+            "92": 1,
+            "93": 8,
+            "94": 8,
+            "95": 1,
+            "96": 8,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 1,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 2,
+            "114": 8,
+            "115": 8,
+            "116": 1,
+            "117": 1,
+            "118": 8,
+            "119": 1,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 8,
+            "127": 1,
+            "128": 5,
+            "129": 8,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 8,
+            "138": 1,
+            "139": 8,
+            "141": 8,
+            "142": 11
+          },
+          "Branches": []
+        },
+        "System.CommandLine.Command Recrd.Cli.Commands.StartCommand::Create()": {
+          "Lines": {
+            "145": 4,
+            "146": 0,
+            "147": 4
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Commands.StartCommand/<>c__DisplayClass0_0/<<Create>b__0>d": {
+        "System.Void Recrd.Cli.Commands.StartCommand/<>c__DisplayClass0_0/<<Create>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 99,
+              "EndOffset": 101,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 52,
+              "Offset": 99,
+              "EndOffset": 107,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 54,
+              "Offset": 183,
+              "EndOffset": 194,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3
+            },
+            {
+              "Line": 58,
+              "Offset": 335,
+              "EndOffset": 337,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 335,
+              "EndOffset": 356,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 65,
+              "Offset": 380,
+              "EndOffset": 382,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 380,
+              "EndOffset": 388,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 78,
+              "Offset": 528,
+              "EndOffset": 530,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 78,
+              "Offset": 528,
+              "EndOffset": 536,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 183,
+              "EndOffset": 634,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 87,
+              "Offset": 639,
+              "EndOffset": 643,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 88,
+              "Offset": 674,
+              "EndOffset": 676,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 88,
+              "Offset": 674,
+              "EndOffset": 688,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            },
+            {
+              "Line": 87,
+              "Offset": 639,
+              "EndOffset": 707,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 122,
+              "Offset": 1337,
+              "EndOffset": 1339,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 122,
+              "Offset": 1337,
+              "EndOffset": 1362,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1499,
+              "EndOffset": 1501,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1499,
+              "EndOffset": 1610,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1620,
+              "EndOffset": 1622,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 138,
+              "Offset": 1620,
+              "EndOffset": 1651,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1662,
+              "EndOffset": 1666,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1662,
+              "EndOffset": 1680,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 138,
+              "Offset": 1721,
+              "EndOffset": 1723,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1721,
+              "EndOffset": 1837,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1847,
+              "EndOffset": 1849,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 138,
+              "Offset": 1847,
+              "EndOffset": 1878,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1889,
+              "EndOffset": 1893,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 1
+            },
+            {
+              "Line": 138,
+              "Offset": 1889,
+              "EndOffset": 1905,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Recrd.Cli.Commands.StartCommand/<>c__DisplayClass0_2/<<Create>b__4>d": {
+        "System.Void Recrd.Cli.Commands.StartCommand/<>c__DisplayClass0_2/<<Create>b__4>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 99,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 99,
+              "Offset": 74,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 99,
+              "Offset": 61,
+              "EndOffset": 100,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 74,
+              "EndOffset": 255,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 90,
+              "EndOffset": 409,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 99,
+              "Offset": 90,
+              "EndOffset": 409,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/ValidateCommand.cs": {
+      "Recrd.Cli.Commands.ValidateCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.ValidateCommand::Create(System.CommandLine.Option`1<System.String>,System.CommandLine.Option`1<System.String>)": {
+          "Lines": {
+            "18": 6,
+            "19": 6,
+            "21": 6,
+            "22": 6,
+            "23": 6,
+            "24": 6,
+            "25": 6,
+            "27": 6,
+            "28": 2,
+            "29": 2,
+            "30": 6,
+            "31": 6,
+            "32": 2,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 6,
+            "37": 6,
+            "38": 2,
+            "39": 6,
+            "40": 6,
+            "41": 2,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 6,
+            "46": 6,
+            "47": 6,
+            "48": 2,
+            "49": 6,
+            "50": 6,
+            "51": 6,
+            "52": 6,
+            "53": 2,
+            "54": 2,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 6,
+            "61": 6,
+            "62": 1,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 6,
+            "67": 6,
+            "68": 6,
+            "69": 1,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 6,
+            "75": 6,
+            "76": 6,
+            "77": 1,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 6,
+            "82": 6,
+            "83": 6,
+            "84": 1,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 6,
+            "89": 6,
+            "90": 6,
+            "91": 3,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 6,
+            "99": 0,
+            "100": 6,
+            "101": 1,
+            "102": 1,
+            "103": 8,
+            "105": 6,
+            "106": 6
+          },
+          "Branches": []
+        },
+        "System.Void Recrd.Cli.Commands.ValidateCommand::.cctor()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      },
+      "Recrd.Cli.Commands.ValidateCommand/<>c__DisplayClass1_0/<<Create>b__0>d": {
+        "System.Void Recrd.Cli.Commands.ValidateCommand/<>c__DisplayClass1_0/<<Create>b__0>d::MoveNext()": {
+          "Lines": {},
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 32,
+              "Offset": 62,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 41,
+              "Offset": 143,
+              "EndOffset": 145,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 143,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 62,
+              "Offset": 399,
+              "EndOffset": 401,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 399,
+              "EndOffset": 420,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 69,
+              "Offset": 441,
+              "EndOffset": 443,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 441,
+              "EndOffset": 519,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 77,
+              "Offset": 537,
+              "EndOffset": 539,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 77,
+              "Offset": 537,
+              "EndOffset": 558,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 569,
+              "EndOffset": 571,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 569,
+              "EndOffset": 592,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 84,
+              "Offset": 597,
+              "EndOffset": 599,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 84,
+              "Offset": 597,
+              "EndOffset": 618,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            },
+            {
+              "Line": 91,
+              "Offset": 747,
+              "EndOffset": 643,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 93,
+              "Offset": 689,
+              "EndOffset": 691,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 93,
+              "Offset": 689,
+              "EndOffset": 728,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 747,
+              "EndOffset": 749,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/gil/dev/recrd/apps/recrd-cli/Commands/VersionCommand.cs": {
+      "Recrd.Cli.Commands.VersionCommand": {
+        "System.CommandLine.Command Recrd.Cli.Commands.VersionCommand::Create()": {
+          "Lines": {
+            "11": 5,
+            "12": 5,
+            "14": 5,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 5,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 5,
+            "24": 1,
+            "25": 6,
+            "27": 5,
+            "28": 5
+          },
+          "Branches": [
+            {
+              "Line": 16,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 16,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 24,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 16,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 16,
+              "Offset": 36,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}
