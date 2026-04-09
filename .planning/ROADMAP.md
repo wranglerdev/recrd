@@ -225,7 +225,7 @@ Plans:
 - [ ] 10-01-PLAN.md — Extension scaffold and status bar
 - [ ] 10-02-PLAN.md — CLI invocation and session lifecycle
 - [ ] 10-03-PLAN.md — Target/Data pickers and compiler integration
-- [ ] 10-04-PLAN.md — Live preview WebView
+- [ ] 10-04-PLAN.md — Live preview WebView and packaging
 **UI hint**: yes
 
 ### Phase 11: Plugin System
