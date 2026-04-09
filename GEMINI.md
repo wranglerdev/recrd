@@ -6,7 +6,7 @@ This project, `recrd`, is a .NET 10 (LTS) CLI tool designed to automate the crea
 
 ### Environment Prerequisites
 - **.NET SDK:** 10.0.100 or later (check `global.json`)
-- **Node.js:** v20+ (required for `rfbrowser init` and VS Code extension)
+- **Node.js:** v22+ (required for `rfbrowser init` and VS Code extension)
 - **Python:** For Robot Framework execution
 - **Playwright:** Browsers must be installed for recording/testing
 
