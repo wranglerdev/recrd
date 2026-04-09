@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.9.0.schema.json
+
+PackageIdentifier: recrd.recrd
+PackageVersion: "{{VERSION}}"
+MinimumOSVersion: 10.0.0.0
+Installers:
+- Architecture: x64
+  InstallerType: portable
+  InstallerUrl: https://github.com/recrd/recrd/releases/download/v{{VERSION}}/recrd-{{VERSION}}-win-x64.zip
+  InstallerSha256: "{{SHA256_WIN}}"
+  Commands:
+  - recrd
+  PortableCommandAlias: recrd
+ManifestType: installer
+ManifestVersion: 1.9.0

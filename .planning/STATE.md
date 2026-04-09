@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-09T04:36:12.635Z"
+last_updated: "2026-04-09T05:12:19.450Z"
 progress:
   total_phases: 13
-  completed_phases: 9
-  total_plans: 37
-  completed_plans: 37
+  completed_phases: 10
+  total_plans: 41
+  completed_plans: 41
   percent: 100
 ---
 
@@ -18,7 +18,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 09 — distribution
+**Current Focus:** Phase 10 — vscode-extension
 
 ---
 
@@ -26,16 +26,16 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| Phase | 08.1 — ci-fixes |
-| Plan | 1 of 1 |
+| Phase | 09 — distribution |
+| Plan | 4 of 4 |
 | Status | Complete |
-| TDD State | Green phase complete — build warnings fixed and CI reordered |
+| TDD State | Green phase complete — Homebrew and Winget manifests created |
 
 **Progress**
 
 ```
-Phase: 08.1 (ci-fixes) — COMPLETE
-Plan: 1 of 1
+Phase: 09 (distribution) — COMPLETE
+Plan: 4 of 4
          [██████████] 100%
 ```
 
@@ -83,6 +83,10 @@ Plan: 1 of 1
 | Phase 07-compilers P04 | 2min | 2 tasks | 3 files |
 | Phase 08.1-ci-fixes P01 | 120s | 2 tasks | 2 files |
 | Phase 08.1-ci-fixes P02 | 120s | 3 tasks | 2 files |
+| Phase 09-distribution P01 | 10m | 2 tasks | 2 files |
+| Phase 09-distribution P02 | 15m | 2 tasks | 1 files |
+| Phase 09-distribution P03 | 10m | 2 tasks | 1 files |
+| Phase 09-distribution P04 | 10m | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -133,6 +137,11 @@ Plan: 1 of 1
 | SeleniumKeywordEmitter uses implicit wait only | Set Selenium Implicit Wait emitted once in Abrir Suite; no per-step Wait Until Element calls (D-08) |
 | python3 -m robot for E2E subprocess invocation | Portable on Linux CI: robot binary may not be on PATH but python3 is guaranteed; also works with pip venv installs |
 | IAsyncLifetime + Kestrel TestServer for integration fixture | Free-port TcpListener pattern avoids port collisions; xUnit lifecycle manages server start/stop around test class |
+| Matrix of 4 RIDs for cross-platform distribution | Covers Windows, Linux, and both Intel/ARM macOS runners in GitHub Actions |
+| Include .playwright driver folder in release package | Ensures Node.js and Playwright CLI are bundled for "self-contained" operation without global install requirements |
+| ZIP and TAR.GZ formats for macOS releases | Follows distribution best practices for both CLI users and macOS app bundle integration |
+| Automatic SHA256 checksum generation | Mitigates artifact tamper risk at the distribution trust boundary |
+| Unified Release Job | Moves release creation from parallel matrix to single job for artifact consolidation and auto-generated notes |
 
 ### TDD Mandate
 
@@ -160,6 +169,6 @@ None.
 
 ## Session Continuity
 
-**Last updated:** 2026-04-06 — Completed 07-04-PLAN.md: E2E round-trip tests + CI integration for Robot Framework execution
+**Last updated:** 2026-03-29 — Completed 09-03-PLAN.md: Refined release workflow with unified asset upload and auto-notes
 
-**To resume:** Phase 07 complete. Ready for Phase 08 (CLI / recrd-cli entry point).
+**To resume:** Phase 09 Plan 04 (Distribution verification/smoke tests).
