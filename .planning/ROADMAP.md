@@ -16,8 +16,8 @@
 - [x] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab (completed 2026-03-31)
 - [x] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip (completed 2026-04-06)
 - [x] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target (completed 2026-04-09)
-- [ ] **Phase 8.1: CI Fixes & Cleanup** - Fix redundant framework references and CI task ordering
-- [ ] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest
+- [x] **Phase 8.1: CI Fixes & Cleanup** - Fix redundant framework references and CI task ordering (completed 2026-04-09)
+- [x] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest (completed 2026-04-09)
 - [ ] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish
 - [ ] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety
 - [ ] **Phase 12: Hardening** - Mutation testing, performance benchmarks, example plugins, docs
@@ -276,8 +276,8 @@ Plans:
 | 6. Recording Engine | 5/5 | Complete | 2026-03-31 |
 | 7. Compilers | 4/4 | Complete | 2026-04-06 |
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
-| 8.1 CI Fixes & Cleanup | 1/2 | In Progress | - |
-| 9. Distribution | 3/4 | In Progress | - |
+| 8.1 CI Fixes & Cleanup | 2/2 | Complete | 2026-04-09 |
+| 9. Distribution | 4/4 | Complete | 2026-04-09 |
 | 10. VS Code Extension | 0/4 | Not Started | - |
 | 11. Plugin System | 0/4 | Not Started | - |
 | 12. Hardening | 0/4 | Not Started | - |
@@ -362,8 +362,8 @@ All 78 v1 requirements map to exactly one phase. No orphans.
 | CLI-12 | Phase 8 | Complete |
 | DIST-01 | Phase 9 | Complete |
 | DIST-02 | Phase 9 | Complete |
-| DIST-03 | Phase 9 | Pending |
-| DIST-04 | Phase 9 | Pending |
+| DIST-03 | Phase 9 | Complete |
+| DIST-04 | Phase 9 | Complete |
 | VSCE-01 | Phase 10 | Pending |
 | VSCE-02 | Phase 10 | Pending |
 | VSCE-03 | Phase 10 | Pending |
