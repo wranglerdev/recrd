@@ -14,8 +14,8 @@
 - [x] **Phase 4: Gherkin Generator** - pt-BR .feature output, Cenario vs Esquema, determinism, variable merging (completed 2026-03-27)
 - [x] **Phase 5: CI Pipeline** - GitHub Actions, coverage gates, format check, Stryker, NuGet push, red-phase support (completed 2026-03-29)
 - [x] **Phase 6: Recording Engine** - Playwright integration, event capture, inspector panel, variable tagging, constrained multi-tab (completed 2026-03-31)
-- [ ] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip
-- [ ] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target
+- [x] **Phase 7: Compilers** - RobotBrowserCompiler, RobotSeleniumCompiler, RF7, traceability header, E2E round-trip (completed 2026-04-06)
+- [x] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target (completed 2026-04-09)
 - [ ] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest
 - [ ] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish
 - [ ] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety
