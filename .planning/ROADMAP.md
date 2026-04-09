@@ -205,8 +205,8 @@ Plans:
 
 Plans:
 - [x] 09-01-PLAN.md — TDD red phase: Distribution test scaffold
-- [ ] 09-02-PLAN.md — Self-contained publish pipeline
-- [ ] 09-03-PLAN.md — GitHub Releases + Release Notes automation
+- [x] 09-02-PLAN.md — Self-contained publish pipeline
+- [x] 09-03-PLAN.md — GitHub Releases + Release Notes automation
 - [ ] 09-04-PLAN.md — Homebrew formula and winget manifest
 
 ### Phase 10: VS Code Extension
@@ -277,7 +277,7 @@ Plans:
 | 7. Compilers | 4/4 | Complete | 2026-04-06 |
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
 | 8.1 CI Fixes & Cleanup | 1/2 | In Progress | - |
-| 9. Distribution | 0/4 | Not Started | - |
+| 9. Distribution | 3/4 | In Progress | - |
 | 10. VS Code Extension | 0/4 | Not Started | - |
 | 11. Plugin System | 0/4 | Not Started | - |
 | 12. Hardening | 0/4 | Not Started | - |
@@ -360,8 +360,8 @@ All 78 v1 requirements map to exactly one phase. No orphans.
 | CLI-10 | Phase 8 | Complete |
 | CLI-11 | Phase 8 | Complete |
 | CLI-12 | Phase 8 | Complete |
-| DIST-01 | Phase 9 | Pending |
-| DIST-02 | Phase 9 | Pending |
+| DIST-01 | Phase 9 | Complete |
+| DIST-02 | Phase 9 | Complete |
 | DIST-03 | Phase 9 | Pending |
 | DIST-04 | Phase 9 | Pending |
 | VSCE-01 | Phase 10 | Pending |
