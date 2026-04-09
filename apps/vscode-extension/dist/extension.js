@@ -34,7 +34,7 @@ __export(extension_exports, {
   deactivate: () => deactivate
 });
 module.exports = __toCommonJS(extension_exports);
-var vscode2 = __toESM(require("vscode"));
+var vscode4 = __toESM(require("vscode"));
 
 // src/statusBar.ts
 var vscode = __toESM(require("vscode"));
@@ -83,28 +83,122 @@ var StatusBarManager = class {
   }
 };
 
+// src/commands/recording.ts
+var vscode3 = __toESM(require("vscode"));
+
+// src/cli/runner.ts
+var vscode2 = __toESM(require("vscode"));
+var cp = __toESM(require("child_process"));
+var CliRunner = class {
+  static _outputChannel;
+  static get outputChannel() {
+    if (!this._outputChannel) {
+      this._outputChannel = vscode2.window.createOutputChannel("recrd");
+    }
+    return this._outputChannel;
+  }
+  static spawn(args) {
+    const config = vscode2.workspace.getConfiguration("recrd");
+    const executablePath = config.get("executablePath") || "recrd";
+    this.outputChannel.appendLine(`[CLI] Executing: ${executablePath} ${args.join(" ")}`);
+    const childProcess = cp.spawn(executablePath, args, {
+      shell: true,
+      env: { ...process.env, DOTNET_SYSTEM_NET_DISABLEIPV6: "1" }
+    });
+    childProcess.stdout?.on("data", (data) => {
+      this.outputChannel.append(data.toString());
+    });
+    childProcess.stderr?.on("data", (data) => {
+      this.outputChannel.append(data.toString());
+    });
+    childProcess.on("error", (err) => {
+      this.outputChannel.appendLine(`[CLI Error] ${err.message}`);
+      vscode2.window.showErrorMessage(`Failed to start recrd CLI: ${err.message}`);
+    });
+    return childProcess;
+  }
+  static async runCommand(args) {
+    return new Promise((resolve) => {
+      const childProcess = this.spawn(args);
+      childProcess.on("close", (code) => {
+        resolve(code || 0);
+      });
+    });
+  }
+};
+
+// src/commands/recording.ts
+var RecordingManager = class {
+  constructor(_statusBarManager) {
+    this._statusBarManager = _statusBarManager;
+  }
+  _currentProcess;
+  async start() {
+    if (this._currentProcess) {
+      vscode3.window.showWarningMessage("A recording is already in progress.");
+      return;
+    }
+    const baseUrl = await vscode3.window.showInputBox({
+      prompt: "Enter Base URL for recording (optional)",
+      placeHolder: "https://example.com"
+    });
+    const args = ["start"];
+    if (baseUrl) {
+      args.push("--base-url", baseUrl);
+    }
+    this._currentProcess = CliRunner.spawn(args);
+    this._statusBarManager.update(1 /* Recording */, 0);
+    this._currentProcess.on("close", (code) => {
+      CliRunner.outputChannel.appendLine(`[CLI] recrd start exited with code ${code}`);
+      this._currentProcess = void 0;
+      this._statusBarManager.update(0 /* Idle */);
+    });
+  }
+  async stop() {
+    CliRunner.outputChannel.appendLine("[CLI] Sending stop signal...");
+    const exitCode = await CliRunner.runCommand(["stop"]);
+    if (exitCode !== 0) {
+      vscode3.window.showErrorMessage("Failed to stop recording gracefully. Killing process...");
+      this.kill();
+    }
+  }
+  kill() {
+    if (this._currentProcess) {
+      this._currentProcess.kill();
+      this._currentProcess = void 0;
+      this._statusBarManager.update(0 /* Idle */);
+    }
+  }
+};
+
 // src/extension.ts
 var statusBarManager;
+var recordingManager;
 function activate(context) {
   console.log("recrd extension is now active");
   statusBarManager = new StatusBarManager();
+  recordingManager = new RecordingManager(statusBarManager);
   context.subscriptions.push(statusBarManager);
-  let showInfoDisposable = vscode2.commands.registerCommand("recrd.showInfo", () => {
-    vscode2.window.showInformationMessage("recrd E2E Recorder - Status Info");
-  });
-  context.subscriptions.push(showInfoDisposable);
-  let startDisposable = vscode2.commands.registerCommand("recrd.start", () => {
-    statusBarManager.update(1 /* Recording */, 0);
-    vscode2.window.showInformationMessage("Recording started (UI only)");
-  });
-  context.subscriptions.push(startDisposable);
-  let stopDisposable = vscode2.commands.registerCommand("recrd.stop", () => {
-    statusBarManager.update(0 /* Idle */);
-    vscode2.window.showInformationMessage("Recording stopped (UI only)");
-  });
-  context.subscriptions.push(stopDisposable);
+  context.subscriptions.push(
+    vscode4.commands.registerCommand("recrd.showInfo", () => {
+      vscode4.window.showInformationMessage("recrd E2E Recorder - Status Info");
+    })
+  );
+  context.subscriptions.push(
+    vscode4.commands.registerCommand("recrd.start", () => {
+      recordingManager.start();
+    })
+  );
+  context.subscriptions.push(
+    vscode4.commands.registerCommand("recrd.stop", () => {
+      recordingManager.stop();
+    })
+  );
 }
 function deactivate() {
+  if (recordingManager) {
+    recordingManager.kill();
+  }
   if (statusBarManager) {
     statusBarManager.dispose();
   }

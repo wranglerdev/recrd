@@ -27,16 +27,16 @@ progress:
 | Field | Value |
 |-------|-------|
 | Phase | 10 — vscode-extension |
-| Plan | 1 of 4 |
+| Plan | 2 of 4 |
 | Status | In Progress |
-| TDD State | Green phase — scaffolding complete, UI initialization verified |
+| TDD State | Green phase — scaffolding and process management verified |
 
 **Progress**
 
 ```
 Phase: 10 (vscode-extension) — IN PROGRESS
-Plan: 1 of 4
-         [██░░░░░░░░] 25%
+Plan: 2 of 4
+         [████░░░░░░] 50%
 ```
 
 ---

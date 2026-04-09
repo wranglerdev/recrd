@@ -1,35 +1,42 @@
 import * as vscode from 'vscode';
-import { StatusBarManager, RecordingState } from './statusBar.js';
+import { StatusBarManager } from './statusBar.js';
+import { RecordingManager } from './commands/recording.js';
 
 let statusBarManager: StatusBarManager;
+let recordingManager: RecordingManager;
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('recrd extension is now active');
 
     statusBarManager = new StatusBarManager();
+    recordingManager = new RecordingManager(statusBarManager);
+    
     context.subscriptions.push(statusBarManager);
 
-    // Placeholder command for status bar click
-    let showInfoDisposable = vscode.commands.registerCommand('recrd.showInfo', () => {
-        vscode.window.showInformationMessage('recrd E2E Recorder - Status Info');
-    });
-    context.subscriptions.push(showInfoDisposable);
+    // Register commands
+    context.subscriptions.push(
+        vscode.commands.registerCommand('recrd.showInfo', () => {
+            vscode.window.showInformationMessage('recrd E2E Recorder - Status Info');
+        })
+    );
 
-    // Basic start/stop placeholders to test state transitions
-    let startDisposable = vscode.commands.registerCommand('recrd.start', () => {
-        statusBarManager.update(RecordingState.Recording, 0);
-        vscode.window.showInformationMessage('Recording started (UI only)');
-    });
-    context.subscriptions.push(startDisposable);
+    context.subscriptions.push(
+        vscode.commands.registerCommand('recrd.start', () => {
+            recordingManager.start();
+        })
+    );
 
-    let stopDisposable = vscode.commands.registerCommand('recrd.stop', () => {
-        statusBarManager.update(RecordingState.Idle);
-        vscode.window.showInformationMessage('Recording stopped (UI only)');
-    });
-    context.subscriptions.push(stopDisposable);
+    context.subscriptions.push(
+        vscode.commands.registerCommand('recrd.stop', () => {
+            recordingManager.stop();
+        })
+    );
 }
 
 export function deactivate() {
+    if (recordingManager) {
+        recordingManager.kill();
+    }
     if (statusBarManager) {
         statusBarManager.dispose();
     }
