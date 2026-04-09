@@ -18,7 +18,7 @@ progress:
 
 **Core Value:** Record once, compile to a round-trip-verified, data-driven Robot Framework 7 suite with zero manual keyword writing.
 
-**Current Focus:** Phase 10 — vscode-extension
+**Current Focus:** Phase 11 — plugin-system
 
 ---
 
@@ -26,15 +26,15 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| Phase | 09 — distribution |
+| Phase | 10 — vscode-extension |
 | Plan | 4 of 4 |
 | Status | Complete |
-| TDD State | Green phase complete — Homebrew and Winget manifests created |
+| TDD State | Green phase complete — WebView and packaging verified |
 
 **Progress**
 
 ```
-Phase: 09 (distribution) — COMPLETE
+Phase: 10 (vscode-extension) — COMPLETE
 Plan: 4 of 4
          [██████████] 100%
 ```

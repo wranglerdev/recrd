@@ -18,7 +18,7 @@
 - [x] **Phase 8: CLI Polish** - Full command surface, logging, help text, error formatting, cold-start target (completed 2026-04-09)
 - [x] **Phase 8.1: CI Fixes & Cleanup** - Fix redundant framework references and CI task ordering (completed 2026-04-09)
 - [x] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest (completed 2026-04-09)
-- [ ] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish
+- [x] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish (completed 2026-04-09)
 - [ ] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety
 - [ ] **Phase 12: Hardening** - Mutation testing, performance benchmarks, example plugins, docs
 
@@ -222,10 +222,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 10-01-PLAN.md — Extension scaffold and status bar
-- [ ] 10-02-PLAN.md — CLI invocation and session lifecycle
+- [ ] 10-01-PLAN.md — Scaffold extension and implement Status Bar
+- [ ] 10-02-PLAN.md — CLI process management (start/stop)
 - [ ] 10-03-PLAN.md — Target/Data pickers and compiler integration
-- [ ] 10-04-PLAN.md — Live preview WebView
+- [ ] 10-04-PLAN.md — Live Preview WebView and Packaging
 **UI hint**: yes
 
 ### Phase 11: Plugin System
@@ -278,7 +278,7 @@ Plans:
 | 8. CLI Polish | 4/4 | Complete | 2026-04-09 |
 | 8.1 CI Fixes & Cleanup | 2/2 | Complete | 2026-04-09 |
 | 9. Distribution | 4/4 | Complete | 2026-04-09 |
-| 10. VS Code Extension | 0/4 | Not Started | - |
+| 10. VS Code Extension | 4/4 | Complete | 2026-04-09 |
 | 11. Plugin System | 0/4 | Not Started | - |
 | 12. Hardening | 0/4 | Not Started | - |
 
@@ -364,13 +364,13 @@ All 78 v1 requirements map to exactly one phase. No orphans.
 | DIST-02 | Phase 9 | Complete |
 | DIST-03 | Phase 9 | Complete |
 | DIST-04 | Phase 9 | Complete |
-| VSCE-01 | Phase 10 | Pending |
-| VSCE-02 | Phase 10 | Pending |
-| VSCE-03 | Phase 10 | Pending |
-| VSCE-04 | Phase 10 | Pending |
-| VSCE-05 | Phase 10 | Pending |
-| VSCE-06 | Phase 10 | Pending |
-| VSCE-07 | Phase 10 | Pending |
+| VSCE-01 | Phase 10 | Complete |
+| VSCE-02 | Phase 10 | Complete |
+| VSCE-03 | Phase 10 | Complete |
+| VSCE-04 | Phase 10 | Complete |
+| VSCE-05 | Phase 10 | Complete |
+| VSCE-06 | Phase 10 | Complete |
+| VSCE-07 | Phase 10 | Complete |
 | PLUG-01 | Phase 11 | Pending |
 | PLUG-02 | Phase 11 | Pending |
 | PLUG-03 | Phase 11 | Pending |
