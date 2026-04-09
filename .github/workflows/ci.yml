@@ -37,6 +37,9 @@ jobs:
           fi
           echo "OK: Recrd.Core has zero Recrd.* references"
 
+      - name: Install Playwright browsers (for Recording tests)
+        run: bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install chromium
+
       - name: Test
         if: ${{ !startsWith(github.ref_name, 'tdd/phase-') }}
         run: dotnet test --no-build --filter "Category!=Integration"
@@ -93,9 +96,6 @@ jobs:
           /p:Threshold=90
           /p:ThresholdType=line
           /p:ThresholdStat=minimum
-
-      - name: Install Playwright browsers (for Recording tests)
-        run: bash packages/Recrd.Recording/bin/Debug/net10.0/playwright.sh install chromium
 
       - name: Coverage gate — Recrd.Recording (90% line)
         run: >
