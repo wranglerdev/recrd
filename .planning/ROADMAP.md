@@ -190,7 +190,7 @@ Plans:
 
 Plans:
 - [x] 08.1-01-PLAN.md — Fix redundant framework reference and reorder CI tasks
-- [ ] 08.1-02-PLAN.md — Update Node.js to 22 and fix Playwright installation path
+- [x] 08.1-02-PLAN.md — Update Node.js to 22 and fix Playwright installation path
 
 ### Phase 9: Distribution
 **Goal**: A tagged release produces self-contained single-file binaries for all four platforms, attached to a GitHub Release, with a Homebrew formula and a winget manifest ready for submission.
