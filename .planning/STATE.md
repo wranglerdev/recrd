@@ -25,15 +25,15 @@ progress:
 
 | Field | Value |
 |-------|-------|
-| Phase | 07 — compilers |
+| Phase | 08 — cli-polish |
 | Plan | 4 of 4 |
 | Status | Complete |
-| TDD State | Green phase complete — all 45 compiler tests pass |
+| TDD State | Green phase complete — all 52 CLI tests pass |
 
 **Progress**
 
 ```
-Phase: 07 (compilers) — COMPLETE
+Phase: 08 (cli-polish) — COMPLETE
 Plan: 4 of 4
          [██████████] 100%
 ```
