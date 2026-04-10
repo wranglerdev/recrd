@@ -7,7 +7,7 @@ namespace Recrd.Cli.Commands;
 
 internal static class PluginsCommand
 {
-    public static Command Create(string? pluginsDirOverride = null)
+    public static Command Create(Plugins.PluginManager pluginManager)
     {
         var command = new Command("plugins", "Manage recrd plugins");
 
@@ -15,28 +15,25 @@ internal static class PluginsCommand
         var listCommand = new Command("list", "List installed plugins from ~/.recrd/plugins/");
         listCommand.SetAction((ParseResult result) =>
         {
-            var pluginsDir = pluginsDirOverride ?? Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                ".recrd", "plugins");
+            var plugins = pluginManager.DiscoverPlugins();
 
-            if (!Directory.Exists(pluginsDir))
-            {
-                Console.Out.WriteLine("No plugins installed");
-                return 0;
-            }
-
-            var dlls = Directory.GetFiles(pluginsDir, "*.dll");
-
-            if (dlls.Length == 0)
+            if (plugins.Count == 0)
             {
                 Console.Out.WriteLine("No plugins installed");
                 return 0;
             }
 
             Console.Out.WriteLine("Installed plugins:");
-            foreach (var dll in dlls)
+            Console.Out.WriteLine($"  {"Name",-30} {"Version",-8} {"Interfaces",-25} {"Status"}");
+            Console.Out.WriteLine($"  {new string('-', 30)} {new string('-', 8)} {new string('-', 25)} {new string('-', 10)}");
+
+            foreach (var plugin in plugins)
             {
-                Console.Out.WriteLine($"  - {Path.GetFileNameWithoutExtension(dll)}");
+                var version = plugin.Version?.ToString() ?? "unknown";
+                var interfaces = string.Join(",", plugin.Interfaces);
+                var status = plugin.Loaded ? "✓ loaded" : $"✗ {plugin.Error ?? "load error"}";
+
+                Console.Out.WriteLine($"  {plugin.Name,-30} {version,-8} {interfaces,-25} {status}");
             }
 
             return 0;
@@ -52,13 +49,14 @@ internal static class PluginsCommand
         installCommand.SetAction((ParseResult result) =>
         {
             var package = result.GetValue(packageArg);
-            var pluginsDir = pluginsDirOverride ?? Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                ".recrd", "plugins");
-
-            CliOutput.WriteInfo($"Plugin installation for '{package}' is not yet implemented.");
-            CliOutput.WriteInfo($"To install a plugin manually, place the plugin DLL in {pluginsDir}");
-            return 1;
+            
+            Console.Out.WriteLine($"To install {package}:");
+            Console.Out.WriteLine($"  1. dotnet publish {package} -c Release --no-self-contained");
+            Console.Out.WriteLine($"  2. Copy the publish output to ~/.recrd/plugins/{package}/");
+            Console.Out.WriteLine();
+            Console.Out.WriteLine($"The directory must contain {package}.dll and {package}.deps.json.");
+            
+            return 0;
         });
 
         command.Subcommands.Add(listCommand);

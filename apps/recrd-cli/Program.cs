@@ -32,6 +32,10 @@ public static class Program
         rootCommand.Options.Add(verbosityOption);
         rootCommand.Options.Add(logOutputOption);
 
+        // plugins directory: ~/.recrd/plugins
+        var pluginsDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".recrd", "plugins");
+        var pluginManager = new Plugins.PluginManager(pluginsDir);
+
         // start
         rootCommand.Subcommands.Add(StartCommand.Create(verbosityOption, logOutputOption));
 
@@ -41,7 +45,7 @@ public static class Program
         rootCommand.Subcommands.Add(SessionControlCommand.CreateStop(verbosityOption, logOutputOption));
 
         // compile
-        rootCommand.Subcommands.Add(CompileCommand.Create(verbosityOption, logOutputOption));
+        rootCommand.Subcommands.Add(CompileCommand.Create(pluginManager, verbosityOption, logOutputOption));
 
         // validate
         rootCommand.Subcommands.Add(ValidateCommand.Create(verbosityOption, logOutputOption));
@@ -56,7 +60,7 @@ public static class Program
         rootCommand.Subcommands.Add(VersionCommand.Create());
 
         // plugins (list + install subcommands grouped)
-        rootCommand.Subcommands.Add(PluginsCommand.Create());
+        rootCommand.Subcommands.Add(PluginsCommand.Create(pluginManager));
 
         return rootCommand;
     }

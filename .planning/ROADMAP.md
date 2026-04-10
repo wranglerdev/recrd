@@ -19,7 +19,7 @@
 - [x] **Phase 8.1: CI Fixes & Cleanup** - Fix redundant framework references and CI task ordering (completed 2026-04-09)
 - [x] **Phase 9: Distribution** - Self-contained publish, GitHub Releases, Homebrew tap, winget manifest (completed 2026-04-09)
 - [x] **Phase 10: VS Code Extension** - Thin wrapper, live preview WebView, Marketplace publish (completed 2026-04-09)
-- [ ] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety
+- [x] **Phase 11: Plugin System** - AssemblyLoadContext isolation, discovery, version gating, exception safety (completed 2026-04-10)
 - [ ] **Phase 12: Hardening** - Mutation testing, performance benchmarks, example plugins, docs
 
 ---
@@ -240,10 +240,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 11-01-PLAN.md — TDD red phase: Plugin discovery tests
-- [ ] 11-02-PLAN.md — AssemblyLoadContext implementation and isolation
-- [ ] 11-03-PLAN.md — Version gating and host integration
-- [ ] 11-04-PLAN.md — Exception safety and reporting
+- [x] 11-01-PLAN.md — TDD red phase: Plugin discovery tests
+- [x] 11-02-PLAN.md — AssemblyLoadContext implementation and isolation
+- [x] 11-03-PLAN.md — Version gating and host integration
+- [x] 11-04-PLAN.md — Exception safety and reporting
 
 ### Phase 12: Hardening
 **Goal**: The codebase achieves measurable resilience through mutation testing, performance benchmarks, example plugin implementations, and contributor documentation.
@@ -279,7 +279,7 @@ Plans:
 | 8.1 CI Fixes & Cleanup | 2/2 | Complete | 2026-04-09 |
 | 9. Distribution | 4/4 | Complete | 2026-04-09 |
 | 10. VS Code Extension | 4/4 | Complete | 2026-04-09 |
-| 11. Plugin System | 0/4 | Planned    |  |
+| 11. Plugin System | 4/3 | Complete   | 2026-04-10 |
 | 12. Hardening | 0/4 | Not Started | - |
 
 ---

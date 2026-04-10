@@ -72,7 +72,21 @@ public sealed class RobotBrowserCompiler : ITestCompiler
             foreach (var (step, name) in keywordMap)
             {
                 await writer.WriteLineAsync();
-                await writer.WriteLineAsync(name);
+                
+                if (step is ActionStep a && NeedsArgument(a))
+                {
+                    await writer.WriteLineAsync($"{name}");
+                    await writer.WriteLineAsync("    [Arguments]    ${value}");
+                }
+                else if (step is AssertionStep ass && NeedsAssertionArgument(ass))
+                {
+                    await writer.WriteLineAsync($"{name}");
+                    await writer.WriteLineAsync("    [Arguments]    ${expected}");
+                }
+                else
+                {
+                    await writer.WriteLineAsync(name);
+                }
 
                 switch (step)
                 {
@@ -108,6 +122,11 @@ public sealed class RobotBrowserCompiler : ITestCompiler
                 if (step is ActionStep a && NeedsArgument(a))
                 {
                     var arg = GetArgument(a);
+                    await writer.WriteLineAsync($"    {name}    {arg}");
+                }
+                else if (step is AssertionStep ass && NeedsAssertionArgument(ass))
+                {
+                    var arg = GetAssertionArgument(ass);
                     await writer.WriteLineAsync($"    {name}    {arg}");
                 }
                 else
@@ -150,4 +169,12 @@ public sealed class RobotBrowserCompiler : ITestCompiler
 
     private static string GetArgument(ActionStep step) =>
         step.Payload.GetValueOrDefault("value") ?? string.Empty;
+
+    private static bool NeedsAssertionArgument(AssertionStep step) =>
+        step.AssertionType is AssertionType.TextEquals or AssertionType.TextContains or AssertionType.UrlMatches;
+
+    private static string GetAssertionArgument(AssertionStep step) =>
+        step.Payload.GetValueOrDefault("expected")
+        ?? step.Payload.GetValueOrDefault("pattern")
+        ?? string.Empty;
 }

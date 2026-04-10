@@ -13,6 +13,15 @@ internal static class CliOutput
         Console.ForegroundColor = prev;
     }
 
+    /// <summary>Writes a warning message to stdout in yellow.</summary>
+    public static void WriteWarning(string message)
+    {
+        var prev = Console.ForegroundColor;
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Out.WriteLine(message);
+        Console.ForegroundColor = prev;
+    }
+
     /// <summary>Writes a success message to stdout in green.</summary>
     public static void WriteSuccess(string message)
     {

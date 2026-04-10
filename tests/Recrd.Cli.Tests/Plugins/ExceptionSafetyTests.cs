@@ -50,7 +50,7 @@ public class ExceptionSafetyTests : IDisposable
         // When FakeThrowingCompiler.CompileAsync throws InvalidOperationException("Plugin kaboom"),
         // PluginManager.SafeCompileAsync must catch it and add a warning "[plugin:fake-throwing] ...".
         var (dllPath, publishDir) = PluginTestFixture.PublishFakePlugin(_tempDir);
-        var pluginsDir = PluginTestFixture.CreatePluginDirectory(_tempDir, "Recrd.Plugin.Test", dllPath);
+        var pluginsDir = PluginTestFixture.CreatePluginDirectory(_tempDir, "FakePlugin", dllPath);
         var manager = new PluginManager(pluginsDir);
 
         // Act — RED PHASE: GetCompilers() throws NotImplementedException
@@ -68,7 +68,7 @@ public class ExceptionSafetyTests : IDisposable
         // Arrange: FakeThrowingCompiler throws during CompileAsync.
         // SafeCompileAsync must complete without propagating the exception.
         var (dllPath, publishDir) = PluginTestFixture.PublishFakePlugin(_tempDir);
-        var pluginsDir = PluginTestFixture.CreatePluginDirectory(_tempDir, "Recrd.Plugin.Test", dllPath);
+        var pluginsDir = PluginTestFixture.CreatePluginDirectory(_tempDir, "FakePlugin", dllPath);
         var manager = new PluginManager(pluginsDir);
 
         // Act — RED PHASE: GetCompilers() throws NotImplementedException
@@ -88,7 +88,7 @@ public class ExceptionSafetyTests : IDisposable
         // Arrange: Two compilers — FakeCompiler (succeeds) and FakeThrowingCompiler (throws).
         // The successful compiler must still produce output even when the other fails.
         var (dllPath, publishDir) = PluginTestFixture.PublishFakePlugin(_tempDir);
-        var pluginsDir = PluginTestFixture.CreatePluginDirectory(_tempDir, "Recrd.Plugin.Test", dllPath);
+        var pluginsDir = PluginTestFixture.CreatePluginDirectory(_tempDir, "FakePlugin", dllPath);
         var manager = new PluginManager(pluginsDir);
 
         // Act — RED PHASE: GetCompilers() throws NotImplementedException
