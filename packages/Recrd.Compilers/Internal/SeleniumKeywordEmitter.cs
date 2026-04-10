@@ -24,13 +24,11 @@ internal static class SeleniumKeywordEmitter
                 break;
 
             case ActionType.Type:
-                var typeValue = step.Payload.GetValueOrDefault("value") ?? string.Empty;
-                await writer.WriteLineAsync($"{Sep}Input Text{Sep}{selector}{Sep}{typeValue}");
+                await writer.WriteLineAsync($"{Sep}Input Text{Sep}{selector}{Sep}${{value}}");
                 break;
 
             case ActionType.Select:
-                var selectValue = step.Payload.GetValueOrDefault("value") ?? string.Empty;
-                await writer.WriteLineAsync($"{Sep}Select From List By Value{Sep}{selector}{Sep}{selectValue}");
+                await writer.WriteLineAsync($"{Sep}Select From List By Value{Sep}{selector}{Sep}${{value}}");
                 break;
 
             case ActionType.Navigate:
@@ -61,18 +59,14 @@ internal static class SeleniumKeywordEmitter
         if (warned)
             warnings.Add($"Could not resolve selector for {step.AssertionType} assertion; emitted '(unknown)'.");
 
-        var expected = step.Payload.GetValueOrDefault("expected")
-            ?? step.Payload.GetValueOrDefault("pattern")
-            ?? string.Empty;
-
         switch (step.AssertionType)
         {
             case AssertionType.TextEquals:
-                await writer.WriteLineAsync($"{Sep}Element Text Should Be{Sep}{selector}{Sep}{expected}");
+                await writer.WriteLineAsync($"{Sep}Element Text Should Be{Sep}{selector}{Sep}${{expected}}");
                 break;
 
             case AssertionType.TextContains:
-                await writer.WriteLineAsync($"{Sep}Element Should Contain{Sep}{selector}{Sep}{expected}");
+                await writer.WriteLineAsync($"{Sep}Element Should Contain{Sep}{selector}{Sep}${{expected}}");
                 break;
 
             case AssertionType.Visible:
@@ -84,7 +78,7 @@ internal static class SeleniumKeywordEmitter
                 break;
 
             case AssertionType.UrlMatches:
-                await writer.WriteLineAsync($"{Sep}Location Should Contain{Sep}{expected}");
+                await writer.WriteLineAsync($"{Sep}Location Should Contain{Sep}${{expected}}");
                 break;
         }
     }

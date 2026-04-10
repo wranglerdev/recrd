@@ -18,6 +18,7 @@ namespace Recrd.Cli.Commands;
 internal static class CompileCommand
 {
     public static Command Create(
+        Plugins.PluginManager? pluginManager = null,
         Option<string>? verbosityOption = null,
         Option<string>? logOutputOption = null)
     {
@@ -135,6 +136,25 @@ internal static class CompileCommand
                 ["robot-selenium"] = new RobotSeleniumCompiler()
             };
 
+            if (pluginManager != null)
+            {
+                try
+                {
+                    foreach (var pluginCompiler in pluginManager.GetCompilers())
+                    {
+                        // D-07: Built-in compilers take precedence; do not override
+                        if (!compilers.ContainsKey(pluginCompiler.TargetName))
+                        {
+                            compilers[pluginCompiler.TargetName] = pluginCompiler;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    logger.LogWarning($"Plugin discovery failed: {ex.Message}");
+                }
+            }
+
             if (!compilers.TryGetValue(target, out var compiler))
             {
                 CliOutput.WriteError(
@@ -193,7 +213,15 @@ internal static class CompileCommand
             };
 
             // Compile
-            var compilationResult = await compiler.CompileAsync(session, options);
+            var compilationResult = (pluginManager != null && pluginManager.IsPluginCompiler(compiler))
+                ? await pluginManager.SafeCompileAsync(compiler, session, options)
+                : await compiler.CompileAsync(session, options);
+
+            // Print warnings if any
+            foreach (var warning in compilationResult.Warnings)
+            {
+                CliOutput.WriteWarning(warning);
+            }
 
             // Generate .feature file via GherkinGenerator
             var featurePath = Path.Combine(outputDir, Path.GetFileNameWithoutExtension(sessionFile.Name) + ".feature");

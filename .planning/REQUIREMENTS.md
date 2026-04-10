@@ -85,25 +85,25 @@
 
 ### CLI Surface
 
-- [x] **CLI-01**: `recrd start [--browser chromium|firefox|webkit] [--headed] [--viewport WxH] [--base-url url]`
-- [x] **CLI-02**: `recrd pause`, `recrd resume`, `recrd stop`
-- [x] **CLI-03**: `recrd compile <session.recrd> [--target robot-browser|robot-selenium] [--data file] [--csv-delimiter char] [--out dir] [--selector-strategy chain] [--timeout secs] [--intercept]`
-- [x] **CLI-04**: `recrd validate <session.recrd>` — validates AST schema and variable consistency, exits non-zero on error
-- [x] **CLI-05**: `recrd sanitize <session.recrd>` — strips all literal values, keeps variable placeholders and structure
-- [x] **CLI-06**: `recrd recover` — reconstructs session from latest `.recrd.partial`
-- [x] **CLI-07**: `recrd version` — prints version and runtime info
-- [x] **CLI-08**: `recrd plugins list` / `recrd plugins install <pkg>` — plugin management
-- [x] **CLI-09**: `--verbosity quiet|normal|detailed|diagnostic` across all commands
-- [x] **CLI-10**: Structured logging via `Microsoft.Extensions.Logging`; `--log-output json` for machine-parseable output
-- [x] **CLI-11**: `recrd stop` prints summary: total events, variables declared, session duration, file sizes
-- [x] **CLI-12**: CLI cold start < 500ms (measured via `time recrd version`)
+- [ ] **CLI-01**: `recrd start [--browser chromium|firefox|webkit] [--headed] [--viewport WxH] [--base-url url]`
+- [ ] **CLI-02**: `recrd pause`, `recrd resume`, `recrd stop`
+- [ ] **CLI-03**: `recrd compile <session.recrd> [--target robot-browser|robot-selenium] [--data file] [--csv-delimiter char] [--out dir] [--selector-strategy chain] [--timeout secs] [--intercept]`
+- [ ] **CLI-04**: `recrd validate <session.recrd>` — validates AST schema and variable consistency, exits non-zero on error
+- [ ] **CLI-05**: `recrd sanitize <session.recrd>` — strips all literal values, keeps variable placeholders and structure
+- [ ] **CLI-06**: `recrd recover` — reconstructs session from latest `.recrd.partial`
+- [ ] **CLI-07**: `recrd version` — prints version and runtime info
+- [ ] **CLI-08**: `recrd plugins list` / `recrd plugins install <pkg>` — plugin management
+- [ ] **CLI-09**: `--verbosity quiet|normal|detailed|diagnostic` across all commands
+- [ ] **CLI-10**: Structured logging via `Microsoft.Extensions.Logging`; `--log-output json` for machine-parseable output
+- [ ] **CLI-11**: `recrd stop` prints summary: total events, variables declared, session duration, file sizes
+- [ ] **CLI-12**: CLI cold start < 500ms (measured via `time recrd version`)
 
 ### Distribution
 
-- [x] **DIST-01**: Self-contained single-file publish for win-x64, osx-arm64, osx-x64, linux-x64
-- [x] **DIST-02**: GitHub Releases automation (binary assets attached on tag push)
-- [x] **DIST-03**: Homebrew tap formula
-- [x] **DIST-04**: winget manifest
+- [ ] **DIST-01**: Self-contained single-file publish for win-x64, osx-arm64, osx-x64, linux-x64
+- [ ] **DIST-02**: GitHub Releases automation (binary assets attached on tag push)
+- [ ] **DIST-03**: Homebrew tap formula
+- [ ] **DIST-04**: winget manifest
 
 ### VS Code Extension
 
@@ -220,22 +220,22 @@
 | COMP-08 | Phase 7 | Complete |
 | COMP-09 | Phase 7 | Complete |
 | COMP-10 | Phase 7 | Complete |
-| CLI-01 | Phase 8 | Complete |
-| CLI-02 | Phase 8 | Complete |
-| CLI-03 | Phase 8 | Complete |
-| CLI-04 | Phase 8 | Complete |
-| CLI-05 | Phase 8 | Complete |
-| CLI-06 | Phase 8 | Complete |
-| CLI-07 | Phase 8 | Complete |
-| CLI-08 | Phase 8 | Complete |
-| CLI-09 | Phase 8 | Complete |
-| CLI-10 | Phase 8 | Complete |
-| CLI-11 | Phase 8 | Complete |
-| CLI-12 | Phase 8 | Complete |
-| DIST-01 | Phase 9 | Complete |
-| DIST-02 | Phase 9 | Complete |
-| DIST-03 | Phase 9 | Complete |
-| DIST-04 | Phase 9 | Complete |
+| CLI-01 | Phase 8 | Pending |
+| CLI-02 | Phase 8 | Pending |
+| CLI-03 | Phase 8 | Pending |
+| CLI-04 | Phase 8 | Pending |
+| CLI-05 | Phase 8 | Pending |
+| CLI-06 | Phase 8 | Pending |
+| CLI-07 | Phase 8 | Pending |
+| CLI-08 | Phase 8 | Pending |
+| CLI-09 | Phase 8 | Pending |
+| CLI-10 | Phase 8 | Pending |
+| CLI-11 | Phase 8 | Pending |
+| CLI-12 | Phase 8 | Pending |
+| DIST-01 | Phase 9 | Pending |
+| DIST-02 | Phase 9 | Pending |
+| DIST-03 | Phase 9 | Pending |
+| DIST-04 | Phase 9 | Pending |
 | VSCE-01 | Phase 10 | Pending |
 | VSCE-02 | Phase 10 | Pending |
 | VSCE-03 | Phase 10 | Pending |

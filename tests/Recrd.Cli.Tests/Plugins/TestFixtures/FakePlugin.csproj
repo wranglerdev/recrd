@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\packages\Recrd.Core\Recrd.Core.csproj">
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

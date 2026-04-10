@@ -5,162 +5,143 @@ on:
     tags:
       - 'v*'
 
-permissions:
-  contents: write
+env:
+  DOTNET_SYSTEM_NET_DISABLEIPV6: '1'
+  PROJECT_NAME: recrd-cli
+  SOLUTION_PATH: recrd.sln
 
 jobs:
-  publish:
-    name: Publish for ${{ matrix.rid }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: windows-latest
-            rid: win-x64
-          - os: macos-latest
-            rid: osx-x64
-          - os: macos-latest
-            rid: osx-arm64
-          - os: ubuntu-latest
-            rid: linux-x64
-
+  build-and-pack:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      packages: write
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
 
-      - name: Publish
-        env:
-          DOTNET_SYSTEM_NET_DISABLEIPV6: 1
-        run: dotnet publish apps/recrd-cli/recrd-cli.csproj -c Release -r ${{ matrix.rid }} --self-contained -p:PublishSingleFile=true -o ./publish/${{ matrix.rid }}
-
-      - name: Verify .playwright folder
-        shell: bash
+      - name: Extract version from tag
+        id: version
         run: |
-          if [ ! -d "./publish/${{ matrix.rid }}/.playwright" ]; then
-            echo "Error: .playwright folder not found in publish output"
-            exit 1
-          fi
-          ls -R ./publish/${{ matrix.rid }}
-          chmod +x ./publish/${{ matrix.rid }}/recrd || true
-          chmod +x ./publish/${{ matrix.rid }}/playwright.sh || true
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing version: $VERSION"
 
-      - name: Package ZIP (Win/Mac)
-        if: matrix.os == 'windows-latest' || matrix.os == 'macos-latest'
-        shell: bash
+      - name: Restore dependencies
         run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          cd ./publish/${{ matrix.rid }}
-          zip -r ../../recrd-$VERSION-${{ matrix.rid }}.zip .
+          dotnet restore
+          dotnet restore tests/Recrd.Cli.Tests/Plugins/TestFixtures/FakePlugin.csproj
 
-      - name: Package TAR.GZ (Linux/Mac)
-        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
-        shell: bash
+      - name: Build in Release mode
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --filter "Category!=Integration"
+
+      - name: Pack NuGet packages
         run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          cd ./publish/${{ matrix.rid }}
-          tar -czf ../../recrd-$VERSION-${{ matrix.rid }}.tar.gz .
+          dotnet pack --no-build --configuration Release \
+            -p:PackageVersion=${{ steps.version.outputs.version }} \
+            --output ./nupkg
 
-      - name: Generate Checksums
-        shell: bash
+      - name: Push to GitHub Packages
         run: |
-          for f in recrd-*; do
-            if [ -f "$f" ]; then
-              sha256sum "$f" > "$f.sha256"
-            fi
-          done
+          dotnet nuget push ./nupkg/*.nupkg \
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --api-key ${{ secrets.GITHUB_TOKEN }} \
+            --skip-duplicate
 
-      - name: Upload Artifacts
+      - name: Upload NuGet artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: binaries-${{ matrix.rid }}
-          path: |
-            recrd-*
-          if-no-files-found: error
+          name: nuget-packages
+          path: ./nupkg/*.nupkg
 
-  validate:
-    name: Validate Manifests (${{ matrix.type }})
-    needs: publish
-    runs-on: ${{ matrix.os }}
+  build-binaries:
+    needs: build-and-pack
     strategy:
-      fail-fast: false
       matrix:
         include:
-          - os: macos-latest
-            type: homebrew
+          - os: ubuntu-latest
+            rid: linux-x64
+            artifact_name: recrd-linux-x64
           - os: windows-latest
-            type: winget
+            rid: win-x64
+            artifact_name: recrd-win-x64
+          - os: macos-latest
+            rid: osx-x64
+            artifact_name: recrd-osx-x64
+          - os: macos-latest
+            rid: osx-arm64
+            artifact_name: recrd-osx-arm64
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
         with:
-          path: dist-artifacts
-          pattern: binaries-*
-          merge-multiple: true
+          dotnet-version: '10.0.x'
 
-      - name: Prepare Manifests
+      - name: Restore dependencies
+        run: |
+          dotnet restore
+          dotnet restore tests/Recrd.Cli.Tests/Plugins/TestFixtures/FakePlugin.csproj
+
+      - name: Publish Binary
+        run: |
+          dotnet publish apps/recrd-cli/recrd-cli.csproj \
+            --configuration Release \
+            --runtime ${{ matrix.rid }} \
+            --self-contained true \
+            -p:PublishSingleFile=true \
+            -p:Version=${{ needs.build-and-pack.outputs.version }} \
+            --output ./publish
+
+      - name: Prepare Artifact
         shell: bash
         run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          SHA256_WIN=$(cat dist-artifacts/recrd-$VERSION-win-x64.zip.sha256 | cut -d' ' -f1)
-          SHA256_OSX_X64=$(cat dist-artifacts/recrd-$VERSION-osx-x64.tar.gz.sha256 | cut -d' ' -f1)
-          SHA256_OSX_ARM64=$(cat dist-artifacts/recrd-$VERSION-osx-arm64.tar.gz.sha256 | cut -d' ' -f1)
-          
-          sed -i "s/{{VERSION}}/$VERSION/g" dist/homebrew/recrd.rb
-          sed -i "s/{{SHA256}}/$SHA256_OSX_X64/g" dist/homebrew/recrd.rb
-          sed -i "s/{{SHA256_ARM}}/$SHA256_OSX_ARM64/g" dist/homebrew/recrd.rb
-          
-          # Replace remote URL with local file URL for testing
-          # pwd output starts with / so file://$(pwd) is file:///home/...
-          sed -i "s|https://github.com/recrd/recrd/releases/download/v$VERSION|file://$(pwd)/dist-artifacts|g" dist/homebrew/recrd.rb
-          
-          sed -i "s/{{VERSION}}/$VERSION/g" dist/winget/recrd.yaml
-          sed -i "s/{{SHA256_WIN}}/$SHA256_WIN/g" dist/winget/recrd.yaml
+          cd publish
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            zip -r ../${{ matrix.artifact_name }}.zip .
+          else
+            tar -czvf ../${{ matrix.artifact_name }}.tar.gz .
+          fi
 
-      - name: Validate Homebrew
-        if: matrix.type == 'homebrew'
-        run: |
-          brew install --build-from-source ./dist/homebrew/recrd.rb
-          recrd --version
+      - name: Upload Binary Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: recrd-${{ matrix.rid }}.*
 
-      - name: Validate Winget
-        if: matrix.type == 'winget'
-        shell: pwsh
-        run: |
-          if (Get-Command winget -ErrorAction SilentlyContinue) {
-            winget validate dist/winget/recrd.yaml
-          } else {
-            Write-Host "winget command not found, skipping validation but file exists."
-            Get-Content dist/winget/recrd.yaml
-          }
-
-  release:
-    name: Create GitHub Release
-    needs: [publish, validate]
+  create-release:
+    needs: [build-and-pack, build-binaries]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          path: dist
-          pattern: binaries-*
-          merge-multiple: true
+          path: ./artifacts
 
-      - name: List files
-        run: ls -R dist/
-
-      - name: Create Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*
+          files: |
+            ./artifacts/**/*.zip
+            ./artifacts/**/*.tar.gz
+            ./artifacts/**/*.nupkg
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

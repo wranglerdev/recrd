@@ -27,15 +27,13 @@ internal static class BrowserKeywordEmitter
                 break;
 
             case ActionType.Type:
-                var typeValue = step.Payload.GetValueOrDefault("value") ?? string.Empty;
                 await writer.WriteLineAsync($"{Sep}Wait For Elements State{Sep}{selector}{Sep}visible{Sep}timeout={timeout}s");
-                await writer.WriteLineAsync($"{Sep}Type Text{Sep}{selector}{Sep}{typeValue}");
+                await writer.WriteLineAsync($"{Sep}Type Text{Sep}{selector}{Sep}${{value}}");
                 break;
 
             case ActionType.Select:
-                var selectValue = step.Payload.GetValueOrDefault("value") ?? string.Empty;
                 await writer.WriteLineAsync($"{Sep}Wait For Elements State{Sep}{selector}{Sep}visible{Sep}timeout={timeout}s");
-                await writer.WriteLineAsync($"{Sep}Select Options By{Sep}{selector}{Sep}value{Sep}{selectValue}");
+                await writer.WriteLineAsync($"{Sep}Select Options By{Sep}{selector}{Sep}value{Sep}${{value}}");
                 break;
 
             case ActionType.Navigate:
@@ -68,18 +66,14 @@ internal static class BrowserKeywordEmitter
         if (warned)
             warnings.Add($"Could not resolve selector for {step.AssertionType} assertion; emitted '(unknown)'.");
 
-        var expected = step.Payload.GetValueOrDefault("expected")
-            ?? step.Payload.GetValueOrDefault("pattern")
-            ?? string.Empty;
-
         switch (step.AssertionType)
         {
             case AssertionType.TextEquals:
-                await writer.WriteLineAsync($"{Sep}Get Text{Sep}{selector}{Sep}=={Sep}{expected}");
+                await writer.WriteLineAsync($"{Sep}Get Text{Sep}{selector}{Sep}=={Sep}${{expected}}");
                 break;
 
             case AssertionType.TextContains:
-                await writer.WriteLineAsync($"{Sep}Get Text{Sep}{selector}{Sep}contains{Sep}{expected}");
+                await writer.WriteLineAsync($"{Sep}Get Text{Sep}{selector}{Sep}contains{Sep}${{expected}}");
                 break;
 
             case AssertionType.Visible:
@@ -91,7 +85,7 @@ internal static class BrowserKeywordEmitter
                 break;
 
             case AssertionType.UrlMatches:
-                await writer.WriteLineAsync($"{Sep}Get Url{Sep}=={Sep}{expected}");
+                await writer.WriteLineAsync($"{Sep}Get Url{Sep}=={Sep}${{expected}}");
                 break;
         }
     }
