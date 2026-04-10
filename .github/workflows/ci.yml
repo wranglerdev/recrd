@@ -23,7 +23,9 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: |
+          dotnet restore
+          dotnet restore tests/Recrd.Cli.Tests/Plugins/TestFixtures/FakePlugin.csproj
 
       - name: Build
         run: dotnet build --no-restore

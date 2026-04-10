@@ -159,16 +159,17 @@ None.
 
 ### Quick Tasks Completed
 
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 260326-eol | Fix Playwright NuGet package in Recrd.Recording causing infinite loading during dotnet restore | 2026-03-26 | 470c456 | [260326-eol-fix-playwright-nuget-package-in-recrd-re](./quick/260326-eol-fix-playwright-nuget-package-in-recrd-re/) |
-| 260326-t3b | Fix CI failure: global.json SDK 10.0.103 unavailable on runners — changed to latestFeature/10.0.100 | 2026-03-26 | 7fc79bc | [260326-t3b-fix-ci-failure-global-json-requires-net-](./quick/260326-t3b-fix-ci-failure-global-json-requires-net-/) |
-| 260329-w2f | Fix CI pipeline coverage gate — switch coverlet.collector to coverlet.msbuild in 4 test projects; update ci.yml gate steps to /p: property syntax | 2026-03-29 | 3b28b93 | [260329-w2f-fix-ci-pipeline-coverage-gate](./quick/260329-w2f-fix-ci-pipeline-coverage-gate/) |
+| # | Description | Date | Commit | Status | Directory |
+|---|-------------|------|--------|--------|-----------|
+| 260326-eol | Fix Playwright NuGet package in Recrd.Recording causing infinite loading during dotnet restore | 2026-03-26 | 470c456 | | [260326-eol-fix-playwright-nuget-package-in-recrd-re](./quick/260326-eol-fix-playwright-nuget-package-in-recrd-re/) |
+| 260326-t3b | Fix CI failure: global.json SDK 10.0.103 unavailable on runners — changed to latestFeature/10.0.100 | 2026-03-26 | 7fc79bc | | [260326-t3b-fix-ci-failure-global-json-requires-net-](./quick/260326-t3b-fix-ci-failure-global-json-requires-net-/) |
+| 260329-w2f | Fix CI pipeline coverage gate — switch coverlet.collector to coverlet.msbuild in 4 test projects; update ci.yml gate steps to /p: property syntax | 2026-03-29 | 3b28b93 | | [260329-w2f-fix-ci-pipeline-coverage-gate](./quick/260329-w2f-fix-ci-pipeline-coverage-gate/) |
+| 260410-16w | fix the complete flow of the CI, test and publish via release on github | 2026-04-10 | aa29295 | Verified | [.planning/quick/260410-16w-fix-the-complete-flow-of-the-ci-test-and/](./quick/260410-16w-fix-the-complete-flow-of-the-ci-test-and/) |
 
 ---
 
 ## Session Continuity
 
-**Last updated:** 2026-03-29 — Completed 09-03-PLAN.md: Refined release workflow with unified asset upload and auto-notes
+**Last updated:** 2026-04-10 — Completed quick task 260410-16w: fix the complete flow of the CI, test and publish via release on github
 
 **To resume:** Phase 09 Plan 04 (Distribution verification/smoke tests).
